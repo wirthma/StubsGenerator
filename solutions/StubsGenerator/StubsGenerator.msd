@@ -8,10 +8,7 @@
   <sourcePath />
   <dependencies>
     <dependency reexport="false">742f6602-5a2f-4313-aa6e-ae1cd4ffdc61(MPS.Platform)</dependency>
-    <dependency reexport="false">2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)</dependency>
     <dependency reexport="false">8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)</dependency>
-    <dependency reexport="false">2429ba7e-dca6-48f7-8628-d00e9ac44245(TextGenGen)</dependency>
-    <dependency reexport="false">a23383a3-9564-4399-8643-72063c6111dc(jetbrains.mps.LangDoc)</dependency>
     <dependency reexport="false">4b884c2d-fa2c-4f14-933e-02a0187f870a(TestLanguage)</dependency>
   </dependencies>
   <languageVersions>
@@ -21,7 +18,6 @@
     <language slang="l:83888646-71ce-4f1c-9c53-c54016f6ad4f:jetbrains.mps.baseLanguage.collections" version="1" />
     <language slang="l:f2801650-65d5-424e-bb1b-463a8781b786:jetbrains.mps.baseLanguage.javadoc" version="2" />
     <language slang="l:760a0a8c-eabb-4521-8bfd-65db761a9ba3:jetbrains.mps.baseLanguage.logging" version="0" />
-    <language slang="l:63650c59-16c8-498a-99c8-005c7ee9515d:jetbrains.mps.lang.access" version="0" />
     <language slang="l:fe9d76d7-5809-45c9-ae28-a40915b4d6ff:jetbrains.mps.lang.checkedName" version="0" />
     <language slang="l:ceab5195-25ea-4f22-9b92-103b95ca8c0c:jetbrains.mps.lang.core" version="1" />
     <language slang="l:446c26eb-2b7b-4bf0-9b35-f83fa582753e:jetbrains.mps.lang.modelapi" version="0" />
@@ -41,10 +37,7 @@
     <module reference="552f07da-7329-4f60-82e1-8f550f3fe13d(StubsGenerator)" version="0" />
     <module reference="4b884c2d-fa2c-4f14-933e-02a0187f870a(TestLanguage)" version="0" />
     <module reference="2429ba7e-dca6-48f7-8628-d00e9ac44245(TextGenGen)" version="0" />
-    <module reference="a23383a3-9564-4399-8643-72063c6111dc(jetbrains.mps.LangDoc)" version="0" />
-    <module reference="2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)" version="0" />
     <module reference="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" version="0" />
-    <module reference="c7fb639f-be78-4307-89b0-b5959c3fa8c8(jetbrains.mps.lang.text)" version="0" />
   </dependencyVersions>
 </solution>
 
