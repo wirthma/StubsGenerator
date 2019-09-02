@@ -150,7 +150,7 @@
       </node>
       <node concept="3_J27D" id="36GfYcKxSuA" role="3s6cr7">
         <node concept="3Mxwew" id="36GfYcKxSuC" role="3MwsjC">
-          <property role="3MwjfP" value="Generator of stubs model from a stubs specification file" />
+          <property role="3MwjfP" value="Generator of stubs model from a stubs specification file using a defined stub-to-concept transformation" />
         </node>
       </node>
     </node>
