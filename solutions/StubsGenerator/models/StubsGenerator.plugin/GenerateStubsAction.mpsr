@@ -5,8 +5,8 @@
     <import index="qq03" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.actions(MPS.Platform/)" implicit="true" />
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" implicit="true" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" implicit="true" />
-    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" implicit="true" />
     <import index="v0q3" ref="r:8badb42f-b48e-4a36-8234-72986f9f62ea(StubsGenerator.core)" implicit="true" />
+    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" implicit="true" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" implicit="true" />
   </imports>
   <registry>
@@ -87,12 +87,16 @@
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
       </concept>
-      <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk">
-        <child id="1212687122400" name="typeParameter" index="1pMfVU" />
-      </concept>
+      <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk" />
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
         <reference id="1107535924139" name="classifier" index="3uigEE" />
         <child id="1109201940907" name="parameter" index="11_B2D" />
+      </concept>
+      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
+        <property id="6329021646629104958" name="text" index="3SKdUp" />
+      </concept>
+      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
+        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
       </concept>
     </language>
     <language id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers">
@@ -203,83 +207,48 @@
             </node>
           </node>
         </node>
-        <node concept="3cpWs8" id="6tMbnEHAPwv" role="3cqZAp">
-          <node concept="3cpWsn" id="6tMbnEHAPww" role="3cpWs9">
+        <node concept="3clFbH" id="7e0AhKzGR29" role="3cqZAp" />
+        <node concept="3cpWs8" id="7e0AhKzGRyz" role="3cqZAp">
+          <node concept="3cpWsn" id="7e0AhKzGRy$" role="3cpWs9">
+            <property role="TrG5h" value="stubSpecsReader" />
+            <node concept="3uibUv" id="7e0AhKzGRy_" role="1tU5fm">
+              <ref role="3uigEE" to="v0q3:3mOrQ__xO8a" resolve="StubSpecsReader" />
+            </node>
+            <node concept="2ShNRf" id="7e0AhKzGRFN" role="33vP2m">
+              <node concept="HV5vD" id="7e0AhKzGRT2" role="2ShVmc">
+                <ref role="HV5vE" to="v0q3:3mOrQ__xO7_" resolve="XmlStubSpecsReader" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="RqQxlJBU4j" role="3cqZAp">
+          <node concept="3SKdUq" id="RqQxlJBU4l" role="3SKWNk">
+            <property role="3SKdUp" value="Provide a path below:" />
+          </node>
+        </node>
+        <node concept="3cpWs8" id="7e0AhKzGSKQ" role="3cqZAp">
+          <node concept="3cpWsn" id="7e0AhKzGSKW" role="3cpWs9">
             <property role="TrG5h" value="stubSpecs" />
-            <node concept="3uibUv" id="6tMbnEHAPwt" role="1tU5fm">
+            <node concept="3uibUv" id="7e0AhKzGSKY" role="1tU5fm">
               <ref role="3uigEE" to="33ny:~List" resolve="List" />
-              <node concept="3uibUv" id="6tMbnEHAPF3" role="11_B2D">
+              <node concept="3uibUv" id="7e0AhKzGT0i" role="11_B2D">
                 <ref role="3uigEE" to="v0q3:3mOrQ__xOlU" resolve="StubSpec" />
               </node>
             </node>
-            <node concept="2ShNRf" id="6tMbnEHAPGr" role="33vP2m">
-              <node concept="1pGfFk" id="6tMbnEHAPUB" role="2ShVmc">
-                <ref role="37wK5l" to="33ny:~ArrayList.&lt;init&gt;()" resolve="ArrayList" />
-                <node concept="3uibUv" id="6tMbnEHAQhc" role="1pMfVU">
-                  <ref role="3uigEE" to="v0q3:3mOrQ__xOlU" resolve="StubSpec" />
+            <node concept="2OqwBi" id="7e0AhKzGT95" role="33vP2m">
+              <node concept="37vLTw" id="7e0AhKzGT6V" role="2Oq$k0">
+                <ref role="3cqZAo" node="7e0AhKzGRy$" resolve="stubSpecsReader" />
+              </node>
+              <node concept="liA8E" id="7e0AhKzGTcU" role="2OqNvi">
+                <ref role="37wK5l" to="v0q3:7e0AhKzFDUO" resolve="parseFile" />
+                <node concept="Xl_RD" id="7e0AhKzGTee" role="37wK5m">
+                  <property role="Xl_RC" value="provide-path-to-some-XML.xml" />
                 </node>
               </node>
             </node>
           </node>
         </node>
-        <node concept="3cpWs8" id="6tMbnEHB3K1" role="3cqZAp">
-          <node concept="3cpWsn" id="6tMbnEHB3K2" role="3cpWs9">
-            <property role="TrG5h" value="classStubSpec" />
-            <node concept="3uibUv" id="1nY$JQcU8qG" role="1tU5fm">
-              <ref role="3uigEE" to="v0q3:3mOrQ__xOlU" resolve="StubSpec" />
-            </node>
-            <node concept="2ShNRf" id="6tMbnEHB3Ro" role="33vP2m">
-              <node concept="HV5vD" id="6tMbnEHB45t" role="2ShVmc">
-                <ref role="HV5vE" to="v0q3:3mOrQ__xOlU" resolve="StubSpec" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="TtYJOWQiys" role="3cqZAp">
-          <node concept="2OqwBi" id="TtYJOWQiyu" role="3clFbG">
-            <node concept="37vLTw" id="TtYJOWQiyv" role="2Oq$k0">
-              <ref role="3cqZAo" node="6tMbnEHB3K2" resolve="classStubSpec" />
-            </node>
-            <node concept="liA8E" id="TtYJOWQiyw" role="2OqNvi">
-              <ref role="37wK5l" to="v0q3:1nY$JQcUo1U" resolve="setProperty" />
-              <node concept="Xl_RD" id="TtYJOWQiyx" role="37wK5m">
-                <property role="Xl_RC" value="stubType" />
-              </node>
-              <node concept="Xl_RD" id="TtYJOWQiyy" role="37wK5m">
-                <property role="Xl_RC" value="class" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="6tMbnEHB4iF" role="3cqZAp">
-          <node concept="2OqwBi" id="6tMbnEHB4uY" role="3clFbG">
-            <node concept="37vLTw" id="6tMbnEHB4iD" role="2Oq$k0">
-              <ref role="3cqZAo" node="6tMbnEHB3K2" resolve="classStubSpec" />
-            </node>
-            <node concept="liA8E" id="6tMbnEHB5Yd" role="2OqNvi">
-              <ref role="37wK5l" to="v0q3:1nY$JQcUo1U" resolve="setProperty" />
-              <node concept="Xl_RD" id="TtYJOWQion" role="37wK5m">
-                <property role="Xl_RC" value="className" />
-              </node>
-              <node concept="Xl_RD" id="TtYJOWQisf" role="37wK5m">
-                <property role="Xl_RC" value="TestClass" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="6tMbnEHAQxl" role="3cqZAp">
-          <node concept="2OqwBi" id="6tMbnEHAR1F" role="3clFbG">
-            <node concept="37vLTw" id="6tMbnEHAQxj" role="2Oq$k0">
-              <ref role="3cqZAo" node="6tMbnEHAPww" resolve="stubSpecs" />
-            </node>
-            <node concept="liA8E" id="6tMbnEHB3qv" role="2OqNvi">
-              <ref role="37wK5l" to="33ny:~List.add(java.lang.Object)" resolve="add" />
-              <node concept="37vLTw" id="6tMbnEHB6bl" role="37wK5m">
-                <ref role="3cqZAo" node="6tMbnEHB3K2" resolve="classStubSpec" />
-              </node>
-            </node>
-          </node>
-        </node>
+        <node concept="3clFbH" id="7e0AhKzGQJ4" role="3cqZAp" />
         <node concept="3cpWs8" id="TtYJOWQrTu" role="3cqZAp">
           <node concept="3cpWsn" id="TtYJOWQrTv" role="3cpWs9">
             <property role="TrG5h" value="stubGenerator" />
@@ -362,8 +331,8 @@
             </node>
             <node concept="liA8E" id="7e0AhKzEJYE" role="2OqNvi">
               <ref role="37wK5l" to="v0q3:7e0AhKzBTv7" resolve="generateStubs" />
-              <node concept="37vLTw" id="7e0AhKzEKCx" role="37wK5m">
-                <ref role="3cqZAo" node="6tMbnEHAPww" resolve="stubSpecs" />
+              <node concept="37vLTw" id="7e0AhKzGTm9" role="37wK5m">
+                <ref role="3cqZAo" node="7e0AhKzGSKW" resolve="stubSpecs" />
               </node>
             </node>
           </node>
