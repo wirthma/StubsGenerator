@@ -36,6 +36,7 @@
       </concept>
       <concept id="5617550519002745364" name="jetbrains.mps.build.structure.BuildLayout" flags="ng" index="1l3spV" />
       <concept id="5617550519002745363" name="jetbrains.mps.build.structure.BuildProject" flags="ng" index="1l3spW">
+        <property id="4915877860348071612" name="fileName" index="turDy" />
         <property id="5204048710541015587" name="internalBaseDirectory" index="2DA0ip" />
         <child id="6647099934206700656" name="plugins" index="10PD9s" />
         <child id="7389400916848080626" name="parts" index="3989C9" />
@@ -73,6 +74,9 @@
         <reference id="6592112598314801433" name="plugin" index="m_rDy" />
         <child id="3570488090019868128" name="packagingType" index="pUk7w" />
       </concept>
+      <concept id="6592112598314499036" name="jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginModule" flags="ng" index="m$_yB">
+        <reference id="6592112598314499037" name="target" index="m$_yA" />
+      </concept>
       <concept id="6592112598314499027" name="jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginDependency" flags="ng" index="m$_yC">
         <reference id="6592112598314499066" name="target" index="m$_y1" />
       </concept>
@@ -101,6 +105,7 @@
   <node concept="1l3spW" id="36GfYcKxStT">
     <property role="TrG5h" value="StubsGenerator" />
     <property role="2DA0ip" value="../../" />
+    <property role="turDy" value="stub-gen-build.xml" />
     <node concept="10PD9b" id="36GfYcKxStU" role="10PD9s" />
     <node concept="3b7kt6" id="36GfYcKxStV" role="10PD9s" />
     <node concept="398rNT" id="36GfYcKxStW" role="1l3spd">
@@ -140,8 +145,14 @@
       <node concept="m$f5U" id="36GfYcKxSub" role="m$_yh">
         <ref role="m$f5T" node="36GfYcKxSu5" resolve="StubsGenerator" />
       </node>
+      <node concept="m$_yB" id="1xIH$tJvVNJ" role="m$_yh">
+        <ref role="m$_yA" node="1xIH$tJvVMq" resolve="StubsGenerator.build" />
+      </node>
       <node concept="m$_yC" id="36GfYcKxSuc" role="m$_yJ">
         <ref role="m$_y1" to="ffeo:4k71ibbKLe8" resolve="jetbrains.mps.core" />
+      </node>
+      <node concept="m$_yC" id="3Gg71rbyied" role="m$_yJ">
+        <ref role="m$_y1" to="ffeo:5HVSRHdVm9a" resolve="jetbrains.mps.build" />
       </node>
       <node concept="3_J27D" id="36GfYcKxSud" role="m_cZH">
         <node concept="3Mxwew" id="36GfYcKxSue" role="3MwsjC">
@@ -181,9 +192,25 @@
             <ref role="3bR37D" to="ffeo:1TaHNgiIbJb" resolve="MPS.Platform" />
           </node>
         </node>
-        <node concept="1SiIV0" id="36GfYcKxSur" role="3bR37C">
-          <node concept="3bR9La" id="36GfYcKxSus" role="1SiIV1">
-            <ref role="3bR37D" to="ffeo:7Kfy9QB6LfQ" resolve="jetbrains.mps.kernel" />
+      </node>
+      <node concept="1E1JtA" id="1xIH$tJvVMq" role="2G$12L">
+        <property role="BnDLt" value="true" />
+        <property role="TrG5h" value="StubsGenerator.build" />
+        <property role="3LESm3" value="81577ea1-8a2d-43ee-802e-5a179a5f0838" />
+        <node concept="55IIr" id="1xIH$tJvVMl" role="3LF7KH">
+          <node concept="2Ry0Ak" id="1xIH$tJvVMm" role="iGT6I">
+            <property role="2Ry0Am" value="solutions" />
+            <node concept="2Ry0Ak" id="1xIH$tJvVMn" role="2Ry0An">
+              <property role="2Ry0Am" value="StubsGenerator.build" />
+              <node concept="2Ry0Ak" id="1xIH$tJvVMo" role="2Ry0An">
+                <property role="2Ry0Am" value="StubsGenerator.build.msd" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="1SiIV0" id="1xIH$tJvVML" role="3bR37C">
+          <node concept="3bR9La" id="1xIH$tJvVMM" role="1SiIV1">
+            <ref role="3bR37D" to="ffeo:78GwwOvB3tw" resolve="jetbrains.mps.ide.build" />
           </node>
         </node>
       </node>
