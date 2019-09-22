@@ -68,14 +68,12 @@
         <child id="6592112598314499028" name="dependencies" index="m$_yJ" />
         <child id="6592112598314499021" name="name" index="m$_yQ" />
         <child id="6592112598314855574" name="containerName" index="m_cZH" />
+        <child id="1238980147629899306" name="pluginXml" index="I30fb" />
         <child id="2172791612906637490" name="description" index="3s6cr7" />
       </concept>
       <concept id="6592112598314498926" name="jetbrains.mps.build.mps.structure.BuildMpsLayout_Plugin" flags="ng" index="m$_wl">
         <reference id="6592112598314801433" name="plugin" index="m_rDy" />
         <child id="3570488090019868128" name="packagingType" index="pUk7w" />
-      </concept>
-      <concept id="6592112598314499036" name="jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginModule" flags="ng" index="m$_yB">
-        <reference id="6592112598314499037" name="target" index="m$_yA" />
       </concept>
       <concept id="6592112598314499027" name="jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginDependency" flags="ng" index="m$_yC">
         <reference id="6592112598314499066" name="target" index="m$_y1" />
@@ -118,15 +116,19 @@
       </node>
     </node>
     <node concept="1l3spV" id="36GfYcKxSuh" role="1l3spN">
-      <node concept="3981dG" id="36GfYcKxSui" role="39821P">
-        <node concept="3_J27D" id="36GfYcKxSuj" role="Nbhlr">
-          <node concept="3Mxwew" id="36GfYcKxSuk" role="3MwsjC">
+      <node concept="m$_wl" id="7dTjpBCEC5L" role="39821P">
+        <ref role="m_rDy" node="36GfYcKxSu6" resolve="StubsGenerator" />
+        <node concept="pUk6x" id="7dTjpBCEC5Z" role="pUk7w" />
+      </node>
+      <node concept="3981dG" id="5LhJ8_flm$X" role="39821P">
+        <node concept="m$_wl" id="5LhJ8_flm_m" role="39821P">
+          <ref role="m_rDy" node="36GfYcKxSu6" resolve="StubsGenerator" />
+          <node concept="pUk6x" id="5LhJ8_flm_n" role="pUk7w" />
+        </node>
+        <node concept="3_J27D" id="5LhJ8_flm$Z" role="Nbhlr">
+          <node concept="3Mxwew" id="5LhJ8_flm_7" role="3MwsjC">
             <property role="3MwjfP" value="StubsGenerator.zip" />
           </node>
-        </node>
-        <node concept="m$_wl" id="36GfYcKxSul" role="39821P">
-          <ref role="m_rDy" node="36GfYcKxSu6" resolve="StubsGenerator" />
-          <node concept="pUk6x" id="36GfYcKxSum" role="pUk7w" />
         </node>
       </node>
     </node>
@@ -142,11 +144,8 @@
           <property role="3MwjfP" value="1.0" />
         </node>
       </node>
-      <node concept="m$f5U" id="36GfYcKxSub" role="m$_yh">
+      <node concept="m$f5U" id="7Ol6YRMJJuJ" role="m$_yh">
         <ref role="m$f5T" node="36GfYcKxSu5" resolve="StubsGenerator" />
-      </node>
-      <node concept="m$_yB" id="1xIH$tJvVNJ" role="m$_yh">
-        <ref role="m$_yA" node="1xIH$tJvVMq" resolve="StubsGenerator.build" />
       </node>
       <node concept="m$_yC" id="36GfYcKxSuc" role="m$_yJ">
         <ref role="m$_y1" to="ffeo:4k71ibbKLe8" resolve="jetbrains.mps.core" />
@@ -162,6 +161,11 @@
       <node concept="3_J27D" id="36GfYcKxSuA" role="3s6cr7">
         <node concept="3Mxwew" id="36GfYcKxSuC" role="3MwsjC">
           <property role="3MwjfP" value="Generator of stubs model from a stubs specification file using a defined stub-to-concept transformation" />
+        </node>
+      </node>
+      <node concept="55IIr" id="7Ol6YRMJJuM" role="I30fb">
+        <node concept="2Ry0Ak" id="7Ol6YRMJJuR" role="iGT6I">
+          <property role="2Ry0Am" value="plugin.xml" />
         </node>
       </node>
     </node>
