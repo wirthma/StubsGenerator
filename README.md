@@ -57,7 +57,7 @@ An example of the *language-side adapter* is
 and an example of the *specification-side adapter* can be found
 [here](https://github.com/Zeman-Dalibor/DotNetLibraryExporter).
 
-## Realease log
+## Release log
 
 This is an overview of plugin versions, always with listed modifications made to the previous
 version:
