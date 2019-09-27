@@ -4,7 +4,6 @@
   <imports>
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" implicit="true" />
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" implicit="true" />
-    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="v0q3" ref="r:8badb42f-b48e-4a36-8234-72986f9f62ea(StubsGenerator.core)" implicit="true" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" implicit="true" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" implicit="true" />
@@ -34,6 +33,7 @@
         <reference id="1068581517664" name="variableDeclaration" index="3cqZAo" />
       </concept>
       <concept id="1068498886292" name="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" flags="ir" index="37vLTG" />
+      <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
@@ -72,12 +72,22 @@
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
     </language>
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
+      <concept id="2546654756694997551" name="jetbrains.mps.baseLanguage.javadoc.structure.LinkInlineDocTag" flags="ng" index="92FcH">
+        <child id="2546654756694997556" name="reference" index="92FcQ" />
+        <child id="3106559687488913694" name="line" index="2XjZqd" />
+      </concept>
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
         <child id="8465538089690331502" name="body" index="TZ5H$" />
       </concept>
       <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
       <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
         <child id="8970989240999019149" name="part" index="1dT_Ay" />
+      </concept>
+      <concept id="2217234381367530212" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocReference" flags="ng" index="VXe08">
+        <reference id="2217234381367530213" name="classifier" index="VXe09" />
+      </concept>
+      <concept id="8970989240999019145" name="jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart" flags="ng" index="1dT_AA">
+        <child id="6962838954693749192" name="tag" index="qph3F" />
       </concept>
       <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
         <property id="8970989240999019144" name="text" index="1dT_AB" />
@@ -117,9 +127,7 @@
       </node>
       <node concept="37vLTG" id="RqQxlJCvy7" role="3clF46">
         <property role="TrG5h" value="modelName" />
-        <node concept="3uibUv" id="RqQxlJCvDV" role="1tU5fm">
-          <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-        </node>
+        <node concept="17QB3L" id="3mhEivYV2Yi" role="1tU5fm" />
       </node>
       <node concept="37vLTG" id="RqQxlJCuKQ" role="3clF46">
         <property role="TrG5h" value="singleStubGenerator" />
@@ -129,9 +137,7 @@
       </node>
       <node concept="37vLTG" id="RqQxlJCuSm" role="3clF46">
         <property role="TrG5h" value="xmlSpecFilePath" />
-        <node concept="3uibUv" id="RqQxlJCuW6" role="1tU5fm">
-          <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-        </node>
+        <node concept="17QB3L" id="3mhEivYV2Tf" role="1tU5fm" />
       </node>
       <node concept="3cqZAl" id="RqQxlJCtK_" role="3clF45" />
       <node concept="3Tm1VV" id="RqQxlJCtKA" role="1B3o_S" />
@@ -275,29 +281,94 @@
         <node concept="2xdQw9" id="3mOrQ__wzii" role="3cqZAp">
           <property role="2xdLsb" value="h1akgim/info" />
           <node concept="Xl_RD" id="3mOrQ__wzik" role="9lYJi">
-            <property role="Xl_RC" value="Stub generation finished!" />
+            <property role="Xl_RC" value="Stub generation action finished!" />
           </node>
         </node>
       </node>
       <node concept="P$JXv" id="RqQxlJCuJQ" role="lGtFl">
         <node concept="TZ5HA" id="RqQxlJCuJR" role="TZ5H$">
           <node concept="1dT_AC" id="RqQxlJCuJS" role="1dT_Ay">
-            <property role="1dT_AB" value="An action which generates a model with stubs which are specified by the given file into the given solution" />
+            <property role="1dT_AB" value="An action which generates a " />
           </node>
-        </node>
-        <node concept="TZ5HA" id="RqQxlJCuXE" role="TZ5H$">
-          <node concept="1dT_AC" id="RqQxlJCuXF" role="1dT_Ay">
-            <property role="1dT_AB" value="in the given repository using the given single-stub-generator." />
+          <node concept="1dT_AA" id="3mhEivYV1UL" role="1dT_Ay">
+            <node concept="92FcH" id="3mhEivYV1UR" role="qph3F">
+              <node concept="TZ5HA" id="3mhEivYV1UT" role="2XjZqd">
+                <node concept="1dT_AC" id="3mhEivYV2JX" role="1dT_Ay">
+                  <property role="1dT_AB" value="model" />
+                </node>
+              </node>
+              <node concept="VXe08" id="3mhEivYV2JL" role="92FcQ">
+                <ref role="VXe09" to="mhbf:~SModel" resolve="SModel" />
+              </node>
+            </node>
           </node>
-        </node>
-        <node concept="TZ5HA" id="RqQxlJCuXW" role="TZ5H$">
-          <node concept="1dT_AC" id="RqQxlJCuXX" role="1dT_Ay">
+          <node concept="1dT_AC" id="3mhEivYV1UK" role="1dT_Ay">
             <property role="1dT_AB" value="" />
           </node>
         </node>
-        <node concept="TZ5HA" id="RqQxlJCuYi" role="TZ5H$">
-          <node concept="1dT_AC" id="RqQxlJCuYj" role="1dT_Ay">
-            <property role="1dT_AB" value="It is an instance of the Strategy GoF pattern." />
+        <node concept="TZ5HA" id="3mhEivYV2JZ" role="TZ5H$">
+          <node concept="1dT_AC" id="3mhEivYV2K0" role="1dT_Ay">
+            <property role="1dT_AB" value="with stubs which are specified by the given file into the given" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="3mhEivYV2Kz" role="TZ5H$">
+          <node concept="1dT_AC" id="3mhEivYV2K$" role="1dT_Ay">
+            <property role="1dT_AB" value="" />
+          </node>
+          <node concept="1dT_AA" id="3mhEivYV2La" role="1dT_Ay">
+            <node concept="92FcH" id="3mhEivYV2Lg" role="qph3F">
+              <node concept="TZ5HA" id="3mhEivYV2Li" role="2XjZqd">
+                <node concept="1dT_AC" id="3mhEivYV2LW" role="1dT_Ay">
+                  <property role="1dT_AB" value="solution" />
+                </node>
+              </node>
+              <node concept="VXe08" id="3mhEivYV2Lx" role="92FcQ">
+                <ref role="VXe09" to="z1c3:~Solution" resolve="Solution" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="3mhEivYV2L9" role="1dT_Ay">
+            <property role="1dT_AB" value=" in the given" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="3mhEivYV2MP" role="TZ5H$">
+          <node concept="1dT_AC" id="3mhEivYV2MQ" role="1dT_Ay">
+            <property role="1dT_AB" value="" />
+          </node>
+          <node concept="1dT_AA" id="3mhEivYV2Ny" role="1dT_Ay">
+            <node concept="92FcH" id="3mhEivYV2NC" role="qph3F">
+              <node concept="TZ5HA" id="3mhEivYV2NE" role="2XjZqd">
+                <node concept="1dT_AC" id="3mhEivYV2Ol" role="1dT_Ay">
+                  <property role="1dT_AB" value="repository" />
+                </node>
+              </node>
+              <node concept="VXe08" id="3mhEivYV2NT" role="92FcQ">
+                <ref role="VXe09" to="lui2:~SRepository" resolve="SRepository" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="3mhEivYV2Nx" role="1dT_Ay">
+            <property role="1dT_AB" value="" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="3mhEivYV2Ov" role="TZ5H$">
+          <node concept="1dT_AC" id="3mhEivYV2Ow" role="1dT_Ay">
+            <property role="1dT_AB" value="using the given " />
+          </node>
+          <node concept="1dT_AA" id="3mhEivYV2Pk" role="1dT_Ay">
+            <node concept="92FcH" id="3mhEivYV2Pq" role="qph3F">
+              <node concept="TZ5HA" id="3mhEivYV2Ps" role="2XjZqd">
+                <node concept="1dT_AC" id="3mhEivYV2Q3" role="1dT_Ay">
+                  <property role="1dT_AB" value="single-stub generator" />
+                </node>
+              </node>
+              <node concept="VXe08" id="3mhEivYV2PF" role="92FcQ">
+                <ref role="VXe09" to="v0q3:6tMbnEHCSHR" resolve="SingleStubGenerator" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="3mhEivYV2Pj" role="1dT_Ay">
+            <property role="1dT_AB" value="" />
           </node>
         </node>
       </node>
