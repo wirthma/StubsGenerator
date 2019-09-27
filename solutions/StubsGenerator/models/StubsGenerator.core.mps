@@ -21,6 +21,7 @@
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
+      <concept id="1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" flags="nn" index="22lmx$" />
       <concept id="1082485599095" name="jetbrains.mps.baseLanguage.structure.BlockStatement" flags="nn" index="9aQIb">
         <child id="1082485599096" name="statements" index="9aQI4" />
       </concept>
@@ -31,9 +32,6 @@
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
       <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
       <concept id="1239709250944" name="jetbrains.mps.baseLanguage.structure.PrefixIncrementExpression" flags="nn" index="2$rviw" />
-      <concept id="1076505808687" name="jetbrains.mps.baseLanguage.structure.WhileStatement" flags="nn" index="2$JKZl">
-        <child id="1076505808688" name="condition" index="2$JKZa" />
-      </concept>
       <concept id="1239714755177" name="jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation" flags="nn" index="2$Kvd9">
         <child id="1239714902950" name="expression" index="2$L3a6" />
       </concept>
@@ -52,6 +50,14 @@
       </concept>
       <concept id="1197029447546" name="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" flags="nn" index="2OwXpG">
         <reference id="1197029500499" name="fieldDeclaration" index="2Oxat5" />
+      </concept>
+      <concept id="1083245097125" name="jetbrains.mps.baseLanguage.structure.EnumClass" flags="ig" index="Qs71p">
+        <child id="1083245396908" name="enumConstant" index="Qtgdg" />
+      </concept>
+      <concept id="1083245299891" name="jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration" flags="ig" index="QsSxf" />
+      <concept id="1083260308424" name="jetbrains.mps.baseLanguage.structure.EnumConstantReference" flags="nn" index="Rm8GO">
+        <reference id="1083260308426" name="enumConstantDeclaration" index="Rm8GQ" />
+        <reference id="1144432896254" name="enumClass" index="1Px2BO" />
       </concept>
       <concept id="1164879751025" name="jetbrains.mps.baseLanguage.structure.TryCatchStatement" flags="nn" index="SfApY">
         <child id="1164879758292" name="body" index="SfCbr" />
@@ -116,6 +122,7 @@
       <concept id="1068580123165" name="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" flags="ig" index="3clFb_">
         <property id="1178608670077" name="isAbstract" index="1EzhhJ" />
       </concept>
+      <concept id="1068580123152" name="jetbrains.mps.baseLanguage.structure.EqualsExpression" flags="nn" index="3clFbC" />
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
         <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
@@ -124,6 +131,7 @@
         <child id="1082485599094" name="ifFalseStatement" index="9aQIa" />
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
+        <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
@@ -144,6 +152,10 @@
       </concept>
       <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
       <concept id="1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" flags="in" index="3cqZAl" />
+      <concept id="1206060495898" name="jetbrains.mps.baseLanguage.structure.ElsifClause" flags="ng" index="3eNFk2">
+        <child id="1206060619838" name="condition" index="3eO9$A" />
+        <child id="1206060644605" name="statementList" index="3eOfB_" />
+      </concept>
       <concept id="1081506773034" name="jetbrains.mps.baseLanguage.structure.LessThanExpression" flags="nn" index="3eOVzh" />
       <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
         <child id="1081516765348" name="expression" index="3fr31v" />
@@ -183,9 +195,6 @@
         <child id="1144231408325" name="iteration" index="1Dwrff" />
       </concept>
       <concept id="1107796713796" name="jetbrains.mps.baseLanguage.structure.Interface" flags="ig" index="3HP615" />
-      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
-        <child id="1350122676458893092" name="text" index="3ndbpf" />
-      </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
@@ -195,6 +204,13 @@
       </concept>
     </language>
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
+      <concept id="2546654756694997551" name="jetbrains.mps.baseLanguage.javadoc.structure.LinkInlineDocTag" flags="ng" index="92FcH">
+        <child id="2546654756694997556" name="reference" index="92FcQ" />
+        <child id="3106559687488913694" name="line" index="2XjZqd" />
+      </concept>
+      <concept id="5858074156537516430" name="jetbrains.mps.baseLanguage.javadoc.structure.ReturnBlockDocTag" flags="ng" index="x79VA">
+        <property id="5858074156537516431" name="text" index="x79VB" />
+      </concept>
       <concept id="6832197706140896242" name="jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment" flags="ng" index="z59LJ" />
       <concept id="6832197706140518104" name="jetbrains.mps.baseLanguage.javadoc.structure.DocMethodParameterReference" flags="ng" index="zr_55" />
       <concept id="6832197706140518103" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseParameterReference" flags="ng" index="zr_5a">
@@ -212,9 +228,26 @@
       <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
         <child id="8970989240999019149" name="part" index="1dT_Ay" />
       </concept>
+      <concept id="6612597108003615641" name="jetbrains.mps.baseLanguage.javadoc.structure.HTMLElement" flags="ng" index="2U$1Ah">
+        <property id="6612597108003615642" name="name" index="2U$1Ai" />
+        <child id="6612597108003615643" name="line" index="2U$1Aj" />
+      </concept>
+      <concept id="2217234381367530212" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocReference" flags="ng" index="VXe08">
+        <reference id="2217234381367530213" name="classifier" index="VXe09" />
+      </concept>
+      <concept id="2217234381367530195" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocReference" flags="ng" index="VXe0Z">
+        <reference id="2217234381367530196" name="methodDeclaration" index="VXe0S" />
+      </concept>
+      <concept id="5562345046718956738" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseVariableDocReference" flags="ng" index="YTMYr">
+        <reference id="5562345046718956740" name="declaration" index="YTMYt" />
+      </concept>
+      <concept id="8970989240999019145" name="jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart" flags="ng" index="1dT_AA">
+        <child id="6962838954693749192" name="tag" index="qph3F" />
+      </concept>
       <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
         <property id="8970989240999019144" name="text" index="1dT_AB" />
       </concept>
+      <concept id="6501140109493894267" name="jetbrains.mps.baseLanguage.javadoc.structure.StaticFieldDocReference" flags="ng" index="1RlsK7" />
       <concept id="2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" flags="ng" index="3UR2Jj" />
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
@@ -231,14 +264,6 @@
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
-      </concept>
-    </language>
-    <language id="c7fb639f-be78-4307-89b0-b5959c3fa8c8" name="jetbrains.mps.lang.text">
-      <concept id="155656958578482948" name="jetbrains.mps.lang.text.structure.Word" flags="ng" index="3oM_SD">
-        <property id="155656958578482949" name="value" index="3oM_SC" />
-      </concept>
-      <concept id="2535923850359271782" name="jetbrains.mps.lang.text.structure.Line" flags="ng" index="1PaTwC">
-        <child id="2535923850359271783" name="elements" index="1PaTwD" />
       </concept>
     </language>
   </registry>
@@ -850,12 +875,62 @@
       <node concept="P$JXv" id="3mOrQ__xQbs" role="lGtFl">
         <node concept="TZ5HA" id="7e0AhKzBYic" role="TZ5H$">
           <node concept="1dT_AC" id="7e0AhKzBYid" role="1dT_Ay">
-            <property role="1dT_AB" value="Constructs a new model with the given name inside the given repository and the given solution. Return the created" />
+            <property role="1dT_AB" value="Constructs a new " />
+          </node>
+          <node concept="1dT_AA" id="3mhEivYR6_8" role="1dT_Ay">
+            <node concept="92FcH" id="3mhEivYR6_m" role="qph3F">
+              <node concept="TZ5HA" id="3mhEivYR6_o" role="2XjZqd">
+                <node concept="1dT_AC" id="3mhEivYR6_N" role="1dT_Ay">
+                  <property role="1dT_AB" value="model" />
+                </node>
+              </node>
+              <node concept="VXe08" id="3mhEivYR6_B" role="92FcQ">
+                <ref role="VXe09" to="mhbf:~SModel" resolve="SModel" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="3mhEivYR6_7" role="1dT_Ay">
+            <property role="1dT_AB" value=" with the given name inside the" />
           </node>
         </node>
-        <node concept="TZ5HA" id="7e0AhKzBYie" role="TZ5H$">
-          <node concept="1dT_AC" id="7e0AhKzBYif" role="1dT_Ay">
-            <property role="1dT_AB" value="model or null on an already existing model with the given name (also reports a warning in this case)." />
+        <node concept="TZ5HA" id="3mhEivYR6_P" role="TZ5H$">
+          <node concept="1dT_AC" id="3mhEivYR6_Q" role="1dT_Ay">
+            <property role="1dT_AB" value="given " />
+          </node>
+          <node concept="1dT_AA" id="3mhEivYR6Ac" role="1dT_Ay">
+            <node concept="92FcH" id="3mhEivYR6Aq" role="qph3F">
+              <node concept="TZ5HA" id="3mhEivYR6As" role="2XjZqd">
+                <node concept="1dT_AC" id="3mhEivYR6B2" role="1dT_Ay">
+                  <property role="1dT_AB" value="repository" />
+                </node>
+              </node>
+              <node concept="VXe08" id="3mhEivYR6AF" role="92FcQ">
+                <ref role="VXe09" to="lui2:~SRepository" resolve="SRepository" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="3mhEivYR6Ab" role="1dT_Ay">
+            <property role="1dT_AB" value=" and the given" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="3mhEivYR6Hn" role="TZ5H$">
+          <node concept="1dT_AC" id="3mhEivYR6Ho" role="1dT_Ay">
+            <property role="1dT_AB" value="" />
+          </node>
+          <node concept="1dT_AA" id="3mhEivYR6B5" role="1dT_Ay">
+            <node concept="92FcH" id="3mhEivYR6Bp" role="qph3F">
+              <node concept="TZ5HA" id="3mhEivYR6Br" role="2XjZqd">
+                <node concept="1dT_AC" id="3mhEivYR6Hl" role="1dT_Ay">
+                  <property role="1dT_AB" value="solution" />
+                </node>
+              </node>
+              <node concept="VXe08" id="3mhEivYR6GZ" role="92FcQ">
+                <ref role="VXe09" to="z1c3:~Solution" resolve="Solution" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="3mhEivYR6B4" role="1dT_Ay">
+            <property role="1dT_AB" value="." />
           </node>
         </node>
         <node concept="TUZQ0" id="6tMbnEHAGlX" role="3nqlJM">
@@ -876,13 +951,31 @@
             <ref role="zr_51" node="3mOrQ__xOxj" resolve="modelName" />
           </node>
         </node>
+        <node concept="x79VA" id="3mhEivYR6IG" role="3nqlJM">
+          <property role="x79VB" value="Returns the created {@link org.jetbrains.mps.openapi.model.SModel model} or null on an already existing model with the given name (also reports a warning in this case)." />
+        </node>
       </node>
     </node>
     <node concept="3Tm1VV" id="3mOrQ__xOj0" role="1B3o_S" />
     <node concept="3UR2Jj" id="3mOrQ__xQiG" role="lGtFl">
       <node concept="TZ5HA" id="3mOrQ__xQiH" role="TZ5H$">
         <node concept="1dT_AC" id="3mOrQ__xQiI" role="1dT_Ay">
-          <property role="1dT_AB" value="Provides model creation functionality." />
+          <property role="1dT_AB" value="Provides " />
+        </node>
+        <node concept="1dT_AA" id="3mhEivYR6$2" role="1dT_Ay">
+          <node concept="92FcH" id="3mhEivYR6$8" role="qph3F">
+            <node concept="TZ5HA" id="3mhEivYR6$a" role="2XjZqd">
+              <node concept="1dT_AC" id="3mhEivYR6$l" role="1dT_Ay">
+                <property role="1dT_AB" value="model" />
+              </node>
+            </node>
+            <node concept="VXe08" id="3mhEivYR6$h" role="92FcQ">
+              <ref role="VXe09" to="mhbf:~SModel" resolve="SModel" />
+            </node>
+          </node>
+        </node>
+        <node concept="1dT_AC" id="3mhEivYR6$1" role="1dT_Ay">
+          <property role="1dT_AB" value=" creation functionality." />
         </node>
       </node>
     </node>
@@ -903,11 +996,23 @@
       <node concept="z59LJ" id="7e0AhKzGoRf" role="lGtFl">
         <node concept="TZ5HA" id="7e0AhKzGoRg" role="TZ5H$">
           <node concept="1dT_AC" id="7e0AhKzGoRh" role="1dT_Ay">
-            <property role="1dT_AB" value="A well-known property representing the most high-level classification of the stub." />
+            <property role="1dT_AB" value="A well-known property representing the most high-level classification of the stub (e.g. class, namespace," />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="3mhEivYRthP" role="TZ5H$">
+          <node concept="1dT_AC" id="3mhEivYRthQ" role="1dT_Ay">
+            <property role="1dT_AB" value="interface, ...)." />
           </node>
         </node>
         <node concept="TZ5HA" id="7e0AhKzGAG8" role="TZ5H$">
           <node concept="1dT_AC" id="7e0AhKzGAG9" role="1dT_Ay">
+            <property role="1dT_AB" value="" />
+          </node>
+          <node concept="2U$1Ah" id="3mhEivYRthJ" role="1dT_Ay">
+            <property role="2U$1Ai" value="p" />
+            <node concept="TZ5HA" id="3mhEivYRthK" role="2U$1Aj" />
+          </node>
+          <node concept="1dT_AC" id="3mhEivYRthI" role="1dT_Ay">
             <property role="1dT_AB" value="" />
           </node>
         </node>
@@ -926,16 +1031,115 @@
         <ref role="3uigEE" to="wyt6:~String" resolve="String" />
       </node>
       <node concept="Xl_RD" id="RqQxlJBPg5" role="33vP2m">
-        <property role="Xl_RC" value="not set: source of the dark force in the program" />
+        <property role="Xl_RC" value="not set: source of the dark force in the program!!!" />
       </node>
       <node concept="z59LJ" id="RqQxlJBPg6" role="lGtFl">
         <node concept="TZ5HA" id="RqQxlJBPg7" role="TZ5H$">
           <node concept="1dT_AC" id="RqQxlJBPg8" role="1dT_Ay">
-            <property role="1dT_AB" value="Default value of the STUB_KIND property." />
+            <property role="1dT_AB" value="Default value of the " />
+          </node>
+          <node concept="1dT_AA" id="3mhEivYRtjH" role="1dT_Ay">
+            <node concept="92FcH" id="3mhEivYRtjN" role="qph3F">
+              <node concept="TZ5HA" id="3mhEivYRtjP" role="2XjZqd" />
+              <node concept="1RlsK7" id="3mhEivYRtjW" role="92FcQ">
+                <ref role="YTMYt" node="7e0AhKzGodq" resolve="STUB_KIND" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="3mhEivYRtjG" role="1dT_Ay">
+            <property role="1dT_AB" value=" property." />
           </node>
         </node>
       </node>
     </node>
+    <node concept="Wx3nA" id="3mhEivYRtk$" role="jymVt">
+      <property role="TrG5h" value="STUB_ID" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm1VV" id="3mhEivYRtk_" role="1B3o_S" />
+      <node concept="3uibUv" id="3mhEivYRtkA" role="1tU5fm">
+        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+      </node>
+      <node concept="Xl_RD" id="3mhEivYRtkB" role="33vP2m">
+        <property role="Xl_RC" value="stubId" />
+      </node>
+      <node concept="z59LJ" id="3mhEivYRtkC" role="lGtFl">
+        <node concept="TZ5HA" id="3mhEivYRtkD" role="TZ5H$">
+          <node concept="1dT_AC" id="3mhEivYRtkE" role="1dT_Ay">
+            <property role="1dT_AB" value="A well-known property identifying the stub (e.g. class name including the namespaces, ...)." />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="3mhEivYRtkH" role="TZ5H$">
+          <node concept="1dT_AC" id="3mhEivYRtkI" role="1dT_Ay">
+            <property role="1dT_AB" value="" />
+          </node>
+          <node concept="2U$1Ah" id="3mhEivYRtkJ" role="1dT_Ay">
+            <property role="2U$1Ai" value="p" />
+            <node concept="TZ5HA" id="3mhEivYRtkK" role="2U$1Aj" />
+          </node>
+          <node concept="1dT_AC" id="3mhEivYRtkL" role="1dT_Ay">
+            <property role="1dT_AB" value="" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="3mhEivYRtkM" role="TZ5H$">
+          <node concept="1dT_AC" id="3mhEivYRtkN" role="1dT_Ay">
+            <property role="1dT_AB" value="This property is expected to be always set." />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="Wx3nA" id="3mhEivYRtkO" role="jymVt">
+      <property role="TrG5h" value="STUB_ID_DEFAULT" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm1VV" id="3mhEivYRtkP" role="1B3o_S" />
+      <node concept="3uibUv" id="3mhEivYRtkQ" role="1tU5fm">
+        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+      </node>
+      <node concept="Xl_RD" id="3mhEivYRtkR" role="33vP2m">
+        <property role="Xl_RC" value="not set: we all are gonna die!!!" />
+      </node>
+      <node concept="z59LJ" id="3mhEivYRtkS" role="lGtFl">
+        <node concept="TZ5HA" id="3mhEivYRtkT" role="TZ5H$">
+          <node concept="1dT_AC" id="3mhEivYRtkU" role="1dT_Ay">
+            <property role="1dT_AB" value="Default value of the " />
+          </node>
+          <node concept="1dT_AA" id="3mhEivYRtkV" role="1dT_Ay">
+            <node concept="92FcH" id="3mhEivYRtkW" role="qph3F">
+              <node concept="TZ5HA" id="3mhEivYRtkX" role="2XjZqd" />
+              <node concept="1RlsK7" id="3mhEivYRtkY" role="92FcQ">
+                <ref role="YTMYt" node="3mhEivYRtk$" resolve="STUB_ID" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="3mhEivYRtkZ" role="1dT_Ay">
+            <property role="1dT_AB" value=" property." />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="Wx3nA" id="3mhEivYSgrJ" role="jymVt">
+      <property role="TrG5h" value="IS_ROOT_NODE" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm1VV" id="3mhEivYSgrK" role="1B3o_S" />
+      <node concept="3uibUv" id="3mhEivYSgrL" role="1tU5fm">
+        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+      </node>
+      <node concept="Xl_RD" id="3mhEivYSgrM" role="33vP2m">
+        <property role="Xl_RC" value="isRootNode" />
+      </node>
+      <node concept="z59LJ" id="3mhEivYSgrN" role="lGtFl">
+        <node concept="TZ5HA" id="3mhEivYSgrO" role="TZ5H$">
+          <node concept="1dT_AC" id="3mhEivYSgrP" role="1dT_Ay">
+            <property role="1dT_AB" value="A well-known property determining whether the stub should become a root node (the property is set to any value" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="3mhEivYSgJM" role="TZ5H$">
+          <node concept="1dT_AC" id="3mhEivYSgJN" role="1dT_Ay">
+            <property role="1dT_AB" value="or not (the property is not set at all)." />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="3mhEivYSg8o" role="jymVt" />
     <node concept="2tJIrI" id="7e0AhKzGAH2" role="jymVt" />
     <node concept="3clFbW" id="7e0AhKzGBAr" role="jymVt">
       <node concept="3cqZAl" id="7e0AhKzGBAs" role="3clF45" />
@@ -951,12 +1155,34 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="3mhEivYRu3d" role="3cqZAp">
+          <node concept="1rXfSq" id="3mhEivYRu3e" role="3clFbG">
+            <ref role="37wK5l" node="1nY$JQcUo1U" resolve="setProperty" />
+            <node concept="37vLTw" id="3mhEivYRug9" role="37wK5m">
+              <ref role="3cqZAo" node="3mhEivYRtk$" resolve="STUB_ID" />
+            </node>
+            <node concept="37vLTw" id="3mhEivYRueB" role="37wK5m">
+              <ref role="3cqZAo" node="3mhEivYRtkO" resolve="STUB_ID_DEFAULT" />
+            </node>
+          </node>
+        </node>
       </node>
       <node concept="3Tm1VV" id="7e0AhKzGBi7" role="1B3o_S" />
       <node concept="P$JXv" id="RqQxlJBQ4C" role="lGtFl">
         <node concept="TZ5HA" id="RqQxlJBQ4D" role="TZ5H$">
           <node concept="1dT_AC" id="RqQxlJBQ4E" role="1dT_Ay">
-            <property role="1dT_AB" value="Constructs an empty-initialized StubSpec." />
+            <property role="1dT_AB" value="Constructs an empty-initialized " />
+          </node>
+          <node concept="1dT_AA" id="3mhEivYRtTD" role="1dT_Ay">
+            <node concept="92FcH" id="3mhEivYRtTR" role="qph3F">
+              <node concept="TZ5HA" id="3mhEivYRtTT" role="2XjZqd" />
+              <node concept="VXe08" id="3mhEivYRtU8" role="92FcQ">
+                <ref role="VXe09" node="3mOrQ__xOlU" resolve="StubSpec" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="3mhEivYRtTC" role="1dT_Ay">
+            <property role="1dT_AB" value="." />
           </node>
         </node>
       </node>
@@ -1046,7 +1272,7 @@
           </node>
         </node>
       </node>
-      <node concept="3Tm1VV" id="7e0AhKzEpz0" role="1B3o_S" />
+      <node concept="3Tmbuc" id="3mhEivYSlvN" role="1B3o_S" />
       <node concept="3uibUv" id="7e0AhKzEpUh" role="3clF45">
         <ref role="3uigEE" to="33ny:~List" resolve="List" />
         <node concept="3uibUv" id="7e0AhKzEpYj" role="11_B2D">
@@ -1079,7 +1305,7 @@
           </node>
         </node>
       </node>
-      <node concept="3Tm1VV" id="7e0AhKzEarE" role="1B3o_S" />
+      <node concept="3Tmbuc" id="3mhEivYVb6E" role="1B3o_S" />
       <node concept="3cqZAl" id="7e0AhKzEarF" role="3clF45" />
       <node concept="P$JXv" id="7e0AhKzEarK" role="lGtFl">
         <node concept="TZ5HA" id="7e0AhKzEarL" role="TZ5H$">
@@ -1089,6 +1315,13 @@
         </node>
         <node concept="TZ5HA" id="7e0AhKzEpd6" role="TZ5H$">
           <node concept="1dT_AC" id="7e0AhKzEpd7" role="1dT_Ay">
+            <property role="1dT_AB" value="" />
+          </node>
+          <node concept="2U$1Ah" id="3mhEivYRuif" role="1dT_Ay">
+            <property role="2U$1Ai" value="p" />
+            <node concept="TZ5HA" id="3mhEivYRuig" role="2U$1Aj" />
+          </node>
+          <node concept="1dT_AC" id="3mhEivYRuie" role="1dT_Ay">
             <property role="1dT_AB" value="" />
           </node>
         </node>
@@ -1168,11 +1401,6 @@
       </node>
     </node>
   </node>
-  <node concept="312cEu" id="6tMbnEHC8X_">
-    <property role="TrG5h" value="Utils" />
-    <property role="3GE5qa" value="utils" />
-    <node concept="3Tm1VV" id="6tMbnEHC8XA" role="1B3o_S" />
-  </node>
   <node concept="312cEu" id="6tMbnEHC93x">
     <property role="3GE5qa" value="utils" />
     <property role="TrG5h" value="LambdaNonFinalParamHelper" />
@@ -1203,7 +1431,18 @@
       <node concept="P$JXv" id="6tMbnEHCc3E" role="lGtFl">
         <node concept="TZ5HA" id="6tMbnEHCc3F" role="TZ5H$">
           <node concept="1dT_AC" id="6tMbnEHCc3G" role="1dT_Ay">
-            <property role="1dT_AB" value="Constructs an initialized LambdaNonFinalParamHelper." />
+            <property role="1dT_AB" value="Constructs an initialized " />
+          </node>
+          <node concept="1dT_AA" id="3mhEivYV1N0" role="1dT_Ay">
+            <node concept="92FcH" id="3mhEivYV1Ne" role="qph3F">
+              <node concept="TZ5HA" id="3mhEivYV1Ng" role="2XjZqd" />
+              <node concept="VXe08" id="3mhEivYV1Nv" role="92FcQ">
+                <ref role="VXe09" node="6tMbnEHC93x" resolve="LambdaNonFinalParamHelper" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="3mhEivYV1MZ" role="1dT_Ay">
+            <property role="1dT_AB" value="" />
           </node>
         </node>
       </node>
@@ -1291,7 +1530,7 @@
       </node>
       <node concept="TZ5HA" id="6tMbnEHC98k" role="TZ5H$">
         <node concept="1dT_AC" id="6tMbnEHC98l" role="1dT_Ay">
-          <property role="1dT_AB" value="time - which is exaclty needed if one wants to pass an argument to a lambda or an anonymous class and change it" />
+          <property role="1dT_AB" value="time - which is exactly needed if one wants to pass an argument to a lambda or an anonymous class and change it" />
         </node>
       </node>
       <node concept="TZ5HA" id="6tMbnEHC98O" role="TZ5H$">
@@ -1327,22 +1566,55 @@
       <node concept="P$JXv" id="6tMbnEHCVfl" role="lGtFl">
         <node concept="TZ5HA" id="6tMbnEHCVfm" role="TZ5H$">
           <node concept="1dT_AC" id="6tMbnEHCVfn" role="1dT_Ay">
-            <property role="1dT_AB" value="Generates a stub according to the given specification. Returns the stub; or null in case of an unknown stub" />
+            <property role="1dT_AB" value="Generates a stub according to the given " />
           </node>
-        </node>
-        <node concept="TZ5HA" id="7e0AhKzIk$b" role="TZ5H$">
-          <node concept="1dT_AC" id="7e0AhKzIk$c" role="1dT_Ay">
-            <property role="1dT_AB" value="specification." />
+          <node concept="1dT_AA" id="3mhEivYR6Vr" role="1dT_Ay">
+            <node concept="92FcH" id="3mhEivYR6VD" role="qph3F">
+              <node concept="TZ5HA" id="3mhEivYR6VF" role="2XjZqd" />
+              <node concept="VXe08" id="3mhEivYR6VU" role="92FcQ">
+                <ref role="VXe09" node="3mOrQ__xOlU" resolve="StubSpec" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="3mhEivYR6Vq" role="1dT_Ay">
+            <property role="1dT_AB" value=" specification." />
           </node>
         </node>
         <node concept="TZ5HA" id="7e0AhKzCQA7" role="TZ5H$">
           <node concept="1dT_AC" id="7e0AhKzCQA8" role="1dT_Ay">
             <property role="1dT_AB" value="" />
           </node>
+          <node concept="2U$1Ah" id="3mhEivYR6Ts" role="1dT_Ay">
+            <property role="2U$1Ai" value="p" />
+            <node concept="TZ5HA" id="3mhEivYR6Tt" role="2U$1Aj" />
+          </node>
+          <node concept="1dT_AC" id="3mhEivYR6Tr" role="1dT_Ay">
+            <property role="1dT_AB" value="" />
+          </node>
         </node>
         <node concept="TZ5HA" id="7e0AhKzCQAl" role="TZ5H$">
           <node concept="1dT_AC" id="7e0AhKzCQAm" role="1dT_Ay">
-            <property role="1dT_AB" value="Note that you can assume that the repository is write-locked when this method gets called." />
+            <property role="1dT_AB" value="Note that you can assume that the " />
+          </node>
+          <node concept="1dT_AA" id="3mhEivYR6TN" role="1dT_Ay">
+            <node concept="92FcH" id="3mhEivYR6U1" role="qph3F">
+              <node concept="TZ5HA" id="3mhEivYR6U3" role="2XjZqd">
+                <node concept="1dT_AC" id="3mhEivYR6Ut" role="1dT_Ay">
+                  <property role="1dT_AB" value="repository" />
+                </node>
+              </node>
+              <node concept="VXe08" id="3mhEivYR6Ui" role="92FcQ">
+                <ref role="VXe09" to="lui2:~SRepository" resolve="SRepository" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="3mhEivYR6TM" role="1dT_Ay">
+            <property role="1dT_AB" value="" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="3mhEivYR6UB" role="TZ5H$">
+          <node concept="1dT_AC" id="3mhEivYR6UC" role="1dT_Ay">
+            <property role="1dT_AB" value="is write-locked when this method gets called." />
           </node>
         </node>
         <node concept="TUZQ0" id="7e0AhKzBV62" role="3nqlJM">
@@ -1351,28 +1623,60 @@
             <ref role="zr_51" node="7e0AhKzBV3K" resolve="stubCollectionGenerator" />
           </node>
         </node>
+        <node concept="x79VA" id="3mhEivYR6T6" role="3nqlJM">
+          <property role="x79VB" value="Returns the stub; or null in case of an unknown stub specification." />
+        </node>
       </node>
     </node>
     <node concept="3Tm1VV" id="6tMbnEHCSHS" role="1B3o_S" />
     <node concept="3UR2Jj" id="6tMbnEHCVAZ" role="lGtFl">
       <node concept="TZ5HA" id="6tMbnEHCVB0" role="TZ5H$">
         <node concept="1dT_AC" id="6tMbnEHCVB1" role="1dT_Ay">
-          <property role="1dT_AB" value="Provides single stub generation." />
+          <property role="1dT_AB" value="Generate a single stub according to a given " />
+        </node>
+        <node concept="1dT_AA" id="3mhEivYR6P2" role="1dT_Ay">
+          <node concept="92FcH" id="3mhEivYR6P8" role="qph3F">
+            <node concept="TZ5HA" id="3mhEivYR6Pa" role="2XjZqd" />
+            <node concept="VXe08" id="3mhEivYR6Ph" role="92FcQ">
+              <ref role="VXe09" node="3mOrQ__xOlU" resolve="StubSpec" />
+            </node>
+          </node>
+        </node>
+        <node concept="1dT_AC" id="3mhEivYR6P1" role="1dT_Ay">
+          <property role="1dT_AB" value="." />
         </node>
       </node>
       <node concept="TZ5HA" id="7e0AhKzBV2G" role="TZ5H$">
         <node concept="1dT_AC" id="7e0AhKzBV2H" role="1dT_Ay">
           <property role="1dT_AB" value="" />
         </node>
+        <node concept="2U$1Ah" id="3mhEivYR6Pt" role="1dT_Ay">
+          <property role="2U$1Ai" value="p" />
+          <node concept="TZ5HA" id="3mhEivYR6Pu" role="2U$1Aj" />
+        </node>
+        <node concept="1dT_AC" id="3mhEivYR6Ps" role="1dT_Ay">
+          <property role="1dT_AB" value="" />
+        </node>
       </node>
       <node concept="TZ5HA" id="7e0AhKzBV2O" role="TZ5H$">
         <node concept="1dT_AC" id="7e0AhKzBV2P" role="1dT_Ay">
-          <property role="1dT_AB" value="It is intended for generation of single indpendent stubs but it is allowed to call a StubCollectionGenerator" />
+          <property role="1dT_AB" value="It is intended for generation of single stubs. It should not generate more than one stub at one call. If another stub" />
         </node>
       </node>
-      <node concept="TZ5HA" id="7e0AhKzBV2Y" role="TZ5H$">
-        <node concept="1dT_AC" id="7e0AhKzBV2Z" role="1dT_Ay">
-          <property role="1dT_AB" value="in order to force generation of other stubs which the currently generated stub depends on." />
+      <node concept="TZ5HA" id="3mhEivYSlaw" role="TZ5H$">
+        <node concept="1dT_AC" id="3mhEivYSlax" role="1dT_Ay">
+          <property role="1dT_AB" value="is required for the given stub's generation, use a call to " />
+        </node>
+        <node concept="1dT_AA" id="3mhEivYR6RB" role="1dT_Ay">
+          <node concept="92FcH" id="3mhEivYR6RH" role="qph3F">
+            <node concept="TZ5HA" id="3mhEivYR6RJ" role="2XjZqd" />
+            <node concept="VXe0Z" id="3mhEivYR6Sw" role="92FcQ">
+              <ref role="VXe0S" node="7e0AhKzBTsV" resolve="getStub" />
+            </node>
+          </node>
+        </node>
+        <node concept="1dT_AC" id="3mhEivYR6RA" role="1dT_Ay">
+          <property role="1dT_AB" value="." />
         </node>
       </node>
     </node>
@@ -1380,40 +1684,278 @@
   <node concept="3HP615" id="7e0AhKzBSq7">
     <property role="3GE5qa" value="stubsGenerator" />
     <property role="TrG5h" value="StubFinder" />
-    <node concept="3clFb_" id="7e0AhKzBSrp" role="jymVt">
-      <property role="TrG5h" value="find" />
-      <node concept="3clFbS" id="7e0AhKzBSrs" role="3clF47" />
-      <node concept="3Tm1VV" id="7e0AhKzBSrt" role="1B3o_S" />
-      <node concept="3uibUv" id="7e0AhKzBSqF" role="3clF45">
-        <ref role="3uigEE" node="3mOrQ__xOlU" resolve="StubSpec" />
+    <node concept="Qs71p" id="3mhEivYR6Zs" role="jymVt">
+      <property role="TrG5h" value="LookResult" />
+      <node concept="3Tm1VV" id="3mhEivYR6Zt" role="1B3o_S" />
+      <node concept="QsSxf" id="3mhEivYR741" role="Qtgdg">
+        <property role="TrG5h" value="ThisIsTheOne" />
+        <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
       </node>
-      <node concept="37vLTG" id="7e0AhKzBSrP" role="3clF46">
-        <property role="TrG5h" value="stubs" />
-        <node concept="3uibUv" id="7e0AhKzBSrO" role="1tU5fm">
-          <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
-          <node concept="3uibUv" id="7e0AhKzBSs$" role="11_B2D">
-            <ref role="3uigEE" node="3mOrQ__xOlU" resolve="StubSpec" />
+      <node concept="QsSxf" id="3mhEivYR75F" role="Qtgdg">
+        <property role="TrG5h" value="MaybeInSubtree" />
+        <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
+      </node>
+      <node concept="QsSxf" id="3mhEivYR7Wd" role="Qtgdg">
+        <property role="TrG5h" value="NotHere" />
+        <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
+      </node>
+      <node concept="3UR2Jj" id="3mhEivYR7AL" role="lGtFl">
+        <node concept="TZ5HA" id="3mhEivYR7AM" role="TZ5H$">
+          <node concept="1dT_AC" id="3mhEivYR7AN" role="1dT_Ay">
+            <property role="1dT_AB" value="Represents a result after a quick look at a " />
+          </node>
+          <node concept="1dT_AA" id="3mhEivYR7Ct" role="1dT_Ay">
+            <node concept="92FcH" id="3mhEivYR7Cz" role="qph3F">
+              <node concept="TZ5HA" id="3mhEivYR7C_" role="2XjZqd" />
+              <node concept="VXe08" id="3mhEivYR7CG" role="92FcQ">
+                <ref role="VXe09" node="3mOrQ__xOlU" resolve="StubSpec" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="3mhEivYR7Cs" role="1dT_Ay">
+            <property role="1dT_AB" value=" when trying to locate a desired " />
+          </node>
+          <node concept="1dT_AA" id="3mhEivYR7CM" role="1dT_Ay">
+            <node concept="92FcH" id="3mhEivYR7CX" role="qph3F">
+              <node concept="TZ5HA" id="3mhEivYR7CZ" role="2XjZqd" />
+              <node concept="VXe08" id="3mhEivYR7D6" role="92FcQ">
+                <ref role="VXe09" node="3mOrQ__xOlU" resolve="StubSpec" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="3mhEivYR7CL" role="1dT_Ay">
+            <property role="1dT_AB" value="." />
           </node>
         </node>
+        <node concept="TZ5HA" id="3mhEivYR8Iy" role="TZ5H$">
+          <node concept="1dT_AC" id="3mhEivYR8Iz" role="1dT_Ay">
+            <property role="1dT_AB" value="" />
+          </node>
+          <node concept="2U$1Ah" id="3mhEivYR8IT" role="1dT_Ay">
+            <property role="2U$1Ai" value="p" />
+            <node concept="TZ5HA" id="3mhEivYR8IU" role="2U$1Aj" />
+          </node>
+          <node concept="1dT_AC" id="3mhEivYR8IS" role="1dT_Ay">
+            <property role="1dT_AB" value="" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="3mhEivYR8IZ" role="TZ5H$">
+          <node concept="1dT_AC" id="3mhEivYR8J0" role="1dT_Ay">
+            <property role="1dT_AB" value="Meaning of individual values:" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="3mhEivYR8Jq" role="TZ5H$">
+          <node concept="1dT_AC" id="3mhEivYR8Jr" role="1dT_Ay">
+            <property role="1dT_AB" value="- ThisIsTheOne = The given " />
+          </node>
+          <node concept="1dT_AA" id="3mhEivYR8JS" role="1dT_Ay">
+            <node concept="92FcH" id="3mhEivYR8JY" role="qph3F">
+              <node concept="TZ5HA" id="3mhEivYR8K0" role="2XjZqd" />
+              <node concept="VXe08" id="3mhEivYR8K7" role="92FcQ">
+                <ref role="VXe09" node="3mOrQ__xOlU" resolve="StubSpec" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="3mhEivYR8JR" role="1dT_Ay">
+            <property role="1dT_AB" value=" is the " />
+          </node>
+          <node concept="1dT_AA" id="3mhEivYR8KT" role="1dT_Ay">
+            <node concept="92FcH" id="3mhEivYR8L4" role="qph3F">
+              <node concept="TZ5HA" id="3mhEivYR8L6" role="2XjZqd" />
+              <node concept="VXe08" id="3mhEivYR8Ld" role="92FcQ">
+                <ref role="VXe09" node="3mOrQ__xOlU" resolve="StubSpec" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="3mhEivYR8KS" role="1dT_Ay">
+            <property role="1dT_AB" value=" we are looking for." />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="3mhEivYR8Li" role="TZ5H$">
+          <node concept="1dT_AC" id="3mhEivYR8Lj" role="1dT_Ay">
+            <property role="1dT_AB" value="- MaybeInSubtree = The " />
+          </node>
+          <node concept="1dT_AA" id="3mhEivYR8Lk" role="1dT_Ay">
+            <node concept="92FcH" id="3mhEivYR8Ll" role="qph3F">
+              <node concept="TZ5HA" id="3mhEivYR8Lm" role="2XjZqd" />
+              <node concept="VXe08" id="3mhEivYR8Ln" role="92FcQ">
+                <ref role="VXe09" node="3mOrQ__xOlU" resolve="StubSpec" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="3mhEivYR8Lo" role="1dT_Ay">
+            <property role="1dT_AB" value=" we are looking for may be in the subtree of the given " />
+          </node>
+          <node concept="1dT_AA" id="3mhEivYR8Lp" role="1dT_Ay">
+            <node concept="92FcH" id="3mhEivYR8Lq" role="qph3F">
+              <node concept="TZ5HA" id="3mhEivYR8Lr" role="2XjZqd" />
+              <node concept="VXe08" id="3mhEivYR8Ls" role="92FcQ">
+                <ref role="VXe09" node="3mOrQ__xOlU" resolve="StubSpec" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="3mhEivYR8Lt" role="1dT_Ay">
+            <property role="1dT_AB" value="." />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="3mhEivYR8N6" role="TZ5H$">
+          <node concept="1dT_AC" id="3mhEivYR8N7" role="1dT_Ay">
+            <property role="1dT_AB" value="- NotHere = The " />
+          </node>
+          <node concept="1dT_AA" id="3mhEivYR8N8" role="1dT_Ay">
+            <node concept="92FcH" id="3mhEivYR8N9" role="qph3F">
+              <node concept="TZ5HA" id="3mhEivYR8Na" role="2XjZqd" />
+              <node concept="VXe08" id="3mhEivYR8Nb" role="92FcQ">
+                <ref role="VXe09" node="3mOrQ__xOlU" resolve="StubSpec" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="3mhEivYR8Nc" role="1dT_Ay">
+            <property role="1dT_AB" value=" we are looking for is definitely nowhere in the subtree of" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="3mhEivYR8Pr" role="TZ5H$">
+          <node concept="1dT_AC" id="3mhEivYR8Ps" role="1dT_Ay">
+            <property role="1dT_AB" value="the given " />
+          </node>
+          <node concept="1dT_AA" id="3mhEivYR8Nd" role="1dT_Ay">
+            <node concept="92FcH" id="3mhEivYR8Ne" role="qph3F">
+              <node concept="TZ5HA" id="3mhEivYR8Nf" role="2XjZqd" />
+              <node concept="VXe08" id="3mhEivYR8Ng" role="92FcQ">
+                <ref role="VXe09" node="3mOrQ__xOlU" resolve="StubSpec" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="3mhEivYR8Nh" role="1dT_Ay">
+            <property role="1dT_AB" value=" (including the root)." />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="3mhEivYR6Z6" role="jymVt" />
+    <node concept="3clFb_" id="7e0AhKzBSrp" role="jymVt">
+      <property role="TrG5h" value="look" />
+      <node concept="3clFbS" id="7e0AhKzBSrs" role="3clF47" />
+      <node concept="3Tm1VV" id="7e0AhKzBSrt" role="1B3o_S" />
+      <node concept="3uibUv" id="3mhEivYR94Q" role="3clF45">
+        <ref role="3uigEE" node="3mhEivYR6Zs" resolve="StubFinder.LookResult" />
       </node>
       <node concept="P$JXv" id="7e0AhKzBSup" role="lGtFl">
         <node concept="TZ5HA" id="7e0AhKzBSuq" role="TZ5H$">
           <node concept="1dT_AC" id="7e0AhKzBSur" role="1dT_Ay">
-            <property role="1dT_AB" value="Returns a seeked stub from the given collection of null if the seeked stub has not been found." />
+            <property role="1dT_AB" value="Looks at the given " />
           </node>
+          <node concept="1dT_AA" id="3mhEivYR8Vz" role="1dT_Ay">
+            <node concept="92FcH" id="3mhEivYR8VL" role="qph3F">
+              <node concept="TZ5HA" id="3mhEivYR8VN" role="2XjZqd" />
+              <node concept="VXe08" id="3mhEivYR8W2" role="92FcQ">
+                <ref role="VXe09" node="3mOrQ__xOlU" resolve="StubSpec" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="3mhEivYR8Vy" role="1dT_Ay">
+            <property role="1dT_AB" value=" and returns a " />
+          </node>
+          <node concept="1dT_AA" id="3mhEivYR8WZ" role="1dT_Ay">
+            <node concept="92FcH" id="3mhEivYR8Xi" role="qph3F">
+              <node concept="TZ5HA" id="3mhEivYR8Xk" role="2XjZqd" />
+              <node concept="VXe08" id="3mhEivYR8Xz" role="92FcQ">
+                <ref role="VXe09" node="3mhEivYR6Zs" resolve="StubFinder.LookResult" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="3mhEivYR8WY" role="1dT_Ay">
+            <property role="1dT_AB" value=" which provides a hint to" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="3mhEivYR90h" role="TZ5H$">
+          <node concept="1dT_AC" id="3mhEivYR90i" role="1dT_Ay">
+            <property role="1dT_AB" value="a seeking algorithm which tries to locate a desired " />
+          </node>
+          <node concept="1dT_AA" id="3mhEivYR90E" role="1dT_Ay">
+            <node concept="92FcH" id="3mhEivYR90K" role="qph3F">
+              <node concept="TZ5HA" id="3mhEivYR90M" role="2XjZqd" />
+              <node concept="VXe08" id="3mhEivYR911" role="92FcQ">
+                <ref role="VXe09" node="3mOrQ__xOlU" resolve="StubSpec" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="3mhEivYR90D" role="1dT_Ay">
+            <property role="1dT_AB" value="." />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="3mhEivYR91t" role="TZ5H$">
+          <node concept="1dT_AC" id="3mhEivYR91u" role="1dT_Ay">
+            <property role="1dT_AB" value="" />
+          </node>
+          <node concept="2U$1Ah" id="3mhEivYR91X" role="1dT_Ay">
+            <property role="2U$1Ai" value="p" />
+            <node concept="TZ5HA" id="3mhEivYR91Y" role="2U$1Aj" />
+          </node>
+          <node concept="1dT_AC" id="3mhEivYR91W" role="1dT_Ay">
+            <property role="1dT_AB" value="" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="3mhEivYR92b" role="TZ5H$">
+          <node concept="1dT_AC" id="3mhEivYR92c" role="1dT_Ay">
+            <property role="1dT_AB" value="The implementation should not traverse the subtree of the given " />
+          </node>
+          <node concept="1dT_AA" id="3mhEivYR92K" role="1dT_Ay">
+            <node concept="92FcH" id="3mhEivYR92Q" role="qph3F">
+              <node concept="TZ5HA" id="3mhEivYR92S" role="2XjZqd" />
+              <node concept="VXe08" id="3mhEivYR937" role="92FcQ">
+                <ref role="VXe09" node="3mOrQ__xOlU" resolve="StubSpec" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="3mhEivYR92J" role="1dT_Ay">
+            <property role="1dT_AB" value=". It is not forbidden but it" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="3mhEivYR94b" role="TZ5H$">
+          <node concept="1dT_AC" id="3mhEivYR94c" role="1dT_Ay">
+            <property role="1dT_AB" value="will significantly slow down the overall algorithm." />
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="3mhEivYR8SM" role="3clF46">
+        <property role="TrG5h" value="stubSpec" />
+        <node concept="3uibUv" id="3mhEivYR8SL" role="1tU5fm">
+          <ref role="3uigEE" node="3mOrQ__xOlU" resolve="StubSpec" />
         </node>
       </node>
     </node>
     <node concept="3Tm1VV" id="7e0AhKzBSq8" role="1B3o_S" />
     <node concept="3UR2Jj" id="7e0AhKzBStq" role="lGtFl">
-      <node concept="TZ5HA" id="7e0AhKzBStr" role="TZ5H$">
-        <node concept="1dT_AC" id="7e0AhKzBSts" role="1dT_Ay">
-          <property role="1dT_AB" value="Serves for identifying stubs in a collection according to user-specific requirements (the user provides" />
+      <node concept="TZ5HA" id="3mhEivYR4r0" role="TZ5H$">
+        <node concept="1dT_AC" id="3mhEivYR4r1" role="1dT_Ay">
+          <property role="1dT_AB" value="Helps to locate a particular " />
         </node>
-      </node>
-      <node concept="TZ5HA" id="7e0AhKzBStO" role="TZ5H$">
-        <node concept="1dT_AC" id="7e0AhKzBStP" role="1dT_Ay">
-          <property role="1dT_AB" value="an implementation of this interface)." />
+        <node concept="1dT_AA" id="3mhEivYR6X3" role="1dT_Ay">
+          <node concept="92FcH" id="3mhEivYR6X9" role="qph3F">
+            <node concept="TZ5HA" id="3mhEivYR6Xb" role="2XjZqd" />
+            <node concept="VXe08" id="3mhEivYR6Xi" role="92FcQ">
+              <ref role="VXe09" node="3mOrQ__xOlU" resolve="StubSpec" />
+            </node>
+          </node>
+        </node>
+        <node concept="1dT_AC" id="3mhEivYR6X2" role="1dT_Ay">
+          <property role="1dT_AB" value=" inside a tree of " />
+        </node>
+        <node concept="1dT_AA" id="3mhEivYR6Xo" role="1dT_Ay">
+          <node concept="92FcH" id="3mhEivYR6Xz" role="qph3F">
+            <node concept="TZ5HA" id="3mhEivYR6X_" role="2XjZqd">
+              <node concept="1dT_AC" id="3mhEivYR6XL" role="1dT_Ay">
+                <property role="1dT_AB" value="stub specifications" />
+              </node>
+            </node>
+            <node concept="VXe08" id="3mhEivYR6XG" role="92FcQ">
+              <ref role="VXe09" node="3mOrQ__xOlU" resolve="StubSpec" />
+            </node>
+          </node>
+        </node>
+        <node concept="1dT_AC" id="3mhEivYR6Xn" role="1dT_Ay">
+          <property role="1dT_AB" value="." />
         </node>
       </node>
     </node>
@@ -1490,7 +2032,34 @@
       <node concept="P$JXv" id="7e0AhKzBUUN" role="lGtFl">
         <node concept="TZ5HA" id="7e0AhKzBUUO" role="TZ5H$">
           <node concept="1dT_AC" id="7e0AhKzBUUP" role="1dT_Ay">
-            <property role="1dT_AB" value="Constructs a StubCollectionGenerator which will use the given SingleStubGenerator to generate stubs." />
+            <property role="1dT_AB" value="Constructs a " />
+          </node>
+          <node concept="1dT_AA" id="3mhEivYRa17" role="1dT_Ay">
+            <node concept="92FcH" id="3mhEivYRa1l" role="qph3F">
+              <node concept="TZ5HA" id="3mhEivYRa1n" role="2XjZqd" />
+              <node concept="VXe08" id="3mhEivYRa1A" role="92FcQ">
+                <ref role="VXe09" node="7e0AhKzBSVG" resolve="StubCollectionGenerator" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="3mhEivYRa16" role="1dT_Ay">
+            <property role="1dT_AB" value=" which will use the given " />
+          </node>
+          <node concept="1dT_AA" id="3mhEivYRa1U" role="1dT_Ay">
+            <node concept="92FcH" id="3mhEivYRa25" role="qph3F">
+              <node concept="TZ5HA" id="3mhEivYRa27" role="2XjZqd" />
+              <node concept="VXe08" id="3mhEivYRa2m" role="92FcQ">
+                <ref role="VXe09" node="6tMbnEHCSHR" resolve="SingleStubGenerator" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="3mhEivYRa1T" role="1dT_Ay">
+            <property role="1dT_AB" value="" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="3mhEivYRa2z" role="TZ5H$">
+          <node concept="1dT_AC" id="3mhEivYRa2$" role="1dT_Ay">
+            <property role="1dT_AB" value="to generate stubs." />
           </node>
         </node>
       </node>
@@ -1515,19 +2084,96 @@
       <node concept="P$JXv" id="7e0AhKzBTvg" role="lGtFl">
         <node concept="TZ5HA" id="7e0AhKzBTvh" role="TZ5H$">
           <node concept="1dT_AC" id="7e0AhKzBTvi" role="1dT_Ay">
-            <property role="1dT_AB" value="Generates the specified stubs into the given model using the given single-stub generator." />
+            <property role="1dT_AB" value="Generates the specified stubs into the given model using the given " />
+          </node>
+          <node concept="1dT_AA" id="3mhEivYRa49" role="1dT_Ay">
+            <node concept="92FcH" id="3mhEivYRa4f" role="qph3F">
+              <node concept="TZ5HA" id="3mhEivYRa4h" role="2XjZqd" />
+              <node concept="VXe08" id="3mhEivYRa4w" role="92FcQ">
+                <ref role="VXe09" node="6tMbnEHCSHR" resolve="SingleStubGenerator" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="3mhEivYRa48" role="1dT_Ay">
+            <property role="1dT_AB" value="." />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="3mhEivYSidm" role="TZ5H$">
+          <node concept="1dT_AC" id="3mhEivYSidn" role="1dT_Ay">
+            <property role="1dT_AB" value="" />
+          </node>
+          <node concept="2U$1Ah" id="3mhEivYSidE" role="1dT_Ay">
+            <property role="2U$1Ai" value="p" />
+            <node concept="TZ5HA" id="3mhEivYSidF" role="2U$1Aj" />
+          </node>
+          <node concept="1dT_AC" id="3mhEivYSidD" role="1dT_Ay">
+            <property role="1dT_AB" value="" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="3mhEivYSie0" role="TZ5H$">
+          <node concept="1dT_AC" id="3mhEivYSie1" role="1dT_Ay">
+            <property role="1dT_AB" value="Each " />
+          </node>
+          <node concept="1dT_AA" id="3mhEivYSiep" role="1dT_Ay">
+            <node concept="92FcH" id="3mhEivYSieB" role="qph3F">
+              <node concept="TZ5HA" id="3mhEivYSieD" role="2XjZqd" />
+              <node concept="VXe08" id="3mhEivYSieS" role="92FcQ">
+                <ref role="VXe09" node="3mOrQ__xOlU" resolve="StubSpec" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="3mhEivYSieo" role="1dT_Ay">
+            <property role="1dT_AB" value=" can contains child " />
+          </node>
+          <node concept="1dT_AA" id="3mhEivYSif_" role="1dT_Ay">
+            <node concept="92FcH" id="3mhEivYSifS" role="qph3F">
+              <node concept="TZ5HA" id="3mhEivYSifU" role="2XjZqd" />
+              <node concept="VXe08" id="3mhEivYSig9" role="92FcQ">
+                <ref role="VXe09" node="3mOrQ__xOlU" resolve="StubSpec" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="3mhEivYSif$" role="1dT_Ay">
+            <property role="1dT_AB" value=" which represent stubs which are necessary for the" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="3mhEivYSikD" role="TZ5H$">
+          <node concept="1dT_AC" id="3mhEivYSikE" role="1dT_Ay">
+            <property role="1dT_AB" value="generation of their parent stub. The implementation of this method handles this and generates all stubs from the" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="3mhEivYSild" role="TZ5H$">
+          <node concept="1dT_AC" id="3mhEivYSile" role="1dT_Ay">
+            <property role="1dT_AB" value="subtree of the given " />
+          </node>
+          <node concept="1dT_AA" id="3mhEivYSilO" role="1dT_Ay">
+            <node concept="92FcH" id="3mhEivYSim2" role="qph3F">
+              <node concept="TZ5HA" id="3mhEivYSim4" role="2XjZqd" />
+              <node concept="VXe08" id="3mhEivYSimj" role="92FcQ">
+                <ref role="VXe09" node="3mOrQ__xOlU" resolve="StubSpec" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="3mhEivYSilN" role="1dT_Ay">
+            <property role="1dT_AB" value="." />
           </node>
         </node>
       </node>
     </node>
     <node concept="2tJIrI" id="7e0AhKzBTuJ" role="jymVt" />
     <node concept="3clFb_" id="7e0AhKzBTsV" role="jymVt">
-      <property role="TrG5h" value="forceStubGeneration" />
+      <property role="TrG5h" value="getStub" />
       <property role="1EzhhJ" value="true" />
       <node concept="3clFbS" id="7e0AhKzBTsW" role="3clF47" />
       <node concept="3Tm1VV" id="7e0AhKzBTsX" role="1B3o_S" />
       <node concept="3uibUv" id="7e0AhKzBTsY" role="3clF45">
         <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
+      </node>
+      <node concept="37vLTG" id="3mhEivYRwEy" role="3clF46">
+        <property role="TrG5h" value="stubId" />
+        <node concept="3uibUv" id="3mhEivYRz3u" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+        </node>
       </node>
       <node concept="37vLTG" id="7e0AhKzBTsZ" role="3clF46">
         <property role="TrG5h" value="stubFinder" />
@@ -1543,28 +2189,72 @@
         </node>
         <node concept="TZ5HA" id="7e0AhKzBTt4" role="TZ5H$">
           <node concept="1dT_AC" id="7e0AhKzBTt5" role="1dT_Ay">
-            <property role="1dT_AB" value="generated and returns it. The generated stub will be put as a root node in the model specified in the constructor." />
+            <property role="1dT_AB" value="generated and returns a reference to it." />
           </node>
         </node>
         <node concept="TZ5HA" id="7e0AhKzD3ji" role="TZ5H$">
           <node concept="1dT_AC" id="7e0AhKzD3jj" role="1dT_Ay">
             <property role="1dT_AB" value="" />
           </node>
-        </node>
-        <node concept="TZ5HA" id="7e0AhKzD3jA" role="TZ5H$">
-          <node concept="1dT_AC" id="7e0AhKzD3jB" role="1dT_Ay">
-            <property role="1dT_AB" value="Note that you must guarantee that the repository is write-locked when calling this method." />
+          <node concept="2U$1Ah" id="3mhEivYRa4I" role="1dT_Ay">
+            <property role="2U$1Ai" value="p" />
+            <node concept="TZ5HA" id="3mhEivYRa4J" role="2U$1Aj" />
           </node>
-        </node>
-        <node concept="TZ5HA" id="7e0AhKzC75D" role="TZ5H$">
-          <node concept="1dT_AC" id="7e0AhKzC75E" role="1dT_Ay">
+          <node concept="1dT_AC" id="3mhEivYRa4H" role="1dT_Ay">
             <property role="1dT_AB" value="" />
           </node>
         </node>
-        <node concept="TZ5HA" id="7e0AhKzC75L" role="TZ5H$">
-          <node concept="1dT_AC" id="7e0AhKzC75M" role="1dT_Ay">
-            <property role="1dT_AB" value="Returns null if no stub has been found by the given finder." />
+        <node concept="TZ5HA" id="7e0AhKzD3jA" role="TZ5H$">
+          <node concept="1dT_AC" id="7e0AhKzD3jB" role="1dT_Ay">
+            <property role="1dT_AB" value="Note that you must guarantee that the repository is write-locked when calling this method. If you are calling this" />
           </node>
+        </node>
+        <node concept="TZ5HA" id="3mhEivYSimV" role="TZ5H$">
+          <node concept="1dT_AC" id="3mhEivYSimW" role="1dT_Ay">
+            <property role="1dT_AB" value="method from a " />
+          </node>
+          <node concept="1dT_AA" id="3mhEivYSinj" role="1dT_Ay">
+            <node concept="92FcH" id="3mhEivYSinx" role="qph3F">
+              <node concept="TZ5HA" id="3mhEivYSinz" role="2XjZqd" />
+              <node concept="VXe08" id="3mhEivYSinM" role="92FcQ">
+                <ref role="VXe09" node="6tMbnEHCSHR" resolve="SingleStubGenerator" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="3mhEivYSini" role="1dT_Ay">
+            <property role="1dT_AB" value=" which is called from this " />
+          </node>
+          <node concept="1dT_AA" id="3mhEivYSioo" role="1dT_Ay">
+            <node concept="92FcH" id="3mhEivYSioF" role="qph3F">
+              <node concept="TZ5HA" id="3mhEivYSioH" role="2XjZqd" />
+              <node concept="VXe08" id="3mhEivYSioW" role="92FcQ">
+                <ref role="VXe09" node="7e0AhKzBSVG" resolve="StubCollectionGenerator" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="3mhEivYSion" role="1dT_Ay">
+            <property role="1dT_AB" value=", this is" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="3mhEivYSipn" role="TZ5H$">
+          <node concept="1dT_AC" id="3mhEivYSipo" role="1dT_Ay">
+            <property role="1dT_AB" value="guaranteed automatically." />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="3mhEivYRz4Y" role="3nqlJM">
+          <property role="TUZQ4" value="Value equal (in terms of Object.equals()) to the STUB_ID property's value of the stub specification of the stub which should be force-generated." />
+          <node concept="zr_55" id="3mhEivYRz5d" role="zr_5Q">
+            <ref role="zr_51" node="3mhEivYRwEy" resolve="stubId" />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="3mhEivYRzaO" role="3nqlJM">
+          <property role="TUZQ4" value="A StubFinder which is able to find the StubSpec for the force-generated stub." />
+          <node concept="zr_55" id="3mhEivYRzb5" role="zr_5Q">
+            <ref role="zr_51" node="7e0AhKzBTsZ" resolve="stubFinder" />
+          </node>
+        </node>
+        <node concept="x79VA" id="3mhEivYRa5G" role="3nqlJM">
+          <property role="x79VB" value="Null if no stub has been found." />
         </node>
       </node>
     </node>
@@ -1579,7 +2269,18 @@
       <node concept="z59LJ" id="7e0AhKzBUYT" role="lGtFl">
         <node concept="TZ5HA" id="7e0AhKzBUYU" role="TZ5H$">
           <node concept="1dT_AC" id="7e0AhKzBUYV" role="1dT_Ay">
-            <property role="1dT_AB" value="The SingleStubGenerator used for individual stub generation." />
+            <property role="1dT_AB" value="The " />
+          </node>
+          <node concept="1dT_AA" id="3mhEivYRa6r" role="1dT_Ay">
+            <node concept="92FcH" id="3mhEivYRa6x" role="qph3F">
+              <node concept="TZ5HA" id="3mhEivYRa6z" role="2XjZqd" />
+              <node concept="VXe08" id="3mhEivYRa6E" role="92FcQ">
+                <ref role="VXe09" node="6tMbnEHCSHR" resolve="SingleStubGenerator" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="3mhEivYRa6q" role="1dT_Ay">
+            <property role="1dT_AB" value=" used for individual stubs generation." />
           </node>
         </node>
       </node>
@@ -1595,7 +2296,22 @@
       <node concept="z59LJ" id="7e0AhKzDWQ9" role="lGtFl">
         <node concept="TZ5HA" id="7e0AhKzDWQa" role="TZ5H$">
           <node concept="1dT_AC" id="7e0AhKzDWQb" role="1dT_Ay">
-            <property role="1dT_AB" value="The repository into which the stubs are generated." />
+            <property role="1dT_AB" value="The " />
+          </node>
+          <node concept="1dT_AA" id="3mhEivYRa6K" role="1dT_Ay">
+            <node concept="92FcH" id="3mhEivYRa6Q" role="qph3F">
+              <node concept="TZ5HA" id="3mhEivYRa6S" role="2XjZqd">
+                <node concept="1dT_AC" id="3mhEivYRa74" role="1dT_Ay">
+                  <property role="1dT_AB" value="repository" />
+                </node>
+              </node>
+              <node concept="VXe08" id="3mhEivYRa6Z" role="92FcQ">
+                <ref role="VXe09" to="lui2:~SRepository" resolve="SRepository" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="3mhEivYRa6J" role="1dT_Ay">
+            <property role="1dT_AB" value=" into which the stubs are generated." />
           </node>
         </node>
       </node>
@@ -1611,7 +2327,22 @@
       <node concept="z59LJ" id="7e0AhKzDWWh" role="lGtFl">
         <node concept="TZ5HA" id="7e0AhKzDWWi" role="TZ5H$">
           <node concept="1dT_AC" id="7e0AhKzDWWj" role="1dT_Ay">
-            <property role="1dT_AB" value="The model into which the stubs are generated." />
+            <property role="1dT_AB" value="The " />
+          </node>
+          <node concept="1dT_AA" id="3mhEivYRa77" role="1dT_Ay">
+            <node concept="92FcH" id="3mhEivYRa7d" role="qph3F">
+              <node concept="TZ5HA" id="3mhEivYRa7f" role="2XjZqd">
+                <node concept="1dT_AC" id="3mhEivYRa7r" role="1dT_Ay">
+                  <property role="1dT_AB" value="model" />
+                </node>
+              </node>
+              <node concept="VXe08" id="3mhEivYRa7m" role="92FcQ">
+                <ref role="VXe09" to="mhbf:~SModel" resolve="SModel" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="3mhEivYRa76" role="1dT_Ay">
+            <property role="1dT_AB" value=" into which the stubs are generated." />
           </node>
         </node>
       </node>
@@ -1628,6 +2359,13 @@
         <node concept="1dT_AC" id="7e0AhKzBTs4" role="1dT_Ay">
           <property role="1dT_AB" value="" />
         </node>
+        <node concept="2U$1Ah" id="3mhEivYSidg" role="1dT_Ay">
+          <property role="2U$1Ai" value="p" />
+          <node concept="TZ5HA" id="3mhEivYSidh" role="2U$1Aj" />
+        </node>
+        <node concept="1dT_AC" id="3mhEivYSidf" role="1dT_Ay">
+          <property role="1dT_AB" value="" />
+        </node>
       </node>
       <node concept="TZ5HA" id="7e0AhKzBTs5" role="TZ5H$">
         <node concept="1dT_AC" id="7e0AhKzBTs6" role="1dT_Ay">
@@ -1641,12 +2379,29 @@
       </node>
       <node concept="TZ5HA" id="7e0AhKzBTs9" role="TZ5H$">
         <node concept="1dT_AC" id="7e0AhKzBTsa" role="1dT_Ay">
-          <property role="1dT_AB" value="stubs). In case there is a stub which has not been generated by this generator but is already existing, a warning" />
+          <property role="1dT_AB" value="stubs)." />
         </node>
       </node>
-      <node concept="TZ5HA" id="7e0AhKzBTsb" role="TZ5H$">
-        <node concept="1dT_AC" id="7e0AhKzBTsc" role="1dT_Ay">
-          <property role="1dT_AB" value="is issued and the stub generation is skipped." />
+      <node concept="TZ5HA" id="3mhEivYSicy" role="TZ5H$">
+        <node concept="1dT_AC" id="3mhEivYSicz" role="1dT_Ay">
+          <property role="1dT_AB" value="" />
+        </node>
+        <node concept="2U$1Ah" id="3mhEivYSid9" role="1dT_Ay">
+          <property role="2U$1Ai" value="p" />
+          <node concept="TZ5HA" id="3mhEivYSida" role="2U$1Aj" />
+        </node>
+        <node concept="1dT_AC" id="3mhEivYSid8" role="1dT_Ay">
+          <property role="1dT_AB" value="" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="3mhEivYSicO" role="TZ5H$">
+        <node concept="1dT_AC" id="3mhEivYSicP" role="1dT_Ay">
+          <property role="1dT_AB" value="In case there is a root stub which has not been generated by this generator but is already existing," />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="3mhEivYSic1" role="TZ5H$">
+        <node concept="1dT_AC" id="3mhEivYSic2" role="1dT_Ay">
+          <property role="1dT_AB" value="a warning is issued and the stub generation is skipped." />
         </node>
       </node>
     </node>
@@ -1898,7 +2653,18 @@
     <node concept="3UR2Jj" id="7e0AhKzC0WB" role="lGtFl">
       <node concept="TZ5HA" id="7e0AhKzC0WC" role="TZ5H$">
         <node concept="1dT_AC" id="7e0AhKzC0WD" role="1dT_Ay">
-          <property role="1dT_AB" value="A straight-forward implementation of ModelCreator." />
+          <property role="1dT_AB" value="A straight-forward implementation of " />
+        </node>
+        <node concept="1dT_AA" id="3mhEivYRavt" role="1dT_Ay">
+          <node concept="92FcH" id="3mhEivYRavz" role="qph3F">
+            <node concept="TZ5HA" id="3mhEivYRav_" role="2XjZqd" />
+            <node concept="VXe08" id="3mhEivYRavG" role="92FcQ">
+              <ref role="VXe09" node="3mOrQ__xOiZ" resolve="ModelCreator" />
+            </node>
+          </node>
+        </node>
+        <node concept="1dT_AC" id="3mhEivYRavs" role="1dT_Ay">
+          <property role="1dT_AB" value="" />
         </node>
       </node>
     </node>
@@ -1942,13 +2708,13 @@
         </node>
       </node>
     </node>
-    <node concept="2tJIrI" id="7e0AhKzC1Yx" role="jymVt" />
+    <node concept="2tJIrI" id="3mhEivYSqz5" role="jymVt" />
     <node concept="3clFb_" id="7e0AhKzC1Zd" role="jymVt">
       <property role="TrG5h" value="generateStubs" />
       <node concept="3Tm1VV" id="7e0AhKzC1Zf" role="1B3o_S" />
       <node concept="3cqZAl" id="7e0AhKzC1Zg" role="3clF45" />
       <node concept="37vLTG" id="7e0AhKzC1Zh" role="3clF46">
-        <property role="TrG5h" value="stubs" />
+        <property role="TrG5h" value="stubSpecs" />
         <property role="3TUv4t" value="true" />
         <node concept="3uibUv" id="7e0AhKzC1Zi" role="1tU5fm">
           <ref role="3uigEE" to="33ny:~List" resolve="List" />
@@ -1960,60 +2726,25 @@
       <node concept="3clFbS" id="7e0AhKzC1Zp" role="3clF47">
         <node concept="2xdQw9" id="RqQxlJBEso" role="3cqZAp">
           <property role="2xdLsb" value="h1akgim/info" />
-          <node concept="3cpWs3" id="RqQxlJBFjm" role="9lYJi">
-            <node concept="2OqwBi" id="RqQxlJBGjN" role="3uHU7w">
-              <node concept="37vLTw" id="RqQxlJBFM_" role="2Oq$k0">
-                <ref role="3cqZAo" node="7e0AhKzC1Zh" resolve="stubs" />
-              </node>
-              <node concept="liA8E" id="RqQxlJBHMO" role="2OqNvi">
-                <ref role="37wK5l" to="33ny:~List.size()" resolve="size" />
-              </node>
-            </node>
-            <node concept="Xl_RD" id="RqQxlJBEsq" role="3uHU7B">
-              <property role="Xl_RC" value="Number of stubs to be generated: " />
-            </node>
+          <node concept="Xl_RD" id="RqQxlJBEsq" role="9lYJi">
+            <property role="Xl_RC" value="Starting stub generation" />
           </node>
         </node>
         <node concept="3clFbH" id="RqQxlJBE4_" role="3cqZAp" />
-        <node concept="1DcWWT" id="7e0AhKzCR4T" role="3cqZAp">
-          <node concept="3clFbS" id="7e0AhKzCR4Z" role="2LFqv$">
-            <node concept="3clFbJ" id="7e0AhKzCSuc" role="3cqZAp">
-              <node concept="3clFbS" id="7e0AhKzCSue" role="3clFbx">
-                <node concept="3clFbF" id="7e0AhKzCSBF" role="3cqZAp">
-                  <node concept="2OqwBi" id="7e0AhKzCT64" role="3clFbG">
-                    <node concept="37vLTw" id="7e0AhKzCSBD" role="2Oq$k0">
-                      <ref role="3cqZAo" node="7e0AhKzCeTE" resolve="notYetGeneratedStubs" />
-                    </node>
-                    <node concept="liA8E" id="7e0AhKzCTIp" role="2OqNvi">
-                      <ref role="37wK5l" to="33ny:~Set.add(java.lang.Object)" resolve="add" />
-                      <node concept="37vLTw" id="7e0AhKzCTQd" role="37wK5m">
-                        <ref role="3cqZAo" node="7e0AhKzCR50" resolve="stubSpec" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="3fqX7Q" id="7e0AhKzFqCM" role="3clFbw">
-                <node concept="1rXfSq" id="7e0AhKzFqCO" role="3fr31v">
-                  <ref role="37wK5l" node="7e0AhKzC9LD" resolve="hasStubBeenGenerated" />
-                  <node concept="37vLTw" id="7e0AhKzFqCP" role="37wK5m">
-                    <ref role="3cqZAo" node="7e0AhKzCR50" resolve="stubSpec" />
-                  </node>
-                </node>
+        <node concept="3clFbF" id="3mhEivYSDlO" role="3cqZAp">
+          <node concept="2OqwBi" id="3mhEivYSDAP" role="3clFbG">
+            <node concept="37vLTw" id="3mhEivYSDlM" role="2Oq$k0">
+              <ref role="3cqZAo" node="7e0AhKzCeTE" resolve="topLevelNotYetGeneratedStubs" />
+            </node>
+            <node concept="liA8E" id="3mhEivYSEbx" role="2OqNvi">
+              <ref role="37wK5l" to="33ny:~List.addAll(java.util.Collection)" resolve="addAll" />
+              <node concept="37vLTw" id="3mhEivYSEpB" role="37wK5m">
+                <ref role="3cqZAo" node="7e0AhKzC1Zh" resolve="stubSpecs" />
               </node>
             </node>
-          </node>
-          <node concept="3cpWsn" id="7e0AhKzCR50" role="1Duv9x">
-            <property role="TrG5h" value="stubSpec" />
-            <node concept="3uibUv" id="7e0AhKzCRGN" role="1tU5fm">
-              <ref role="3uigEE" node="3mOrQ__xOlU" resolve="StubSpec" />
-            </node>
-          </node>
-          <node concept="37vLTw" id="7e0AhKzCRSw" role="1DdaDG">
-            <ref role="3cqZAo" node="7e0AhKzC1Zh" resolve="stubs" />
           </node>
         </node>
-        <node concept="3clFbH" id="7e0AhKzCfD6" role="3cqZAp" />
+        <node concept="3clFbH" id="3mhEivYSDhS" role="3cqZAp" />
         <node concept="3clFbF" id="7e0AhKzC2Bw" role="3cqZAp">
           <node concept="2OqwBi" id="7e0AhKzC2Bx" role="3clFbG">
             <node concept="2OqwBi" id="7e0AhKzC2By" role="2Oq$k0">
@@ -2038,119 +2769,50 @@
                       <node concept="3Tm1VV" id="7e0AhKzC2BF" role="1B3o_S" />
                       <node concept="3cqZAl" id="7e0AhKzC2BG" role="3clF45" />
                       <node concept="3clFbS" id="7e0AhKzC2BH" role="3clF47">
-                        <node concept="3SKdUt" id="RqQxlJBA8A" role="3cqZAp">
-                          <node concept="1PaTwC" id="2DQsKpcuT3S" role="3ndbpf">
-                            <node concept="3oM_SD" id="2DQsKpcuT3T" role="1PaTwD">
-                              <property role="3oM_SC" value="this" />
-                            </node>
-                            <node concept="3oM_SD" id="2DQsKpcuT3U" role="1PaTwD">
-                              <property role="3oM_SC" value="loop" />
-                            </node>
-                            <node concept="3oM_SD" id="2DQsKpcuT3V" role="1PaTwD">
-                              <property role="3oM_SC" value="cannot" />
-                            </node>
-                            <node concept="3oM_SD" id="2DQsKpcuT3W" role="1PaTwD">
-                              <property role="3oM_SC" value="be" />
-                            </node>
-                            <node concept="3oM_SD" id="2DQsKpcuT3X" role="1PaTwD">
-                              <property role="3oM_SC" value="&quot;for-each&quot;-like" />
-                            </node>
-                            <node concept="3oM_SD" id="2DQsKpcuT3Y" role="1PaTwD">
-                              <property role="3oM_SC" value="as" />
-                            </node>
-                            <node concept="3oM_SD" id="2DQsKpcuT3Z" role="1PaTwD">
-                              <property role="3oM_SC" value="the" />
-                            </node>
-                            <node concept="3oM_SD" id="2DQsKpcuT40" role="1PaTwD">
-                              <property role="3oM_SC" value="collection" />
-                            </node>
-                            <node concept="3oM_SD" id="2DQsKpcuT41" role="1PaTwD">
-                              <property role="3oM_SC" value="is" />
-                            </node>
-                            <node concept="3oM_SD" id="2DQsKpcuT42" role="1PaTwD">
-                              <property role="3oM_SC" value="modified" />
-                            </node>
-                            <node concept="3oM_SD" id="2DQsKpcuT43" role="1PaTwD">
-                              <property role="3oM_SC" value="inside" />
-                            </node>
-                            <node concept="3oM_SD" id="2DQsKpcuT44" role="1PaTwD">
-                              <property role="3oM_SC" value="the" />
-                            </node>
-                            <node concept="3oM_SD" id="2DQsKpcuT45" role="1PaTwD">
-                              <property role="3oM_SC" value="loop" />
-                            </node>
-                          </node>
-                        </node>
-                        <node concept="2$JKZl" id="RqQxlJBoaQ" role="3cqZAp">
-                          <node concept="3clFbS" id="RqQxlJBoaS" role="2LFqv$">
-                            <node concept="3cpWs8" id="RqQxlJBAxh" role="3cqZAp">
-                              <node concept="3cpWsn" id="RqQxlJBAxi" role="3cpWs9">
-                                <property role="TrG5h" value="stubSpec" />
-                                <node concept="3uibUv" id="RqQxlJBAxj" role="1tU5fm">
-                                  <ref role="3uigEE" node="3mOrQ__xOlU" resolve="StubSpec" />
-                                </node>
-                                <node concept="2OqwBi" id="RqQxlJBBZo" role="33vP2m">
-                                  <node concept="2OqwBi" id="RqQxlJBB4s" role="2Oq$k0">
-                                    <node concept="37vLTw" id="RqQxlJBA$R" role="2Oq$k0">
-                                      <ref role="3cqZAo" node="7e0AhKzCeTE" resolve="notYetGeneratedStubs" />
-                                    </node>
-                                    <node concept="liA8E" id="RqQxlJBBHz" role="2OqNvi">
-                                      <ref role="37wK5l" to="33ny:~Set.iterator()" resolve="iterator" />
-                                    </node>
-                                  </node>
-                                  <node concept="liA8E" id="RqQxlJBCoz" role="2OqNvi">
-                                    <ref role="37wK5l" to="33ny:~Iterator.next()" resolve="next" />
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                            <node concept="3cpWs8" id="7e0AhKzC2BM" role="3cqZAp">
-                              <node concept="3cpWsn" id="7e0AhKzC2BN" role="3cpWs9">
-                                <property role="TrG5h" value="stub" />
-                                <node concept="3uibUv" id="7e0AhKzC2BO" role="1tU5fm">
-                                  <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
-                                </node>
-                                <node concept="1rXfSq" id="7e0AhKzCQ0s" role="33vP2m">
-                                  <ref role="37wK5l" node="7e0AhKzCmCs" resolve="generateStubNotLocking" />
-                                  <node concept="37vLTw" id="RqQxlJBIuT" role="37wK5m">
-                                    <ref role="3cqZAo" node="RqQxlJBAxi" resolve="stubSpec" />
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                            <node concept="3clFbJ" id="7e0AhKzC2BT" role="3cqZAp">
-                              <node concept="3clFbS" id="7e0AhKzC2BU" role="3clFbx">
-                                <node concept="3clFbF" id="7e0AhKzC2BV" role="3cqZAp">
-                                  <node concept="2OqwBi" id="7e0AhKzC2BW" role="3clFbG">
-                                    <node concept="37vLTw" id="7e0AhKzE09T" role="2Oq$k0">
-                                      <ref role="3cqZAo" node="7e0AhKzDWWe" resolve="model" />
-                                    </node>
-                                    <node concept="liA8E" id="7e0AhKzC2BY" role="2OqNvi">
-                                      <ref role="37wK5l" to="mhbf:~SModel.addRootNode(org.jetbrains.mps.openapi.model.SNode)" resolve="addRootNode" />
-                                      <node concept="37vLTw" id="7e0AhKzC2BZ" role="37wK5m">
-                                        <ref role="3cqZAo" node="7e0AhKzC2BN" resolve="stub" />
-                                      </node>
+                        <node concept="1DcWWT" id="7e0AhKzCR4T" role="3cqZAp">
+                          <node concept="3clFbS" id="7e0AhKzCR4Z" role="2LFqv$">
+                            <node concept="3clFbJ" id="7e0AhKzCSuc" role="3cqZAp">
+                              <node concept="3clFbS" id="7e0AhKzCSue" role="3clFbx">
+                                <node concept="3clFbF" id="3mhEivYSBMh" role="3cqZAp">
+                                  <node concept="1rXfSq" id="3mhEivYSBMg" role="3clFbG">
+                                    <ref role="37wK5l" node="3mhEivYSt5j" resolve="generateStubTree" />
+                                    <node concept="37vLTw" id="3mhEivYSBU6" role="37wK5m">
+                                      <ref role="3cqZAo" node="7e0AhKzCR50" resolve="stubSpec" />
                                     </node>
                                   </node>
                                 </node>
                               </node>
-                              <node concept="3y3z36" id="7e0AhKzC2C0" role="3clFbw">
-                                <node concept="10Nm6u" id="7e0AhKzC2C1" role="3uHU7w" />
-                                <node concept="37vLTw" id="7e0AhKzC2C2" role="3uHU7B">
-                                  <ref role="3cqZAo" node="7e0AhKzC2BN" resolve="stub" />
+                              <node concept="3fqX7Q" id="7e0AhKzFqCM" role="3clFbw">
+                                <node concept="1rXfSq" id="7e0AhKzFqCO" role="3fr31v">
+                                  <ref role="37wK5l" node="7e0AhKzC9LD" resolve="hasStubBeenGenerated" />
+                                  <node concept="37vLTw" id="7e0AhKzFqCP" role="37wK5m">
+                                    <ref role="3cqZAo" node="7e0AhKzCR50" resolve="stubSpec" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                            <node concept="3clFbF" id="3mhEivYSP_s" role="3cqZAp">
+                              <node concept="2OqwBi" id="3mhEivYSNuC" role="3clFbG">
+                                <node concept="37vLTw" id="3mhEivYSNfJ" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="7e0AhKzCeTE" resolve="topLevelNotYetGeneratedStubs" />
+                                </node>
+                                <node concept="liA8E" id="3mhEivYSNU_" role="2OqNvi">
+                                  <ref role="37wK5l" to="33ny:~List.remove(java.lang.Object)" resolve="remove" />
+                                  <node concept="37vLTw" id="3mhEivYSPVG" role="37wK5m">
+                                    <ref role="3cqZAo" node="7e0AhKzCR50" resolve="stubSpec" />
+                                  </node>
                                 </node>
                               </node>
                             </node>
                           </node>
-                          <node concept="3fqX7Q" id="RqQxlJB_vX" role="2$JKZa">
-                            <node concept="2OqwBi" id="RqQxlJB_vZ" role="3fr31v">
-                              <node concept="37vLTw" id="RqQxlJB_w0" role="2Oq$k0">
-                                <ref role="3cqZAo" node="7e0AhKzCeTE" resolve="notYetGeneratedStubs" />
-                              </node>
-                              <node concept="liA8E" id="RqQxlJB_w1" role="2OqNvi">
-                                <ref role="37wK5l" to="33ny:~Set.isEmpty()" resolve="isEmpty" />
-                              </node>
+                          <node concept="3cpWsn" id="7e0AhKzCR50" role="1Duv9x">
+                            <property role="TrG5h" value="stubSpec" />
+                            <node concept="3uibUv" id="7e0AhKzCRGN" role="1tU5fm">
+                              <ref role="3uigEE" node="3mOrQ__xOlU" resolve="StubSpec" />
                             </node>
+                          </node>
+                          <node concept="37vLTw" id="7e0AhKzCRSw" role="1DdaDG">
+                            <ref role="3cqZAo" node="7e0AhKzC1Zh" resolve="stubSpecs" />
                           </node>
                         </node>
                       </node>
@@ -2164,17 +2826,30 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbH" id="3mhEivYUZaI" role="3cqZAp" />
+        <node concept="2xdQw9" id="3mhEivYUZG8" role="3cqZAp">
+          <property role="2xdLsb" value="h1akgim/info" />
+          <node concept="Xl_RD" id="3mhEivYUZG9" role="9lYJi">
+            <property role="Xl_RC" value="Stub generation finished" />
+          </node>
+        </node>
       </node>
       <node concept="2AHcQZ" id="7e0AhKzC1Zq" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
-    <node concept="2tJIrI" id="7e0AhKzC229" role="jymVt" />
+    <node concept="2tJIrI" id="3mhEivYUMot" role="jymVt" />
     <node concept="3clFb_" id="7e0AhKzC26h" role="jymVt">
-      <property role="TrG5h" value="forceStubGeneration" />
+      <property role="TrG5h" value="getStub" />
       <node concept="3Tm1VV" id="7e0AhKzC26j" role="1B3o_S" />
       <node concept="3uibUv" id="7e0AhKzC26k" role="3clF45">
         <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
+      </node>
+      <node concept="37vLTG" id="3mhEivYRVs6" role="3clF46">
+        <property role="TrG5h" value="stubId" />
+        <node concept="3uibUv" id="3mhEivYRWM8" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+        </node>
       </node>
       <node concept="37vLTG" id="7e0AhKzC26l" role="3clF46">
         <property role="TrG5h" value="stubFinder" />
@@ -2183,125 +2858,118 @@
         </node>
       </node>
       <node concept="3clFbS" id="7e0AhKzC26s" role="3clF47">
-        <node concept="3cpWs8" id="7e0AhKzCZgf" role="3cqZAp">
-          <node concept="3cpWsn" id="7e0AhKzCZgg" role="3cpWs9">
-            <property role="TrG5h" value="stubSpec" />
-            <node concept="3uibUv" id="7e0AhKzCZgh" role="1tU5fm">
-              <ref role="3uigEE" node="3mOrQ__xOlU" resolve="StubSpec" />
+        <node concept="3cpWs8" id="3mhEivYRTdi" role="3cqZAp">
+          <node concept="3cpWsn" id="3mhEivYRTdj" role="3cpWs9">
+            <property role="TrG5h" value="generatedStub" />
+            <node concept="3uibUv" id="3mhEivYS9g3" role="1tU5fm">
+              <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
             </node>
-            <node concept="2OqwBi" id="7e0AhKzCZvS" role="33vP2m">
-              <node concept="37vLTw" id="7e0AhKzCZnS" role="2Oq$k0">
-                <ref role="3cqZAo" node="7e0AhKzC26l" resolve="stubFinder" />
+            <node concept="2OqwBi" id="3mhEivYRUwS" role="33vP2m">
+              <node concept="37vLTw" id="3mhEivYRUwT" role="2Oq$k0">
+                <ref role="3cqZAo" node="7e0AhKzCaSG" resolve="generatedStubs" />
               </node>
-              <node concept="liA8E" id="7e0AhKzCZQL" role="2OqNvi">
-                <ref role="37wK5l" node="7e0AhKzBSrp" resolve="find" />
-                <node concept="37vLTw" id="7e0AhKzCZRC" role="37wK5m">
-                  <ref role="3cqZAo" node="7e0AhKzCeTE" resolve="notYetGeneratedStubs" />
+              <node concept="liA8E" id="3mhEivYRUwU" role="2OqNvi">
+                <ref role="37wK5l" to="33ny:~Map.get(java.lang.Object)" resolve="get" />
+                <node concept="37vLTw" id="3mhEivYRYCw" role="37wK5m">
+                  <ref role="3cqZAo" node="3mhEivYRVs6" resolve="stubId" />
                 </node>
               </node>
             </node>
           </node>
         </node>
-        <node concept="3clFbJ" id="7e0AhKzCVnD" role="3cqZAp">
-          <node concept="3clFbS" id="7e0AhKzCVnF" role="3clFbx">
-            <node concept="3cpWs8" id="7e0AhKzE1fY" role="3cqZAp">
-              <node concept="3cpWsn" id="7e0AhKzE1fZ" role="3cpWs9">
-                <property role="TrG5h" value="stub" />
-                <node concept="3uibUv" id="7e0AhKzE1g0" role="1tU5fm">
-                  <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
+        <node concept="3clFbJ" id="3mhEivYS0eG" role="3cqZAp">
+          <node concept="3clFbS" id="3mhEivYS0eI" role="3clFbx">
+            <node concept="3cpWs6" id="3mhEivYS3tA" role="3cqZAp">
+              <node concept="37vLTw" id="3mhEivYS4pq" role="3cqZAk">
+                <ref role="3cqZAo" node="3mhEivYRTdj" resolve="generatedStub" />
+              </node>
+            </node>
+          </node>
+          <node concept="3y3z36" id="3mhEivYS2WM" role="3clFbw">
+            <node concept="10Nm6u" id="3mhEivYS3jy" role="3uHU7w" />
+            <node concept="37vLTw" id="3mhEivYS2q0" role="3uHU7B">
+              <ref role="3cqZAo" node="3mhEivYRTdj" resolve="generatedStub" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="3mhEivYTvQO" role="3cqZAp" />
+        <node concept="1DcWWT" id="3mhEivYTuJW" role="3cqZAp">
+          <node concept="3clFbS" id="3mhEivYTuJY" role="2LFqv$">
+            <node concept="3cpWs8" id="7e0AhKzCZgf" role="3cqZAp">
+              <node concept="3cpWsn" id="7e0AhKzCZgg" role="3cpWs9">
+                <property role="TrG5h" value="stubSpec" />
+                <node concept="3uibUv" id="7e0AhKzCZgh" role="1tU5fm">
+                  <ref role="3uigEE" node="3mOrQ__xOlU" resolve="StubSpec" />
                 </node>
-                <node concept="1rXfSq" id="7e0AhKzE1g1" role="33vP2m">
-                  <ref role="37wK5l" node="7e0AhKzCmCs" resolve="generateStubNotLocking" />
-                  <node concept="37vLTw" id="7e0AhKzE4w0" role="37wK5m">
-                    <ref role="3cqZAo" node="7e0AhKzCZgg" resolve="stubSpec" />
+                <node concept="1rXfSq" id="3mhEivYTqyN" role="33vP2m">
+                  <ref role="37wK5l" node="3mhEivYSSDw" resolve="locateStubSpecInSubTree" />
+                  <node concept="37vLTw" id="3mhEivYT_Nb" role="37wK5m">
+                    <ref role="3cqZAo" node="3mhEivYTuJZ" resolve="topLevelNotYetGeneratedStubSpec" />
+                  </node>
+                  <node concept="37vLTw" id="3mhEivYT_S5" role="37wK5m">
+                    <ref role="3cqZAo" node="7e0AhKzC26l" resolve="stubFinder" />
                   </node>
                 </node>
               </node>
             </node>
-            <node concept="3clFbJ" id="7e0AhKzE1g3" role="3cqZAp">
-              <node concept="3clFbS" id="7e0AhKzE1g4" role="3clFbx">
-                <node concept="3clFbF" id="7e0AhKzE1g5" role="3cqZAp">
-                  <node concept="2OqwBi" id="7e0AhKzE1g6" role="3clFbG">
-                    <node concept="37vLTw" id="7e0AhKzE1g7" role="2Oq$k0">
-                      <ref role="3cqZAo" node="7e0AhKzDWWe" resolve="model" />
+            <node concept="3clFbJ" id="3mhEivYT_Yw" role="3cqZAp">
+              <node concept="3clFbS" id="3mhEivYT_Yy" role="3clFbx">
+                <node concept="3clFbJ" id="3mhEivYU6YR" role="3cqZAp">
+                  <node concept="3clFbS" id="3mhEivYU6YT" role="3clFbx">
+                    <node concept="3clFbF" id="3mhEivYUafV" role="3cqZAp">
+                      <node concept="2OqwBi" id="3mhEivYUam7" role="3clFbG">
+                        <node concept="37vLTw" id="3mhEivYUafT" role="2Oq$k0">
+                          <ref role="3cqZAo" node="7e0AhKzCeTE" resolve="topLevelNotYetGeneratedStubs" />
+                        </node>
+                        <node concept="liA8E" id="3mhEivYUaLy" role="2OqNvi">
+                          <ref role="37wK5l" to="33ny:~List.remove(java.lang.Object)" resolve="remove" />
+                          <node concept="37vLTw" id="3mhEivYUb61" role="37wK5m">
+                            <ref role="3cqZAo" node="7e0AhKzCZgg" resolve="stubSpec" />
+                          </node>
+                        </node>
+                      </node>
                     </node>
-                    <node concept="liA8E" id="7e0AhKzE1g8" role="2OqNvi">
-                      <ref role="37wK5l" to="mhbf:~SModel.addRootNode(org.jetbrains.mps.openapi.model.SNode)" resolve="addRootNode" />
-                      <node concept="37vLTw" id="7e0AhKzE1g9" role="37wK5m">
-                        <ref role="3cqZAo" node="7e0AhKzE1fZ" resolve="stub" />
+                  </node>
+                  <node concept="2OqwBi" id="3mhEivYU9jY" role="3clFbw">
+                    <node concept="37vLTw" id="3mhEivYU8PB" role="2Oq$k0">
+                      <ref role="3cqZAo" node="7e0AhKzCeTE" resolve="topLevelNotYetGeneratedStubs" />
+                    </node>
+                    <node concept="liA8E" id="3mhEivYU9Pe" role="2OqNvi">
+                      <ref role="37wK5l" to="33ny:~List.contains(java.lang.Object)" resolve="contains" />
+                      <node concept="37vLTw" id="3mhEivYUa1G" role="37wK5m">
+                        <ref role="3cqZAo" node="7e0AhKzCZgg" resolve="stubSpec" />
                       </node>
                     </node>
                   </node>
                 </node>
+                <node concept="3cpWs6" id="3mhEivYTAgV" role="3cqZAp">
+                  <node concept="1rXfSq" id="3mhEivYTA5f" role="3cqZAk">
+                    <ref role="37wK5l" node="3mhEivYSt5j" resolve="generateStubTree" />
+                    <node concept="37vLTw" id="3mhEivYTAcS" role="37wK5m">
+                      <ref role="3cqZAo" node="7e0AhKzCZgg" resolve="stubSpec" />
+                    </node>
+                  </node>
+                </node>
               </node>
-              <node concept="3y3z36" id="7e0AhKzE1ga" role="3clFbw">
-                <node concept="10Nm6u" id="7e0AhKzE1gb" role="3uHU7w" />
-                <node concept="37vLTw" id="7e0AhKzE1gc" role="3uHU7B">
-                  <ref role="3cqZAo" node="7e0AhKzE1fZ" resolve="stub" />
+              <node concept="3y3z36" id="3mhEivYTA3O" role="3clFbw">
+                <node concept="10Nm6u" id="3mhEivYTA4x" role="3uHU7w" />
+                <node concept="37vLTw" id="3mhEivYTA0z" role="3uHU7B">
+                  <ref role="3cqZAo" node="7e0AhKzCZgg" resolve="stubSpec" />
                 </node>
               </node>
             </node>
-            <node concept="3cpWs6" id="7e0AhKzE2zG" role="3cqZAp">
-              <node concept="37vLTw" id="7e0AhKzE3QA" role="3cqZAk">
-                <ref role="3cqZAo" node="7e0AhKzE1fZ" resolve="stub" />
-              </node>
+          </node>
+          <node concept="3cpWsn" id="3mhEivYTuJZ" role="1Duv9x">
+            <property role="TrG5h" value="topLevelNotYetGeneratedStubSpec" />
+            <node concept="3uibUv" id="3mhEivYTwW4" role="1tU5fm">
+              <ref role="3uigEE" node="3mOrQ__xOlU" resolve="StubSpec" />
             </node>
           </node>
-          <node concept="3y3z36" id="7e0AhKzD340" role="3clFbw">
-            <node concept="10Nm6u" id="7e0AhKzD34A" role="3uHU7w" />
-            <node concept="37vLTw" id="7e0AhKzD09K" role="3uHU7B">
-              <ref role="3cqZAo" node="7e0AhKzCZgg" resolve="stubSpec" />
-            </node>
+          <node concept="37vLTw" id="3mhEivYTxhP" role="1DdaDG">
+            <ref role="3cqZAo" node="7e0AhKzCeTE" resolve="topLevelNotYetGeneratedStubs" />
           </node>
         </node>
         <node concept="3clFbH" id="7e0AhKzD5HJ" role="3cqZAp" />
-        <node concept="3clFbF" id="7e0AhKzDube" role="3cqZAp">
-          <node concept="37vLTI" id="7e0AhKzDxAm" role="3clFbG">
-            <node concept="37vLTw" id="7e0AhKzDubc" role="37vLTJ">
-              <ref role="3cqZAo" node="7e0AhKzCZgg" resolve="stubSpec" />
-            </node>
-            <node concept="2OqwBi" id="7e0AhKzDoYv" role="37vLTx">
-              <node concept="37vLTw" id="7e0AhKzDoQ9" role="2Oq$k0">
-                <ref role="3cqZAo" node="7e0AhKzC26l" resolve="stubFinder" />
-              </node>
-              <node concept="liA8E" id="7e0AhKzDphX" role="2OqNvi">
-                <ref role="37wK5l" node="7e0AhKzBSrp" resolve="find" />
-                <node concept="2OqwBi" id="7e0AhKzDpCE" role="37wK5m">
-                  <node concept="37vLTw" id="7e0AhKzDpmC" role="2Oq$k0">
-                    <ref role="3cqZAo" node="7e0AhKzCaSG" resolve="generatedStubs" />
-                  </node>
-                  <node concept="liA8E" id="7e0AhKzDstS" role="2OqNvi">
-                    <ref role="37wK5l" to="33ny:~Map.keySet()" resolve="keySet" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbJ" id="7e0AhKzDJcj" role="3cqZAp">
-          <node concept="3clFbS" id="7e0AhKzDJcl" role="3clFbx">
-            <node concept="3cpWs6" id="7e0AhKzDNQ4" role="3cqZAp">
-              <node concept="2OqwBi" id="7e0AhKzDPjo" role="3cqZAk">
-                <node concept="37vLTw" id="7e0AhKzDOr_" role="2Oq$k0">
-                  <ref role="3cqZAo" node="7e0AhKzCaSG" resolve="generatedStubs" />
-                </node>
-                <node concept="liA8E" id="7e0AhKzDSCm" role="2OqNvi">
-                  <ref role="37wK5l" to="33ny:~Map.get(java.lang.Object)" resolve="get" />
-                  <node concept="37vLTw" id="7e0AhKzDThm" role="37wK5m">
-                    <ref role="3cqZAo" node="7e0AhKzCZgg" resolve="stubSpec" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3y3z36" id="7e0AhKzDNgC" role="3clFbw">
-            <node concept="10Nm6u" id="7e0AhKzDNgR" role="3uHU7w" />
-            <node concept="37vLTw" id="7e0AhKzDJLS" role="3uHU7B">
-              <ref role="3cqZAo" node="7e0AhKzCZgg" resolve="stubSpec" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbH" id="7e0AhKzDTWm" role="3cqZAp" />
         <node concept="3cpWs6" id="7e0AhKzDVbt" role="3cqZAp">
           <node concept="10Nm6u" id="7e0AhKzDVNd" role="3cqZAk" />
         </node>
@@ -2310,7 +2978,323 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
-    <node concept="2tJIrI" id="7e0AhKzC81C" role="jymVt" />
+    <node concept="2tJIrI" id="3mhEivYUXfw" role="jymVt" />
+    <node concept="3clFb_" id="3mhEivYSt5j" role="jymVt">
+      <property role="TrG5h" value="generateStubTree" />
+      <node concept="3clFbS" id="3mhEivYSt5m" role="3clF47">
+        <node concept="3clFbJ" id="3mhEivYSxW6" role="3cqZAp">
+          <node concept="22lmx$" id="3mhEivYUbo5" role="3clFbw">
+            <node concept="1rXfSq" id="3mhEivYUdw9" role="3uHU7w">
+              <ref role="37wK5l" node="7e0AhKzC9LD" resolve="hasStubBeenGenerated" />
+              <node concept="37vLTw" id="3mhEivYUdDI" role="37wK5m">
+                <ref role="3cqZAo" node="3mhEivYSu5L" resolve="rootStubSpec" />
+              </node>
+            </node>
+            <node concept="3clFbC" id="3mhEivYSy1F" role="3uHU7B">
+              <node concept="37vLTw" id="3mhEivYSxWE" role="3uHU7B">
+                <ref role="3cqZAo" node="3mhEivYSu5L" resolve="rootStubSpec" />
+              </node>
+              <node concept="10Nm6u" id="3mhEivYSy2O" role="3uHU7w" />
+            </node>
+          </node>
+          <node concept="3clFbS" id="3mhEivYSxW8" role="3clFbx">
+            <node concept="3cpWs6" id="3mhEivYSy3k" role="3cqZAp">
+              <node concept="10Nm6u" id="3mhEivYTM34" role="3cqZAk" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="3mhEivYSy3w" role="3cqZAp" />
+        <node concept="1DcWWT" id="3mhEivYSy5m" role="3cqZAp">
+          <node concept="3clFbS" id="3mhEivYSy5r" role="2LFqv$">
+            <node concept="3clFbF" id="3mhEivYSyTu" role="3cqZAp">
+              <node concept="1rXfSq" id="3mhEivYSyTs" role="3clFbG">
+                <ref role="37wK5l" node="3mhEivYSt5j" resolve="generateStubTree" />
+                <node concept="37vLTw" id="3mhEivYSz08" role="37wK5m">
+                  <ref role="3cqZAo" node="3mhEivYSy5s" resolve="childStubSpec" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3cpWsn" id="3mhEivYSy5s" role="1Duv9x">
+            <property role="TrG5h" value="childStubSpec" />
+            <node concept="3uibUv" id="3mhEivYSy7t" role="1tU5fm">
+              <ref role="3uigEE" node="3mOrQ__xOlU" resolve="StubSpec" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="3mhEivYSypp" role="1DdaDG">
+            <node concept="37vLTw" id="3mhEivYSyjQ" role="2Oq$k0">
+              <ref role="3cqZAo" node="3mhEivYSu5L" resolve="rootStubSpec" />
+            </node>
+            <node concept="liA8E" id="3mhEivYSyu5" role="2OqNvi">
+              <ref role="37wK5l" node="7e0AhKzEq2h" resolve="getChildStubSpecs" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="3mhEivYSz9e" role="3cqZAp" />
+        <node concept="3cpWs6" id="3mhEivYTDEa" role="3cqZAp">
+          <node concept="1rXfSq" id="3mhEivYSzXW" role="3cqZAk">
+            <ref role="37wK5l" node="7e0AhKzCmCs" resolve="generateStubNotLocking" />
+            <node concept="37vLTw" id="3mhEivYS$F2" role="37wK5m">
+              <ref role="3cqZAo" node="3mhEivYSu5L" resolve="rootStubSpec" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm6S6" id="3mhEivYSshh" role="1B3o_S" />
+      <node concept="3uibUv" id="3mhEivYTIsQ" role="3clF45">
+        <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
+      </node>
+      <node concept="37vLTG" id="3mhEivYSu5L" role="3clF46">
+        <property role="TrG5h" value="rootStubSpec" />
+        <node concept="3uibUv" id="3mhEivYSu5K" role="1tU5fm">
+          <ref role="3uigEE" node="3mOrQ__xOlU" resolve="StubSpec" />
+        </node>
+      </node>
+      <node concept="P$JXv" id="3mhEivYSvM_" role="lGtFl">
+        <node concept="TZ5HA" id="3mhEivYSvMA" role="TZ5H$">
+          <node concept="1dT_AC" id="3mhEivYSvMB" role="1dT_Ay">
+            <property role="1dT_AB" value="Generates stubs represented by the given " />
+          </node>
+          <node concept="1dT_AA" id="3mhEivYSxsq" role="1dT_Ay">
+            <node concept="92FcH" id="3mhEivYSxsC" role="qph3F">
+              <node concept="TZ5HA" id="3mhEivYSxsE" role="2XjZqd" />
+              <node concept="VXe08" id="3mhEivYSxsT" role="92FcQ">
+                <ref role="VXe09" node="3mOrQ__xOlU" resolve="StubSpec" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="3mhEivYSxsp" role="1dT_Ay">
+            <property role="1dT_AB" value=" specification and its child" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="3mhEivYSxJS" role="TZ5H$">
+          <node concept="1dT_AC" id="3mhEivYSxJT" role="1dT_Ay">
+            <property role="1dT_AB" value="" />
+          </node>
+          <node concept="1dT_AA" id="3mhEivYSx_R" role="1dT_Ay">
+            <node concept="92FcH" id="3mhEivYSxAa" role="qph3F">
+              <node concept="TZ5HA" id="3mhEivYSxAc" role="2XjZqd" />
+              <node concept="VXe08" id="3mhEivYSxAr" role="92FcQ">
+                <ref role="VXe09" node="3mOrQ__xOlU" resolve="StubSpec" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="3mhEivYSx_Q" role="1dT_Ay">
+            <property role="1dT_AB" value=" specification." />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="3mhEivYSxTe" role="TZ5H$">
+          <node concept="1dT_AC" id="3mhEivYSxTf" role="1dT_Ay">
+            <property role="1dT_AB" value="" />
+          </node>
+          <node concept="2U$1Ah" id="3mhEivYSxTD" role="1dT_Ay">
+            <property role="2U$1Ai" value="p" />
+            <node concept="TZ5HA" id="3mhEivYSxTE" role="2U$1Aj" />
+          </node>
+          <node concept="1dT_AC" id="3mhEivYSxTC" role="1dT_Ay">
+            <property role="1dT_AB" value="" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="3mhEivYSxTZ" role="TZ5H$">
+          <node concept="1dT_AC" id="3mhEivYSxU0" role="1dT_Ay">
+            <property role="1dT_AB" value="The implementation uses a bottom-up traversal of the tree, specifically post-order Depth-First Search, because" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="3mhEivYSxVt" role="TZ5H$">
+          <node concept="1dT_AC" id="3mhEivYSxVu" role="1dT_Ay">
+            <property role="1dT_AB" value="first the child stubs has to be generated before their parent." />
+          </node>
+        </node>
+        <node concept="x79VA" id="3mhEivYTKoP" role="3nqlJM">
+          <property role="x79VB" value="A stub corresponding to the root StubSpec." />
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="3mhEivYSQrU" role="jymVt" />
+    <node concept="3clFb_" id="3mhEivYSSDw" role="jymVt">
+      <property role="TrG5h" value="locateStubSpecInSubTree" />
+      <node concept="3clFbS" id="3mhEivYSSDz" role="3clF47">
+        <node concept="3cpWs8" id="3mhEivYSYJz" role="3cqZAp">
+          <node concept="3cpWsn" id="3mhEivYSYJ$" role="3cpWs9">
+            <property role="TrG5h" value="lookResult" />
+            <node concept="3uibUv" id="3mhEivYSYJ_" role="1tU5fm">
+              <ref role="3uigEE" node="3mhEivYR6Zs" resolve="StubFinder.LookResult" />
+            </node>
+            <node concept="2OqwBi" id="3mhEivYSYOA" role="33vP2m">
+              <node concept="37vLTw" id="3mhEivYSYK$" role="2Oq$k0">
+                <ref role="3cqZAo" node="3mhEivYSTJ7" resolve="stubFinder" />
+              </node>
+              <node concept="liA8E" id="3mhEivYSYS2" role="2OqNvi">
+                <ref role="37wK5l" node="7e0AhKzBSrp" resolve="look" />
+                <node concept="37vLTw" id="3mhEivYSYTa" role="37wK5m">
+                  <ref role="3cqZAo" node="3mhEivYSVOa" resolve="rootStubSpec" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="3mhEivYSYUJ" role="3cqZAp" />
+        <node concept="3clFbJ" id="3mhEivYSYhp" role="3cqZAp">
+          <node concept="3clFbS" id="3mhEivYSYhr" role="3clFbx">
+            <node concept="3cpWs6" id="3mhEivYSZ8Q" role="3cqZAp">
+              <node concept="37vLTw" id="3mhEivYT0XM" role="3cqZAk">
+                <ref role="3cqZAo" node="3mhEivYSVOa" resolve="rootStubSpec" />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbC" id="3mhEivYSZ6u" role="3clFbw">
+            <node concept="Rm8GO" id="3mhEivYSZ85" role="3uHU7w">
+              <ref role="Rm8GQ" node="3mhEivYR741" resolve="ThisIsTheOne" />
+              <ref role="1Px2BO" node="3mhEivYR6Zs" resolve="StubFinder.LookResult" />
+            </node>
+            <node concept="37vLTw" id="3mhEivYSYVJ" role="3uHU7B">
+              <ref role="3cqZAo" node="3mhEivYSYJ$" resolve="lookResult" />
+            </node>
+          </node>
+          <node concept="3eNFk2" id="3mhEivYT1GY" role="3eNLev">
+            <node concept="3clFbS" id="3mhEivYT1H0" role="3eOfB_">
+              <node concept="3cpWs6" id="3mhEivYT2q4" role="3cqZAp">
+                <node concept="10Nm6u" id="3mhEivYT3nd" role="3cqZAk" />
+              </node>
+            </node>
+            <node concept="3clFbC" id="3mhEivYT2nH" role="3eO9$A">
+              <node concept="Rm8GO" id="3mhEivYT2oW" role="3uHU7w">
+                <ref role="Rm8GQ" node="3mhEivYR7Wd" resolve="NotHere" />
+                <ref role="1Px2BO" node="3mhEivYR6Zs" resolve="StubFinder.LookResult" />
+              </node>
+              <node concept="37vLTw" id="3mhEivYT2nJ" role="3uHU7B">
+                <ref role="3cqZAo" node="3mhEivYSYJ$" resolve="lookResult" />
+              </node>
+            </node>
+          </node>
+          <node concept="3eNFk2" id="3mhEivYT4Z1" role="3eNLev">
+            <node concept="3clFbS" id="3mhEivYT4Z2" role="3eOfB_">
+              <node concept="1DcWWT" id="3mhEivYT5Sj" role="3cqZAp">
+                <node concept="3cpWsn" id="3mhEivYT5Sk" role="1Duv9x">
+                  <property role="TrG5h" value="childStubSpec" />
+                  <node concept="3uibUv" id="3mhEivYT5Ud" role="1tU5fm">
+                    <ref role="3uigEE" node="3mOrQ__xOlU" resolve="StubSpec" />
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="3mhEivYT6jy" role="1DdaDG">
+                  <node concept="37vLTw" id="3mhEivYT6dK" role="2Oq$k0">
+                    <ref role="3cqZAo" node="3mhEivYSVOa" resolve="rootStubSpec" />
+                  </node>
+                  <node concept="liA8E" id="3mhEivYT6oY" role="2OqNvi">
+                    <ref role="37wK5l" node="7e0AhKzEq2h" resolve="getChildStubSpecs" />
+                  </node>
+                </node>
+                <node concept="3clFbS" id="3mhEivYT5Sm" role="2LFqv$">
+                  <node concept="3cpWs8" id="3mhEivYT7Zn" role="3cqZAp">
+                    <node concept="3cpWsn" id="3mhEivYT7Zo" role="3cpWs9">
+                      <property role="TrG5h" value="stubSpec" />
+                      <node concept="3uibUv" id="3mhEivYT7Zp" role="1tU5fm">
+                        <ref role="3uigEE" node="3mOrQ__xOlU" resolve="StubSpec" />
+                      </node>
+                      <node concept="1rXfSq" id="3mhEivYT8iw" role="33vP2m">
+                        <ref role="37wK5l" node="3mhEivYSSDw" resolve="locateStubSpecInSubTree" />
+                        <node concept="37vLTw" id="3mhEivYT8oi" role="37wK5m">
+                          <ref role="3cqZAo" node="3mhEivYT5Sk" resolve="childStubSpec" />
+                        </node>
+                        <node concept="37vLTw" id="3mhEivYT8t8" role="37wK5m">
+                          <ref role="3cqZAo" node="3mhEivYSTJ7" resolve="stubFinder" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbJ" id="3mhEivYT8vu" role="3cqZAp">
+                    <node concept="3clFbS" id="3mhEivYT8vw" role="3clFbx">
+                      <node concept="3cpWs6" id="3mhEivYT8CH" role="3cqZAp">
+                        <node concept="37vLTw" id="3mhEivYT8Do" role="3cqZAk">
+                          <ref role="3cqZAo" node="3mhEivYT7Zo" resolve="stubSpec" />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="3y3z36" id="3mhEivYT8Bu" role="3clFbw">
+                      <node concept="10Nm6u" id="3mhEivYT8C9" role="3uHU7w" />
+                      <node concept="37vLTw" id="3mhEivYT8wv" role="3uHU7B">
+                        <ref role="3cqZAo" node="3mhEivYT7Zo" resolve="stubSpec" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3cpWs6" id="3mhEivYTm5Z" role="3cqZAp">
+                <node concept="10Nm6u" id="3mhEivYTmZj" role="3cqZAk" />
+              </node>
+            </node>
+            <node concept="3clFbC" id="3mhEivYT5OX" role="3eO9$A">
+              <node concept="37vLTw" id="3mhEivYT5En" role="3uHU7B">
+                <ref role="3cqZAo" node="3mhEivYSYJ$" resolve="lookResult" />
+              </node>
+              <node concept="Rm8GO" id="3mhEivYT5QM" role="3uHU7w">
+                <ref role="Rm8GQ" node="3mhEivYR75F" resolve="MaybeInSubtree" />
+                <ref role="1Px2BO" node="3mhEivYR6Zs" resolve="StubFinder.LookResult" />
+              </node>
+            </node>
+          </node>
+          <node concept="9aQIb" id="3mhEivYTa1w" role="9aQIa">
+            <node concept="3clFbS" id="3mhEivYTa1x" role="9aQI4">
+              <node concept="2xdQw9" id="3mhEivYTb6B" role="3cqZAp">
+                <property role="2xdLsb" value="gZ5fh_4/error" />
+                <node concept="Xl_RD" id="3mhEivYTb6D" role="9lYJi">
+                  <property role="Xl_RC" value="Unknown LookResult!" />
+                </node>
+              </node>
+              <node concept="3cpWs6" id="3mhEivYTb8V" role="3cqZAp">
+                <node concept="10Nm6u" id="3mhEivYTb9w" role="3cqZAk" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm6S6" id="3mhEivYSRr6" role="1B3o_S" />
+      <node concept="3uibUv" id="3mhEivYSSrT" role="3clF45">
+        <ref role="3uigEE" node="3mOrQ__xOlU" resolve="StubSpec" />
+      </node>
+      <node concept="37vLTG" id="3mhEivYSVOa" role="3clF46">
+        <property role="TrG5h" value="rootStubSpec" />
+        <node concept="3uibUv" id="3mhEivYSWLh" role="1tU5fm">
+          <ref role="3uigEE" node="3mOrQ__xOlU" resolve="StubSpec" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="3mhEivYSTJ7" role="3clF46">
+        <property role="TrG5h" value="stubFinder" />
+        <node concept="3uibUv" id="3mhEivYSTJ6" role="1tU5fm">
+          <ref role="3uigEE" node="7e0AhKzBSq7" resolve="StubFinder" />
+        </node>
+      </node>
+      <node concept="P$JXv" id="3mhEivYSVag" role="lGtFl">
+        <node concept="TZ5HA" id="3mhEivYSVah" role="TZ5H$">
+          <node concept="1dT_AC" id="3mhEivYSVai" role="1dT_Ay">
+            <property role="1dT_AB" value="Finds a " />
+          </node>
+          <node concept="1dT_AA" id="3mhEivYSX1g" role="1dT_Ay">
+            <node concept="92FcH" id="3mhEivYSX1m" role="qph3F">
+              <node concept="TZ5HA" id="3mhEivYSX1o" role="2XjZqd" />
+              <node concept="VXe08" id="3mhEivYSX1B" role="92FcQ">
+                <ref role="VXe09" node="3mOrQ__xOlU" resolve="StubSpec" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="3mhEivYSX1f" role="1dT_Ay">
+            <property role="1dT_AB" value=" in the subtree defined by the given root using the given " />
+          </node>
+          <node concept="1dT_AA" id="3mhEivYSYb6" role="1dT_Ay">
+            <node concept="92FcH" id="3mhEivYSYbh" role="qph3F">
+              <node concept="TZ5HA" id="3mhEivYSYbj" role="2XjZqd" />
+              <node concept="VXe08" id="3mhEivYSYby" role="92FcQ">
+                <ref role="VXe09" node="7e0AhKzBSq7" resolve="StubFinder" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="3mhEivYSYb5" role="1dT_Ay">
+            <property role="1dT_AB" value="." />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="7e0AhKzC229" role="jymVt" />
     <node concept="3clFb_" id="7e0AhKzC9LD" role="jymVt">
       <property role="TrG5h" value="hasStubBeenGenerated" />
       <node concept="3clFbS" id="7e0AhKzC9LG" role="3clF47">
@@ -2321,8 +3305,17 @@
             </node>
             <node concept="liA8E" id="7e0AhKzClWI" role="2OqNvi">
               <ref role="37wK5l" to="33ny:~Map.containsKey(java.lang.Object)" resolve="containsKey" />
-              <node concept="37vLTw" id="7e0AhKzCmfI" role="37wK5m">
-                <ref role="3cqZAo" node="7e0AhKzCa1o" resolve="stubSpec" />
+              <node concept="2OqwBi" id="3mhEivYRPQZ" role="37wK5m">
+                <node concept="37vLTw" id="3mhEivYRPR0" role="2Oq$k0">
+                  <ref role="3cqZAo" node="7e0AhKzCa1o" resolve="stubSpec" />
+                </node>
+                <node concept="liA8E" id="3mhEivYRPR1" role="2OqNvi">
+                  <ref role="37wK5l" node="6tMbnEHAuS4" resolve="getProperty" />
+                  <node concept="10M0yZ" id="3mhEivYRPR2" role="37wK5m">
+                    <ref role="3cqZAo" node="3mhEivYRtk$" resolve="STUB_ID" />
+                    <ref role="1PxDUh" node="3mOrQ__xOlU" resolve="StubSpec" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>
@@ -2349,136 +3342,24 @@
         </node>
       </node>
     </node>
-    <node concept="2tJIrI" id="7e0AhKzCp2L" role="jymVt" />
-    <node concept="3clFb_" id="7e0AhKzCoqe" role="jymVt">
-      <property role="TrG5h" value="generateStubLocking" />
-      <node concept="3clFbS" id="7e0AhKzCoqf" role="3clF47">
-        <node concept="3cpWs8" id="7e0AhKzCs6j" role="3cqZAp">
-          <node concept="3cpWsn" id="7e0AhKzCs6h" role="3cpWs9">
-            <property role="3TUv4t" value="true" />
-            <property role="TrG5h" value="stubCarrier" />
-            <node concept="3uibUv" id="7e0AhKzCsib" role="1tU5fm">
-              <ref role="3uigEE" node="6tMbnEHC93x" resolve="LambdaNonFinalParamHelper" />
-              <node concept="3uibUv" id="7e0AhKzCsTE" role="11_B2D">
-                <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
-              </node>
-            </node>
-            <node concept="2ShNRf" id="7e0AhKzCsoR" role="33vP2m">
-              <node concept="1pGfFk" id="7e0AhKzCsDZ" role="2ShVmc">
-                <ref role="37wK5l" node="6tMbnEHCaY6" resolve="LambdaNonFinalParamHelper" />
-                <node concept="3uibUv" id="7e0AhKzCsJs" role="1pMfVU">
-                  <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
-                </node>
-                <node concept="10Nm6u" id="7e0AhKzCsYZ" role="37wK5m" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbH" id="7e0AhKzCCup" role="3cqZAp" />
-        <node concept="3clFbF" id="7e0AhKzCrpy" role="3cqZAp">
-          <node concept="2OqwBi" id="7e0AhKzCrpz" role="3clFbG">
-            <node concept="2OqwBi" id="7e0AhKzCrp$" role="2Oq$k0">
-              <node concept="37vLTw" id="7e0AhKzCuu$" role="2Oq$k0">
-                <ref role="3cqZAo" node="7e0AhKzCtVr" resolve="repository" />
-              </node>
-              <node concept="liA8E" id="7e0AhKzCrpA" role="2OqNvi">
-                <ref role="37wK5l" to="lui2:~SRepository.getModelAccess()" resolve="getModelAccess" />
-              </node>
-            </node>
-            <node concept="liA8E" id="7e0AhKzCrpB" role="2OqNvi">
-              <ref role="37wK5l" to="lui2:~ModelAccess.runWriteAction(java.lang.Runnable)" resolve="runWriteAction" />
-              <node concept="2ShNRf" id="7e0AhKzCrpC" role="37wK5m">
-                <node concept="YeOm9" id="7e0AhKzCrpD" role="2ShVmc">
-                  <node concept="1Y3b0j" id="7e0AhKzCrpE" role="YeSDq">
-                    <property role="2bfB8j" value="true" />
-                    <ref role="1Y3XeK" to="wyt6:~Runnable" resolve="Runnable" />
-                    <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
-                    <node concept="3Tm1VV" id="7e0AhKzCrpF" role="1B3o_S" />
-                    <node concept="3clFb_" id="7e0AhKzCrpG" role="jymVt">
-                      <property role="TrG5h" value="run" />
-                      <node concept="3Tm1VV" id="7e0AhKzCrpH" role="1B3o_S" />
-                      <node concept="3cqZAl" id="7e0AhKzCrpI" role="3clF45" />
-                      <node concept="3clFbS" id="7e0AhKzCrpJ" role="3clF47">
-                        <node concept="3cpWs8" id="7e0AhKzCrpO" role="3cqZAp">
-                          <node concept="3cpWsn" id="7e0AhKzCrpP" role="3cpWs9">
-                            <property role="TrG5h" value="stub" />
-                            <node concept="3uibUv" id="7e0AhKzCrpQ" role="1tU5fm">
-                              <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
-                            </node>
-                            <node concept="1rXfSq" id="7e0AhKzCGZH" role="33vP2m">
-                              <ref role="37wK5l" node="7e0AhKzCmCs" resolve="generateStubNotLocking" />
-                              <node concept="37vLTw" id="7e0AhKzCH4B" role="37wK5m">
-                                <ref role="3cqZAo" node="7e0AhKzCoql" resolve="stubSpec" />
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                        <node concept="3clFbF" id="7e0AhKzCxjk" role="3cqZAp">
-                          <node concept="2OqwBi" id="7e0AhKzCxrR" role="3clFbG">
-                            <node concept="37vLTw" id="7e0AhKzCxji" role="2Oq$k0">
-                              <ref role="3cqZAo" node="7e0AhKzCs6h" resolve="stubCarrier" />
-                            </node>
-                            <node concept="liA8E" id="7e0AhKzCz2Y" role="2OqNvi">
-                              <ref role="37wK5l" node="6tMbnEHC9hm" resolve="setValue" />
-                              <node concept="37vLTw" id="7e0AhKzCz4T" role="37wK5m">
-                                <ref role="3cqZAo" node="7e0AhKzCrpP" resolve="stub" />
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="2AHcQZ" id="7e0AhKzCrq6" role="2AJF6D">
-                        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbH" id="7e0AhKzCAEB" role="3cqZAp" />
-        <node concept="3cpWs6" id="7e0AhKzCzud" role="3cqZAp">
-          <node concept="2OqwBi" id="7e0AhKzC$nf" role="3cqZAk">
-            <node concept="37vLTw" id="7e0AhKzCzUJ" role="2Oq$k0">
-              <ref role="3cqZAo" node="7e0AhKzCs6h" resolve="stubCarrier" />
-            </node>
-            <node concept="liA8E" id="7e0AhKzCAjD" role="2OqNvi">
-              <ref role="37wK5l" node="6tMbnEHC9df" resolve="getValue" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3Tm6S6" id="7e0AhKzCoqg" role="1B3o_S" />
-      <node concept="3uibUv" id="7e0AhKzCoqh" role="3clF45">
-        <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
-      </node>
-      <node concept="P$JXv" id="7e0AhKzCoqi" role="lGtFl">
-        <node concept="TZ5HA" id="7e0AhKzCoqj" role="TZ5H$">
-          <node concept="1dT_AC" id="7e0AhKzCoqk" role="1dT_Ay">
-            <property role="1dT_AB" value="Generates a stub with the given specification with locking the repository. Returns the generated stub." />
-          </node>
-        </node>
-      </node>
-      <node concept="37vLTG" id="7e0AhKzCoql" role="3clF46">
-        <property role="TrG5h" value="stubSpec" />
-        <property role="3TUv4t" value="true" />
-        <node concept="3uibUv" id="7e0AhKzCoqm" role="1tU5fm">
-          <ref role="3uigEE" node="3mOrQ__xOlU" resolve="StubSpec" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="7e0AhKzCtVr" role="3clF46">
-        <property role="3TUv4t" value="true" />
-        <property role="TrG5h" value="repository" />
-        <node concept="3uibUv" id="7e0AhKzCuoE" role="1tU5fm">
-          <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
-        </node>
-      </node>
-    </node>
     <node concept="2tJIrI" id="7e0AhKzCd2h" role="jymVt" />
     <node concept="3clFb_" id="7e0AhKzCmCs" role="jymVt">
       <property role="TrG5h" value="generateStubNotLocking" />
       <node concept="3clFbS" id="7e0AhKzCmCv" role="3clF47">
+        <node concept="3clFbJ" id="3mhEivYUhUf" role="3cqZAp">
+          <node concept="3clFbS" id="3mhEivYUhUh" role="3clFbx">
+            <node concept="3cpWs6" id="3mhEivYUk$1" role="3cqZAp">
+              <node concept="10Nm6u" id="3mhEivYUoIT" role="3cqZAk" />
+            </node>
+          </node>
+          <node concept="1rXfSq" id="3mhEivYUk9D" role="3clFbw">
+            <ref role="37wK5l" node="7e0AhKzC9LD" resolve="hasStubBeenGenerated" />
+            <node concept="37vLTw" id="3mhEivYUkvO" role="37wK5m">
+              <ref role="3cqZAo" node="7e0AhKzCo55" resolve="stubSpec" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="3mhEivYUfXd" role="3cqZAp" />
         <node concept="3cpWs8" id="7e0AhKzCIwi" role="3cqZAp">
           <node concept="3cpWsn" id="7e0AhKzCIwj" role="3cpWs9">
             <property role="TrG5h" value="stub" />
@@ -2502,19 +3383,6 @@
         <node concept="3clFbH" id="7e0AhKzCOX9" role="3cqZAp" />
         <node concept="3clFbJ" id="7e0AhKzCJjH" role="3cqZAp">
           <node concept="3clFbS" id="7e0AhKzCJjJ" role="3clFbx">
-            <node concept="3clFbF" id="7e0AhKzD6Nh" role="3cqZAp">
-              <node concept="2OqwBi" id="7e0AhKzD7ol" role="3clFbG">
-                <node concept="37vLTw" id="7e0AhKzD6Nf" role="2Oq$k0">
-                  <ref role="3cqZAo" node="7e0AhKzCeTE" resolve="notYetGeneratedStubs" />
-                </node>
-                <node concept="liA8E" id="7e0AhKzDiAN" role="2OqNvi">
-                  <ref role="37wK5l" to="33ny:~Set.remove(java.lang.Object)" resolve="remove" />
-                  <node concept="37vLTw" id="7e0AhKzDiJl" role="37wK5m">
-                    <ref role="3cqZAo" node="7e0AhKzCo55" resolve="stubSpec" />
-                  </node>
-                </node>
-              </node>
-            </node>
             <node concept="3clFbF" id="7e0AhKzCJOT" role="3cqZAp">
               <node concept="2OqwBi" id="7e0AhKzCK7w" role="3clFbG">
                 <node concept="37vLTw" id="7e0AhKzCJOR" role="2Oq$k0">
@@ -2522,11 +3390,52 @@
                 </node>
                 <node concept="liA8E" id="7e0AhKzCMVt" role="2OqNvi">
                   <ref role="37wK5l" to="33ny:~Map.put(java.lang.Object,java.lang.Object)" resolve="put" />
-                  <node concept="37vLTw" id="7e0AhKzCN1A" role="37wK5m">
-                    <ref role="3cqZAo" node="7e0AhKzCo55" resolve="stubSpec" />
+                  <node concept="2OqwBi" id="3mhEivYRMuR" role="37wK5m">
+                    <node concept="37vLTw" id="7e0AhKzCN1A" role="2Oq$k0">
+                      <ref role="3cqZAo" node="7e0AhKzCo55" resolve="stubSpec" />
+                    </node>
+                    <node concept="liA8E" id="3mhEivYRMJl" role="2OqNvi">
+                      <ref role="37wK5l" node="6tMbnEHAuS4" resolve="getProperty" />
+                      <node concept="10M0yZ" id="3mhEivYRN4a" role="37wK5m">
+                        <ref role="3cqZAo" node="3mhEivYRtk$" resolve="STUB_ID" />
+                        <ref role="1PxDUh" node="3mOrQ__xOlU" resolve="StubSpec" />
+                      </node>
+                    </node>
                   </node>
                   <node concept="37vLTw" id="7e0AhKzCNjc" role="37wK5m">
                     <ref role="3cqZAo" node="7e0AhKzCIwj" resolve="stub" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbJ" id="3mhEivYUwjp" role="3cqZAp">
+              <node concept="3clFbS" id="3mhEivYUwjr" role="3clFbx">
+                <node concept="3clFbF" id="7e0AhKzC2BV" role="3cqZAp">
+                  <node concept="2OqwBi" id="7e0AhKzC2BW" role="3clFbG">
+                    <node concept="37vLTw" id="7e0AhKzE09T" role="2Oq$k0">
+                      <ref role="3cqZAo" node="7e0AhKzDWWe" resolve="model" />
+                    </node>
+                    <node concept="liA8E" id="7e0AhKzC2BY" role="2OqNvi">
+                      <ref role="37wK5l" to="mhbf:~SModel.addRootNode(org.jetbrains.mps.openapi.model.SNode)" resolve="addRootNode" />
+                      <node concept="37vLTw" id="3mhEivYUxP9" role="37wK5m">
+                        <ref role="3cqZAo" node="7e0AhKzCIwj" resolve="stub" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3y3z36" id="3mhEivYUxax" role="3clFbw">
+                <node concept="10Nm6u" id="3mhEivYUxaQ" role="3uHU7w" />
+                <node concept="2OqwBi" id="3mhEivYUwt_" role="3uHU7B">
+                  <node concept="37vLTw" id="3mhEivYUwoV" role="2Oq$k0">
+                    <ref role="3cqZAo" node="7e0AhKzCo55" resolve="stubSpec" />
+                  </node>
+                  <node concept="liA8E" id="3mhEivYUwwC" role="2OqNvi">
+                    <ref role="37wK5l" node="6tMbnEHAuS4" resolve="getProperty" />
+                    <node concept="10M0yZ" id="3mhEivYUwQc" role="37wK5m">
+                      <ref role="3cqZAo" node="3mhEivYSgrJ" resolve="IS_ROOT_NODE" />
+                      <ref role="1PxDUh" node="3mOrQ__xOlU" resolve="StubSpec" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -2542,8 +3451,22 @@
             <node concept="3clFbS" id="7e0AhKzIkhS" role="9aQI4">
               <node concept="2xdQw9" id="7e0AhKzIksq" role="3cqZAp">
                 <property role="2xdLsb" value="gZ5fksE/warn" />
-                <node concept="Xl_RD" id="7e0AhKzIkss" role="9lYJi">
-                  <property role="Xl_RC" value="Unknown stub specification!" />
+                <node concept="3cpWs3" id="3mhEivYRNka" role="9lYJi">
+                  <node concept="Xl_RD" id="7e0AhKzIkss" role="3uHU7B">
+                    <property role="Xl_RC" value="Single-stub generator cannot generate stub for: " />
+                  </node>
+                  <node concept="2OqwBi" id="3mhEivYRNkM" role="3uHU7w">
+                    <node concept="37vLTw" id="3mhEivYRNkN" role="2Oq$k0">
+                      <ref role="3cqZAo" node="7e0AhKzCo55" resolve="stubSpec" />
+                    </node>
+                    <node concept="liA8E" id="3mhEivYRNkO" role="2OqNvi">
+                      <ref role="37wK5l" node="6tMbnEHAuS4" resolve="getProperty" />
+                      <node concept="10M0yZ" id="3mhEivYRNkP" role="37wK5m">
+                        <ref role="1PxDUh" node="3mOrQ__xOlU" resolve="StubSpec" />
+                        <ref role="3cqZAo" node="3mhEivYRtk$" resolve="STUB_ID" />
+                      </node>
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
@@ -2563,8 +3486,48 @@
       <node concept="P$JXv" id="7e0AhKzCnvG" role="lGtFl">
         <node concept="TZ5HA" id="7e0AhKzCnvH" role="TZ5H$">
           <node concept="1dT_AC" id="7e0AhKzCnvI" role="1dT_Ay">
-            <property role="1dT_AB" value="Generates a stub with the given specification without locking the repository. Returns the generated stub." />
+            <property role="1dT_AB" value="Generates a stub with the given specification without locking the" />
           </node>
+        </node>
+        <node concept="TZ5HA" id="3mhEivYRf9S" role="TZ5H$">
+          <node concept="1dT_AC" id="3mhEivYRf9T" role="1dT_Ay">
+            <property role="1dT_AB" value="" />
+          </node>
+          <node concept="1dT_AA" id="3mhEivYRf8r" role="1dT_Ay">
+            <node concept="92FcH" id="3mhEivYRf8x" role="qph3F">
+              <node concept="TZ5HA" id="3mhEivYRf8z" role="2XjZqd">
+                <node concept="1dT_AC" id="3mhEivYRf9Q" role="1dT_Ay">
+                  <property role="1dT_AB" value="repository" />
+                </node>
+              </node>
+              <node concept="VXe08" id="3mhEivYRf8M" role="92FcQ">
+                <ref role="VXe09" to="lui2:~SRepository" resolve="SRepository" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="3mhEivYRf8q" role="1dT_Ay">
+            <property role="1dT_AB" value="." />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="3mhEivYUdFR" role="TZ5H$">
+          <node concept="1dT_AC" id="3mhEivYUdFS" role="1dT_Ay">
+            <property role="1dT_AB" value="" />
+          </node>
+          <node concept="2U$1Ah" id="3mhEivYUdGi" role="1dT_Ay">
+            <property role="2U$1Ai" value="p" />
+            <node concept="TZ5HA" id="3mhEivYUdGj" role="2U$1Aj" />
+          </node>
+          <node concept="1dT_AC" id="3mhEivYUdGh" role="1dT_Ay">
+            <property role="1dT_AB" value="" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="3mhEivYUdGw" role="TZ5H$">
+          <node concept="1dT_AC" id="3mhEivYUdGx" role="1dT_Ay">
+            <property role="1dT_AB" value="If the stub has been already generated, it does nothing." />
+          </node>
+        </node>
+        <node concept="x79VA" id="3mhEivYRfc5" role="3nqlJM">
+          <property role="x79VB" value="The generated stub or null if the stub has been already generated." />
         </node>
       </node>
       <node concept="37vLTG" id="7e0AhKzCo55" role="3clF46">
@@ -2580,8 +3543,8 @@
       <node concept="3Tm6S6" id="7e0AhKzCawT" role="1B3o_S" />
       <node concept="3uibUv" id="7e0AhKzCaK1" role="1tU5fm">
         <ref role="3uigEE" to="33ny:~Map" resolve="Map" />
-        <node concept="3uibUv" id="7e0AhKzCaMI" role="11_B2D">
-          <ref role="3uigEE" node="3mOrQ__xOlU" resolve="StubSpec" />
+        <node concept="3uibUv" id="3mhEivYR$BX" role="11_B2D">
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
         </node>
         <node concept="3uibUv" id="7e0AhKzCaPJ" role="11_B2D">
           <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
@@ -2590,8 +3553,8 @@
       <node concept="2ShNRf" id="7e0AhKzCb8u" role="33vP2m">
         <node concept="1pGfFk" id="7e0AhKzCcq1" role="2ShVmc">
           <ref role="37wK5l" to="33ny:~HashMap.&lt;init&gt;()" resolve="HashMap" />
-          <node concept="3uibUv" id="7e0AhKzCcFi" role="1pMfVU">
-            <ref role="3uigEE" node="3mOrQ__xOlU" resolve="StubSpec" />
+          <node concept="3uibUv" id="3mhEivYRDDW" role="1pMfVU">
+            <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
           </node>
           <node concept="3uibUv" id="7e0AhKzCcUH" role="1pMfVU">
             <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
@@ -2604,21 +3567,80 @@
             <property role="1dT_AB" value="Stores all already generated stubs." />
           </node>
         </node>
+        <node concept="TZ5HA" id="3mhEivYR_TY" role="TZ5H$">
+          <node concept="1dT_AC" id="3mhEivYR_TZ" role="1dT_Ay">
+            <property role="1dT_AB" value="" />
+          </node>
+          <node concept="2U$1Ah" id="3mhEivYRAX3" role="1dT_Ay">
+            <property role="2U$1Ai" value="p" />
+            <node concept="TZ5HA" id="3mhEivYRAX4" role="2U$1Aj" />
+          </node>
+          <node concept="1dT_AC" id="3mhEivYRAX2" role="1dT_Ay">
+            <property role="1dT_AB" value="" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="3mhEivYRAX9" role="TZ5H$">
+          <node concept="1dT_AC" id="3mhEivYRAXa" role="1dT_Ay">
+            <property role="1dT_AB" value="The key is the value of the " />
+          </node>
+          <node concept="1dT_AA" id="3mhEivYRC0j" role="1dT_Ay">
+            <node concept="92FcH" id="3mhEivYRC0p" role="qph3F">
+              <node concept="TZ5HA" id="3mhEivYRC0r" role="2XjZqd" />
+              <node concept="1RlsK7" id="3mhEivYRC3j" role="92FcQ">
+                <ref role="YTMYt" node="3mhEivYRtk$" resolve="STUB_ID" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="3mhEivYRC0i" role="1dT_Ay">
+            <property role="1dT_AB" value=" property from the " />
+          </node>
+          <node concept="1dT_AA" id="3mhEivYRC65" role="1dT_Ay">
+            <node concept="92FcH" id="3mhEivYRC6g" role="qph3F">
+              <node concept="TZ5HA" id="3mhEivYRC6i" role="2XjZqd" />
+              <node concept="VXe08" id="3mhEivYRC6p" role="92FcQ">
+                <ref role="VXe09" node="3mOrQ__xOlU" resolve="StubSpec" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="3mhEivYRC64" role="1dT_Ay">
+            <property role="1dT_AB" value=" according to which" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="3mhEivYRC9a" role="TZ5H$">
+          <node concept="1dT_AC" id="3mhEivYRC9b" role="1dT_Ay">
+            <property role="1dT_AB" value="the stub in the value of this " />
+          </node>
+          <node concept="1dT_AA" id="3mhEivYRDtl" role="1dT_Ay">
+            <node concept="92FcH" id="3mhEivYRDtr" role="qph3F">
+              <node concept="TZ5HA" id="3mhEivYRDtt" role="2XjZqd">
+                <node concept="1dT_AC" id="3mhEivYRDDU" role="1dT_Ay">
+                  <property role="1dT_AB" value="Map" />
+                </node>
+              </node>
+              <node concept="VXe08" id="3mhEivYRDt$" role="92FcQ">
+                <ref role="VXe09" to="33ny:~Map" resolve="Map" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="3mhEivYRDtk" role="1dT_Ay">
+            <property role="1dT_AB" value=" has been generated." />
+          </node>
+        </node>
       </node>
     </node>
-    <node concept="2tJIrI" id="7e0AhKzCegh" role="jymVt" />
+    <node concept="2tJIrI" id="3mhEivYUB$2" role="jymVt" />
     <node concept="312cEg" id="7e0AhKzCeTE" role="jymVt">
-      <property role="TrG5h" value="notYetGeneratedStubs" />
+      <property role="TrG5h" value="topLevelNotYetGeneratedStubs" />
       <node concept="3Tm6S6" id="7e0AhKzCexa" role="1B3o_S" />
       <node concept="3uibUv" id="7e0AhKzCg_c" role="1tU5fm">
-        <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
+        <ref role="3uigEE" to="33ny:~List" resolve="List" />
         <node concept="3uibUv" id="7e0AhKzCgPs" role="11_B2D">
           <ref role="3uigEE" node="3mOrQ__xOlU" resolve="StubSpec" />
         </node>
       </node>
       <node concept="2ShNRf" id="7e0AhKzCffc" role="33vP2m">
         <node concept="1pGfFk" id="7e0AhKzCh6e" role="2ShVmc">
-          <ref role="37wK5l" to="33ny:~HashSet.&lt;init&gt;()" resolve="HashSet" />
+          <ref role="37wK5l" to="33ny:~ArrayList.&lt;init&gt;()" resolve="ArrayList" />
           <node concept="3uibUv" id="7e0AhKzChpX" role="1pMfVU">
             <ref role="3uigEE" node="3mOrQ__xOlU" resolve="StubSpec" />
           </node>
@@ -2627,7 +3649,18 @@
       <node concept="z59LJ" id="7e0AhKzCfnk" role="lGtFl">
         <node concept="TZ5HA" id="7e0AhKzCfnl" role="TZ5H$">
           <node concept="1dT_AC" id="7e0AhKzCfnm" role="1dT_Ay">
-            <property role="1dT_AB" value="Stores all not-yet generated stubs." />
+            <property role="1dT_AB" value="Stores all not-yet generated stubs which have been passed to " />
+          </node>
+          <node concept="1dT_AA" id="3mhEivYSKpO" role="1dT_Ay">
+            <node concept="92FcH" id="3mhEivYSKpU" role="qph3F">
+              <node concept="TZ5HA" id="3mhEivYSKpW" role="2XjZqd" />
+              <node concept="VXe0Z" id="3mhEivYSKq3" role="92FcQ">
+                <ref role="VXe0S" node="7e0AhKzC1Zd" resolve="generateStubs" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="3mhEivYSKpN" role="1dT_Ay">
+            <property role="1dT_AB" value="." />
           </node>
         </node>
       </node>
@@ -2636,7 +3669,18 @@
     <node concept="3UR2Jj" id="7e0AhKzC1xJ" role="lGtFl">
       <node concept="TZ5HA" id="7e0AhKzC1UH" role="TZ5H$">
         <node concept="1dT_AC" id="7e0AhKzC1UI" role="1dT_Ay">
-          <property role="1dT_AB" value="A straight-forward implementation of StubCollectionGenerator" />
+          <property role="1dT_AB" value="A straight-forward implementation of " />
+        </node>
+        <node concept="1dT_AA" id="3mhEivYRcDV" role="1dT_Ay">
+          <node concept="92FcH" id="3mhEivYRcE1" role="qph3F">
+            <node concept="TZ5HA" id="3mhEivYRcE3" role="2XjZqd" />
+            <node concept="VXe08" id="3mhEivYRcEa" role="92FcQ">
+              <ref role="VXe09" node="7e0AhKzBSVG" resolve="StubCollectionGenerator" />
+            </node>
+          </node>
+        </node>
+        <node concept="1dT_AC" id="3mhEivYRcDU" role="1dT_Ay">
+          <property role="1dT_AB" value="." />
         </node>
       </node>
     </node>
