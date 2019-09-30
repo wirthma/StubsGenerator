@@ -1,8 +1,8 @@
 # Stubs Generator
 
-*Stubs Generator* is a plugin to Jetbrains MPS which provides users with easy creation of stub model
-generators for their MPS language. *Stubs Generator* is language-independent, it can be used for
-any MPS language.
+*Stubs Generator* is a plugin to Jetbrains MPS which provides users with easy creation of stub
+models generators for their MPS language. *Stubs Generator* is language-independent, it can be
+used for any MPS language.
 
 ## Use case
 
@@ -12,8 +12,9 @@ easy creation of a generator which constructs MPS stubs for the library entities
 JetBrains MPS BaseLanguage stubs for Java libraries).
 
 Although it has not been designed to any other purpose, it may have even different kinds of use
-cases as the plugin is rather general. If you come with an interesting usage of the plugin, please,
-let us know to update this use-cases section.
+cases as the plugin is rather general. The code itself is even not much about stubs as rather
+about generation of general MPS entities. If you come with an interesting usage of the plugin,
+please, let us know.
 
 ## Scale
 
@@ -40,7 +41,7 @@ The second listed part is language-independent whereas the first and the third p
 language-specific. The *Stubs Generator* encapsulates this second listed part providing as much
 universal support as possible to the two other parts. These other parts can be viewed as adapters of
 *Stub Generator* to a given language and will be further referenced as *specification-side adapter*
-and *language-side adapter*.
+(the first part) and *language-side adapter* (the third part).
 
 *Stubs Generator* expects to recieve an XML file from the *specification-side adapter* which
 describes the stubs which should be created. There are only few requirements for the XML structure:
@@ -48,34 +49,35 @@ describes the stubs which should be created. There are only few requirements for
 - Each element must have a mandatory attribute `stubId` whose value uniquely identifies the stub.
 For example, a stub for a class `java.util.List` could have a string `java.util.List` as a value
 of this attribute.
-- All stubs which should be root nodes in the generated stubs model must have the attribute
-`isRootNode` set. The value is irrelevant. If the element has not this attribute, it will not be
-generated as a root node in the generated stubs model.
 
 Nothing else is required. The details of the structure are important to the *language-side adapter*
 but not to *Stubs Generator*. This is the key power of *Stubs Generator*: it is universal.
 
 When *Stubs Generator* recieves the XML file, it parses it to a tree of stub specification
-structures (*StubSpec* class) which are interconnected in the same way as the elements in
-the XML file. Each *StubSpec* corresponds to one element of the original XML.
+structures (*MpsEntitySpec* class) which are interconnected in the same way as the elements in
+the XML file. Each *MpsEntitySpec* corresponds to one element of the original XML.
 
 Then *Stubs Generator* traverses the tree from the bottom to the top. The reason for this direction
 is that the parent stubs typically depend on the child stubs. This way the dependencies are
 efficiently satisfied.
 
-Each *StubSpec* node of the tree is passed to the *language-side adapter* which is expected to
+Each *MpsEntitySpec* node of the tree is passed to the *language-side adapter* which is expected to
 process this particular node and generate a stub for it. It should not generate any other stubs.
-It is needs references to some other stubs, it should ask the *Stubs Generator* (specifically, the
-class *StubCollectionGenerator*) for it. It is transparent to the *language-side adapter* whether
-the requested stub has or has not been generated yet.
+If it needs references to some other stubs, it should ask the *Stubs Generator* (specifically, the
+class *MpsEntityCollectionGenerator*) for it. It is transparent to the *language-side adapter*
+whether the requested stub has or has not been generated yet.
 
 All-in-all *Stubs Generator* provides a helpful support of implementing the core of stubs generation
 common to all languages. *Language-side adapter* and *specification-side adapter* do not have to
-deal with non-language-specific code which makes them easy to develop.
+deal with non-language-specific code which makes them easier to develop.
 
 ### Getting the plugin running
 
-1. Install the plugin from JetBrains MPS Marketplace or build it from this repository.
+1. Install the plugin:
+    - from JetBrains MPS Marketplace,
+    - or build it from this repository. First, rebuild the project and then right-click the
+    *StubsGenerator* script in the *StubsGenerator.build* and select `Run`. This results in
+    creation of a plugin ZIP file in the plugins directory hierarchy.)
 2. Develop a *specification-side adapter* which produces XML files representing the stubs
 specification. The requirements for the XML file structure are described above. You can also
 write the XML file manually if you only want to try *Stubs Generator* out.
@@ -87,26 +89,31 @@ write the XML file manually if you only want to try *Stubs Generator* out.
 6. Import a *StubsGenerator.core* dependency to the dependencies of the *core* model and
 a *StubsGenerator.plugin* dependency to the dependencies of the *plugin* model (Right-click
 the model and select `Model Properties`).
-7. Implement a new BaseLanguage class inheriting *SingleStubGenerator* from the *Stubs Generator*
-plugin. Put it inside the *core* model.
-    - The *StubSpec* parameter contains the stub specification parsed from a corresponding XML
-    element. *StubSpec* is basically a *Map* of original XML attributes to their values. These
-    attributes are called *properties* in the plugin terminology. There are three well-known
+7. Implement a new BaseLanguage class inheriting *SingleMpsEntityGenerator* from the
+*Stubs Generator* plugin. Put your class inside the *core* model.
+    - The *MpsEntitySpec* parameter contains the stub specification parsed from a corresponding XML
+    element. *MpsEntitySpec* is basically a *Map* of original XML attributes to their values. These
+    attributes are called *properties* in the plugin terminology. There are two well-known
     properties:
-        - *stubKind* = The XML element name
-        - *stubId* = A unique identification of the stub
-        - *isRootNode* = Signal to *Stubs Generator* so that it creates a root node for the stub.
-        You can ignore this property (here, in the *language-side adapter*).
-    - The *StubCollectionGenerator* parameter contains a reference to *Stubs Generator*. Whenever
-    you want a reference to another stub, you should use this object and ask it for the stub
-    reference. For this purpose you will need the stub's unique identification and implementation
-    of a *StubFinder*class which can produce hints to look the *StubSpec* of the requested stub
-    up in a tree. The stub look-up provided by *Stubs Generator* should be fast (given the XML
-    tree is well balanced).
-8. Create plugin actions which trigger the stub generation. This is not specific to the
-*Stubs Generator* plugin and therefore we leave it to the documentation of JetBrains MPS.
-You can find useful the class Action in the *StubsGenerator.plugin* model which provides
-a wrapper to a call to *Stubs Generator*.
+        - *entityKind* = The XML element name
+        - *entityId* = A unique identification of the stub
+    - The *MpsEntityCollectionGenerator* parameter represents a contact to *Stubs Generator*.
+    Whenever you want a reference to another stub, you should use this object and ask it for the
+    stub reference. For this purpose you will need the stub's unique identification and
+    implementation of a *MpsEntityFinder* class which can produce hints to look up the
+    *MpsEntitySpec* of the requested stub in a tree. The stub look-up provided by *Stubs Generator*
+    should be fast (given the XML tree is reasonably balanced).
+    - The return value is an *MpsEntity* which represents either a stub (*SNode*) or a model
+    (*SModel*) or a special object which can represent both of them - the representation is selected
+    according to the context whether the entity is included in an *SNode* entity (stub) somewhere
+    up in the tree or it is included only in models. For example, *MpsEntitySpec* for a C# namespace
+    is expected to result in this special object as it can be an *SNode* if included in a class for
+    example or it can be an *SModel* if not.
+8. Create plugin actions which trigger the stubs generation. You can find useful the class *Action*
+in the *StubsGenerator.plugin* model which provides a wrapper to a call to *Stubs Generator*. You
+are expected to create an action which simply calls a method from the *Action* class. The exact
+guide is not specific to the *Stubs Generator* plugin and therefore we leave it to the
+documentation of JetBrains MPS.
 9. Create the *build* solution for your plugin (see the JetBrains MPS documentation for more
 information).
 
