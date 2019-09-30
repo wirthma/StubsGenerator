@@ -125,14 +125,10 @@
           <ref role="3uigEE" to="z1c3:~Solution" resolve="Solution" />
         </node>
       </node>
-      <node concept="37vLTG" id="RqQxlJCvy7" role="3clF46">
-        <property role="TrG5h" value="modelName" />
-        <node concept="17QB3L" id="3mhEivYV2Yi" role="1tU5fm" />
-      </node>
       <node concept="37vLTG" id="RqQxlJCuKQ" role="3clF46">
-        <property role="TrG5h" value="singleStubGenerator" />
+        <property role="TrG5h" value="singleMpsEntityGenerator" />
         <node concept="3uibUv" id="RqQxlJCuRH" role="1tU5fm">
-          <ref role="3uigEE" to="v0q3:6tMbnEHCSHR" resolve="SingleStubGenerator" />
+          <ref role="3uigEE" to="v0q3:6tMbnEHCSHR" resolve="SingleMpsEntityGenerator" />
         </node>
       </node>
       <node concept="37vLTG" id="RqQxlJCuSm" role="3clF46">
@@ -145,7 +141,7 @@
         <node concept="2xdQw9" id="RqQxlJCx0f" role="3cqZAp">
           <property role="2xdLsb" value="h1akgim/info" />
           <node concept="Xl_RD" id="RqQxlJCx0g" role="9lYJi">
-            <property role="Xl_RC" value="Stub generation started!" />
+            <property role="Xl_RC" value="Stubs generation started!" />
           </node>
         </node>
         <node concept="3clFbH" id="RqQxlJCwRv" role="3cqZAp" />
@@ -157,29 +153,29 @@
         </node>
         <node concept="3cpWs8" id="7e0AhKzGRyz" role="3cqZAp">
           <node concept="3cpWsn" id="7e0AhKzGRy$" role="3cpWs9">
-            <property role="TrG5h" value="stubSpecsReader" />
+            <property role="TrG5h" value="specsReader" />
             <node concept="3uibUv" id="7e0AhKzGRy_" role="1tU5fm">
-              <ref role="3uigEE" to="v0q3:3mOrQ__xO8a" resolve="StubSpecsReader" />
+              <ref role="3uigEE" to="v0q3:3mOrQ__xO8a" resolve="MpsEntitySpecsReader" />
             </node>
             <node concept="2ShNRf" id="7e0AhKzGRFN" role="33vP2m">
               <node concept="HV5vD" id="7e0AhKzGRT2" role="2ShVmc">
-                <ref role="HV5vE" to="v0q3:3mOrQ__xO7_" resolve="XmlStubSpecsReader" />
+                <ref role="HV5vE" to="v0q3:3mOrQ__xO7_" resolve="XmlMpsEntitySpecsReader" />
               </node>
             </node>
           </node>
         </node>
         <node concept="3cpWs8" id="7e0AhKzGSKQ" role="3cqZAp">
           <node concept="3cpWsn" id="7e0AhKzGSKW" role="3cpWs9">
-            <property role="TrG5h" value="stubSpecs" />
+            <property role="TrG5h" value="specs" />
             <node concept="3uibUv" id="7e0AhKzGSKY" role="1tU5fm">
               <ref role="3uigEE" to="33ny:~List" resolve="List" />
               <node concept="3uibUv" id="7e0AhKzGT0i" role="11_B2D">
-                <ref role="3uigEE" to="v0q3:3mOrQ__xOlU" resolve="StubSpec" />
+                <ref role="3uigEE" to="v0q3:3mOrQ__xOlU" resolve="MpsEntitySpec" />
               </node>
             </node>
             <node concept="2OqwBi" id="7e0AhKzGT95" role="33vP2m">
               <node concept="37vLTw" id="7e0AhKzGT6V" role="2Oq$k0">
-                <ref role="3cqZAo" node="7e0AhKzGRy$" resolve="stubSpecsReader" />
+                <ref role="3cqZAo" node="7e0AhKzGRy$" resolve="specsReader" />
               </node>
               <node concept="liA8E" id="7e0AhKzGTcU" role="2OqNvi">
                 <ref role="37wK5l" to="v0q3:7e0AhKzFDUO" resolve="parseFile" />
@@ -190,75 +186,35 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="RqQxlJCxVk" role="3cqZAp" />
-        <node concept="2xdQw9" id="RqQxlJCxDe" role="3cqZAp">
-          <property role="2xdLsb" value="h1akgim/info" />
-          <node concept="Xl_RD" id="RqQxlJCxDf" role="9lYJi">
-            <property role="Xl_RC" value="Creating a model in the given solution..." />
-          </node>
-        </node>
-        <node concept="3cpWs8" id="6tMbnEHAMWK" role="3cqZAp">
-          <node concept="3cpWsn" id="6tMbnEHAMWL" role="3cpWs9">
-            <property role="TrG5h" value="modelCreator" />
-            <node concept="3uibUv" id="6tMbnEHAN6k" role="1tU5fm">
-              <ref role="3uigEE" to="v0q3:3mOrQ__xOiZ" resolve="ModelCreator" />
-            </node>
-            <node concept="2ShNRf" id="6tMbnEHAN7t" role="33vP2m">
-              <node concept="HV5vD" id="6tMbnEHAOg_" role="2ShVmc">
-                <ref role="HV5vE" to="v0q3:7e0AhKzBVEu" resolve="BasicModelCreator" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs8" id="7e0AhKzEJeX" role="3cqZAp">
-          <node concept="3cpWsn" id="7e0AhKzEJeY" role="3cpWs9">
-            <property role="TrG5h" value="model" />
-            <node concept="3uibUv" id="7e0AhKzEJeZ" role="1tU5fm">
-              <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
-            </node>
-            <node concept="2OqwBi" id="7e0AhKzEGUI" role="33vP2m">
-              <node concept="37vLTw" id="7e0AhKzEGM7" role="2Oq$k0">
-                <ref role="3cqZAo" node="6tMbnEHAMWL" resolve="modelCreator" />
-              </node>
-              <node concept="liA8E" id="7e0AhKzEH2h" role="2OqNvi">
-                <ref role="37wK5l" to="v0q3:3mOrQ__xOk8" resolve="createModel" />
-                <node concept="37vLTw" id="RqQxlJCws$" role="37wK5m">
-                  <ref role="3cqZAo" node="RqQxlJCuth" resolve="repository" />
-                </node>
-                <node concept="37vLTw" id="RqQxlJCwvr" role="37wK5m">
-                  <ref role="3cqZAo" node="RqQxlJCu5J" resolve="solution" />
-                </node>
-                <node concept="37vLTw" id="RqQxlJCwyh" role="37wK5m">
-                  <ref role="3cqZAo" node="RqQxlJCvy7" resolve="modelName" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbH" id="7e0AhKzEHhS" role="3cqZAp" />
         <node concept="2xdQw9" id="RqQxlJCyeu" role="3cqZAp">
           <property role="2xdLsb" value="h1akgim/info" />
           <node concept="Xl_RD" id="RqQxlJCyev" role="9lYJi">
-            <property role="Xl_RC" value="Generating stubs into the created model..." />
+            <property role="Xl_RC" value="Generating stubs and models..." />
           </node>
         </node>
         <node concept="3cpWs8" id="7e0AhKzEHLf" role="3cqZAp">
           <node concept="3cpWsn" id="7e0AhKzEHLg" role="3cpWs9">
-            <property role="TrG5h" value="stubCollectionGenerator" />
+            <property role="TrG5h" value="generator" />
             <node concept="3uibUv" id="7e0AhKzEHLh" role="1tU5fm">
-              <ref role="3uigEE" to="v0q3:7e0AhKzBSVG" resolve="StubCollectionGenerator" />
+              <ref role="3uigEE" to="v0q3:7e0AhKzBSVG" resolve="MpsEntityCollectionGenerator" />
             </node>
             <node concept="2ShNRf" id="7e0AhKzEHTk" role="33vP2m">
               <node concept="1pGfFk" id="7e0AhKzEI61" role="2ShVmc">
-                <ref role="37wK5l" to="v0q3:7e0AhKzC1W3" resolve="BasicStubCollectionGenerator" />
+                <ref role="37wK5l" to="v0q3:7e0AhKzC1W3" resolve="BasicMpsEntityCollectionGenerator" />
                 <node concept="37vLTw" id="RqQxlJCwDg" role="37wK5m">
-                  <ref role="3cqZAo" node="RqQxlJCuKQ" resolve="singleStubGenerator" />
+                  <ref role="3cqZAo" node="RqQxlJCuKQ" resolve="singleMpsEntityGenerator" />
                 </node>
                 <node concept="37vLTw" id="RqQxlJCwFs" role="37wK5m">
                   <ref role="3cqZAo" node="RqQxlJCuth" resolve="repository" />
                 </node>
-                <node concept="37vLTw" id="7e0AhKzEJpl" role="37wK5m">
-                  <ref role="3cqZAo" node="7e0AhKzEJeY" resolve="model" />
+                <node concept="37vLTw" id="5YnbZedYCh_" role="37wK5m">
+                  <ref role="3cqZAo" node="RqQxlJCu5J" resolve="solution" />
+                </node>
+                <node concept="2ShNRf" id="5YnbZedYBSF" role="37wK5m">
+                  <node concept="HV5vD" id="5YnbZedYC8M" role="2ShVmc">
+                    <ref role="HV5vE" to="v0q3:7e0AhKzBVEu" resolve="BasicModelCreator" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -267,12 +223,12 @@
         <node concept="3clFbF" id="7e0AhKzEJFD" role="3cqZAp">
           <node concept="2OqwBi" id="7e0AhKzEJRg" role="3clFbG">
             <node concept="37vLTw" id="7e0AhKzEJFB" role="2Oq$k0">
-              <ref role="3cqZAo" node="7e0AhKzEHLg" resolve="stubCollectionGenerator" />
+              <ref role="3cqZAo" node="7e0AhKzEHLg" resolve="generator" />
             </node>
             <node concept="liA8E" id="7e0AhKzEJYE" role="2OqNvi">
-              <ref role="37wK5l" to="v0q3:7e0AhKzBTv7" resolve="generateStubs" />
+              <ref role="37wK5l" to="v0q3:7e0AhKzBTv7" resolve="generateMpsEntities" />
               <node concept="37vLTw" id="7e0AhKzGTm9" role="37wK5m">
-                <ref role="3cqZAo" node="7e0AhKzGSKW" resolve="stubSpecs" />
+                <ref role="3cqZAo" node="7e0AhKzGSKW" resolve="specs" />
               </node>
             </node>
           </node>
@@ -281,20 +237,20 @@
         <node concept="2xdQw9" id="3mOrQ__wzii" role="3cqZAp">
           <property role="2xdLsb" value="h1akgim/info" />
           <node concept="Xl_RD" id="3mOrQ__wzik" role="9lYJi">
-            <property role="Xl_RC" value="Stub generation action finished!" />
+            <property role="Xl_RC" value="Stubs generation action finished!" />
           </node>
         </node>
       </node>
       <node concept="P$JXv" id="RqQxlJCuJQ" role="lGtFl">
         <node concept="TZ5HA" id="RqQxlJCuJR" role="TZ5H$">
           <node concept="1dT_AC" id="RqQxlJCuJS" role="1dT_Ay">
-            <property role="1dT_AB" value="An action which generates a " />
+            <property role="1dT_AB" value="An action which generates " />
           </node>
           <node concept="1dT_AA" id="3mhEivYV1UL" role="1dT_Ay">
             <node concept="92FcH" id="3mhEivYV1UR" role="qph3F">
               <node concept="TZ5HA" id="3mhEivYV1UT" role="2XjZqd">
                 <node concept="1dT_AC" id="3mhEivYV2JX" role="1dT_Ay">
-                  <property role="1dT_AB" value="model" />
+                  <property role="1dT_AB" value="models" />
                 </node>
               </node>
               <node concept="VXe08" id="3mhEivYV2JL" role="92FcQ">
@@ -308,7 +264,7 @@
         </node>
         <node concept="TZ5HA" id="3mhEivYV2JZ" role="TZ5H$">
           <node concept="1dT_AC" id="3mhEivYV2K0" role="1dT_Ay">
-            <property role="1dT_AB" value="with stubs which are specified by the given file into the given" />
+            <property role="1dT_AB" value="with stubs which are specified by the given file. The resulting stubs are put into the given" />
           </node>
         </node>
         <node concept="TZ5HA" id="3mhEivYV2Kz" role="TZ5H$">
@@ -348,27 +304,32 @@
             </node>
           </node>
           <node concept="1dT_AC" id="3mhEivYV2Nx" role="1dT_Ay">
-            <property role="1dT_AB" value="" />
+            <property role="1dT_AB" value=". The generation uses" />
           </node>
         </node>
         <node concept="TZ5HA" id="3mhEivYV2Ov" role="TZ5H$">
           <node concept="1dT_AC" id="3mhEivYV2Ow" role="1dT_Ay">
-            <property role="1dT_AB" value="using the given " />
+            <property role="1dT_AB" value="the given " />
           </node>
           <node concept="1dT_AA" id="3mhEivYV2Pk" role="1dT_Ay">
             <node concept="92FcH" id="3mhEivYV2Pq" role="qph3F">
               <node concept="TZ5HA" id="3mhEivYV2Ps" role="2XjZqd">
                 <node concept="1dT_AC" id="3mhEivYV2Q3" role="1dT_Ay">
-                  <property role="1dT_AB" value="single-stub generator" />
+                  <property role="1dT_AB" value="single MPS entity generator" />
                 </node>
               </node>
               <node concept="VXe08" id="3mhEivYV2PF" role="92FcQ">
-                <ref role="VXe09" to="v0q3:6tMbnEHCSHR" resolve="SingleStubGenerator" />
+                <ref role="VXe09" to="v0q3:6tMbnEHCSHR" resolve="SingleMpsEntityGenerator" />
               </node>
             </node>
           </node>
           <node concept="1dT_AC" id="3mhEivYV2Pj" role="1dT_Ay">
-            <property role="1dT_AB" value="" />
+            <property role="1dT_AB" value=" for" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="5YnbZedYkbH" role="TZ5H$">
+          <node concept="1dT_AC" id="5YnbZedYkbI" role="1dT_Ay">
+            <property role="1dT_AB" value="generation of individual stubs and models." />
           </node>
         </node>
       </node>
