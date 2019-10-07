@@ -121,7 +121,7 @@
       </node>
       <node concept="37vLTG" id="RqQxlJCu5J" role="3clF46">
         <property role="TrG5h" value="solution" />
-        <node concept="3uibUv" id="RqQxlJCuqN" role="1tU5fm">
+        <node concept="3uibUv" id="5Ee80ncseXr" role="1tU5fm">
           <ref role="3uigEE" to="z1c3:~Solution" resolve="Solution" />
         </node>
       </node>
@@ -129,6 +129,12 @@
         <property role="TrG5h" value="singleMpsEntityGenerator" />
         <node concept="3uibUv" id="RqQxlJCuRH" role="1tU5fm">
           <ref role="3uigEE" to="v0q3:6tMbnEHCSHR" resolve="SingleMpsEntityGenerator" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="5Ee80ncr8tw" role="3clF46">
+        <property role="TrG5h" value="constructionHelper" />
+        <node concept="3uibUv" id="5Ee80ncr8Ba" role="1tU5fm">
+          <ref role="3uigEE" to="v0q3:5Ee80ncr7Dy" resolve="ConstructionHelper" />
         </node>
       </node>
       <node concept="37vLTG" id="RqQxlJCuSm" role="3clF46">
@@ -205,6 +211,9 @@
                 <node concept="37vLTw" id="RqQxlJCwDg" role="37wK5m">
                   <ref role="3cqZAo" node="RqQxlJCuKQ" resolve="singleMpsEntityGenerator" />
                 </node>
+                <node concept="37vLTw" id="5Ee80ncr8Ht" role="37wK5m">
+                  <ref role="3cqZAo" node="5Ee80ncr8tw" resolve="constructionHelper" />
+                </node>
                 <node concept="37vLTw" id="RqQxlJCwFs" role="37wK5m">
                   <ref role="3cqZAo" node="RqQxlJCuth" resolve="repository" />
                 </node>
@@ -278,7 +287,7 @@
                   <property role="1dT_AB" value="solution" />
                 </node>
               </node>
-              <node concept="VXe08" id="3mhEivYV2Lx" role="92FcQ">
+              <node concept="VXe08" id="5Ee80ncseQK" role="92FcQ">
                 <ref role="VXe09" to="z1c3:~Solution" resolve="Solution" />
               </node>
             </node>
@@ -329,7 +338,47 @@
         </node>
         <node concept="TZ5HA" id="5YnbZedYkbH" role="TZ5H$">
           <node concept="1dT_AC" id="5YnbZedYkbI" role="1dT_Ay">
-            <property role="1dT_AB" value="generation of individual stubs and models." />
+            <property role="1dT_AB" value="generation of individual stubs and models. It also uses the given" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="5Ee80ncrd26" role="TZ5H$">
+          <node concept="1dT_AC" id="5Ee80ncrd27" role="1dT_Ay">
+            <property role="1dT_AB" value="" />
+          </node>
+          <node concept="1dT_AA" id="5Ee80ncrchp" role="1dT_Ay">
+            <node concept="92FcH" id="5Ee80ncrchB" role="qph3F">
+              <node concept="TZ5HA" id="5Ee80ncrchD" role="2XjZqd">
+                <node concept="1dT_AC" id="5Ee80ncrd3q" role="1dT_Ay">
+                  <property role="1dT_AB" value="construction helper" />
+                </node>
+              </node>
+              <node concept="VXe08" id="5Ee80ncrd08" role="92FcQ">
+                <ref role="VXe09" to="v0q3:5Ee80ncr7Dy" resolve="ConstructionHelper" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="5Ee80ncrcho" role="1dT_Ay">
+            <property role="1dT_AB" value="" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="5Ee80ncrd0w" role="TZ5H$">
+          <node concept="1dT_AC" id="5Ee80ncrd0x" role="1dT_Ay">
+            <property role="1dT_AB" value="for proper construction of " />
+          </node>
+          <node concept="1dT_AA" id="5Ee80ncrd1y" role="1dT_Ay">
+            <node concept="92FcH" id="5Ee80ncrd1C" role="qph3F">
+              <node concept="TZ5HA" id="5Ee80ncrd1E" role="2XjZqd">
+                <node concept="1dT_AC" id="5Ee80ncrd24" role="1dT_Ay">
+                  <property role="1dT_AB" value="models" />
+                </node>
+              </node>
+              <node concept="VXe08" id="5Ee80ncrd1T" role="92FcQ">
+                <ref role="VXe09" to="mhbf:~SModel" resolve="SModel" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="5Ee80ncrd1x" role="1dT_Ay">
+            <property role="1dT_AB" value="" />
           </node>
         </node>
       </node>
