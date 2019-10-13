@@ -6439,14 +6439,6 @@
     <node concept="3clFb_" id="k9tZZRVK5i" role="jymVt">
       <property role="TrG5h" value="getStub" />
       <node concept="3clFbS" id="k9tZZRVK5l" role="3clF47">
-        <node concept="3clFbF" id="k9tZZS1Fp4" role="3cqZAp">
-          <node concept="37vLTI" id="k9tZZS1F_T" role="3clFbG">
-            <node concept="3clFbT" id="k9tZZS1FF7" role="37vLTx" />
-            <node concept="37vLTw" id="k9tZZS1Fp2" role="37vLTJ">
-              <ref role="3cqZAo" node="k9tZZS1EJT" resolve="isConsideredToBeModel" />
-            </node>
-          </node>
-        </node>
         <node concept="3cpWs6" id="k9tZZRVK7L" role="3cqZAp">
           <node concept="37vLTw" id="k9tZZRVKcc" role="3cqZAk">
             <ref role="3cqZAo" node="k9tZZRVJ4d" resolve="stub" />
@@ -6478,42 +6470,95 @@
             <property role="1dT_AB" value="." />
           </node>
         </node>
-        <node concept="TZ5HA" id="k9tZZS1FFy" role="TZ5H$">
-          <node concept="1dT_AC" id="k9tZZS1FFz" role="1dT_Ay">
-            <property role="1dT_AB" value="" />
-          </node>
-          <node concept="2U$1Ah" id="k9tZZS1FFT" role="1dT_Ay">
-            <property role="2U$1Ai" value="p" />
-            <node concept="TZ5HA" id="k9tZZS1FFU" role="2U$1Aj" />
-          </node>
-          <node concept="1dT_AC" id="k9tZZS1FFS" role="1dT_Ay">
-            <property role="1dT_AB" value="" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="27C6ztZdE8v" role="jymVt" />
+    <node concept="3clFb_" id="27C6ztZdEny" role="jymVt">
+      <property role="TrG5h" value="markAsModel" />
+      <node concept="3clFbS" id="27C6ztZdEn_" role="3clF47">
+        <node concept="3clFbF" id="27C6ztZdEHx" role="3cqZAp">
+          <node concept="37vLTI" id="27C6ztZdEQx" role="3clFbG">
+            <node concept="3clFbT" id="27C6ztZdERN" role="37vLTx">
+              <property role="3clFbU" value="true" />
+            </node>
+            <node concept="37vLTw" id="27C6ztZdEHw" role="37vLTJ">
+              <ref role="3cqZAo" node="k9tZZS1EJT" resolve="isConsideredToBeModel" />
+            </node>
           </node>
         </node>
-        <node concept="TZ5HA" id="k9tZZS1FGf" role="TZ5H$">
-          <node concept="1dT_AC" id="k9tZZS1FGg" role="1dT_Ay">
-            <property role="1dT_AB" value="Note that once this method is called, the " />
+      </node>
+      <node concept="3Tm1VV" id="27C6ztZdEic" role="1B3o_S" />
+      <node concept="3cqZAl" id="27C6ztZdEnf" role="3clF45" />
+      <node concept="P$JXv" id="27C6ztZdEzc" role="lGtFl">
+        <node concept="TZ5HA" id="27C6ztZdEzd" role="TZ5H$">
+          <node concept="1dT_AC" id="27C6ztZdEze" role="1dT_Ay">
+            <property role="1dT_AB" value="Marks this " />
           </node>
-          <node concept="1dT_AA" id="k9tZZS1FGF" role="1dT_Ay">
-            <node concept="92FcH" id="k9tZZS1FGT" role="qph3F">
-              <node concept="TZ5HA" id="k9tZZS1FGV" role="2XjZqd" />
-              <node concept="VXe08" id="k9tZZS1FHa" role="92FcQ">
+          <node concept="1dT_AA" id="27C6ztZdEFj" role="1dT_Ay">
+            <node concept="92FcH" id="27C6ztZdEFx" role="qph3F">
+              <node concept="TZ5HA" id="27C6ztZdEFz" role="2XjZqd" />
+              <node concept="VXe08" id="27C6ztZdEFM" role="92FcQ">
                 <ref role="VXe09" node="k9tZZRVJ1s" resolve="FuzzyModelStub" />
               </node>
             </node>
           </node>
-          <node concept="1dT_AC" id="k9tZZS1FGE" role="1dT_Ay">
-            <property role="1dT_AB" value=" will never be considered to be a " />
+          <node concept="1dT_AC" id="27C6ztZdEFi" role="1dT_Ay">
+            <property role="1dT_AB" value=" to represent a " />
           </node>
-          <node concept="1dT_AA" id="k9tZZS1FIn" role="1dT_Ay">
-            <node concept="92FcH" id="k9tZZS1FIE" role="qph3F">
-              <node concept="TZ5HA" id="k9tZZS1FIG" role="2XjZqd" />
-              <node concept="VXe08" id="k9tZZS1FIV" role="92FcQ">
+          <node concept="1dT_AA" id="27C6ztZdEGh" role="1dT_Ay">
+            <node concept="92FcH" id="27C6ztZdEG$" role="qph3F">
+              <node concept="TZ5HA" id="27C6ztZdEGA" role="2XjZqd" />
+              <node concept="VXe08" id="27C6ztZdEGP" role="92FcQ">
                 <ref role="VXe09" node="k9tZZRVH9n" resolve="Model" />
               </node>
             </node>
           </node>
-          <node concept="1dT_AC" id="k9tZZS1FIm" role="1dT_Ay">
+          <node concept="1dT_AC" id="27C6ztZdEGg" role="1dT_Ay">
+            <property role="1dT_AB" value="." />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="27C6ztZdF32" role="jymVt" />
+    <node concept="3clFb_" id="27C6ztZdESJ" role="jymVt">
+      <property role="TrG5h" value="markAsStub" />
+      <node concept="3clFbS" id="27C6ztZdESK" role="3clF47">
+        <node concept="3clFbF" id="27C6ztZdESL" role="3cqZAp">
+          <node concept="37vLTI" id="27C6ztZdESM" role="3clFbG">
+            <node concept="3clFbT" id="27C6ztZdESN" role="37vLTx" />
+            <node concept="37vLTw" id="27C6ztZdESO" role="37vLTJ">
+              <ref role="3cqZAo" node="k9tZZS1EJT" resolve="isConsideredToBeModel" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="27C6ztZdESP" role="1B3o_S" />
+      <node concept="3cqZAl" id="27C6ztZdESQ" role="3clF45" />
+      <node concept="P$JXv" id="27C6ztZdESR" role="lGtFl">
+        <node concept="TZ5HA" id="27C6ztZdESS" role="TZ5H$">
+          <node concept="1dT_AC" id="27C6ztZdEST" role="1dT_Ay">
+            <property role="1dT_AB" value="Marks this " />
+          </node>
+          <node concept="1dT_AA" id="27C6ztZdESU" role="1dT_Ay">
+            <node concept="92FcH" id="27C6ztZdESV" role="qph3F">
+              <node concept="TZ5HA" id="27C6ztZdESW" role="2XjZqd" />
+              <node concept="VXe08" id="27C6ztZdESX" role="92FcQ">
+                <ref role="VXe09" node="k9tZZRVJ1s" resolve="FuzzyModelStub" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="27C6ztZdESY" role="1dT_Ay">
+            <property role="1dT_AB" value=" to represent a " />
+          </node>
+          <node concept="1dT_AA" id="27C6ztZdESZ" role="1dT_Ay">
+            <node concept="92FcH" id="27C6ztZdET0" role="qph3F">
+              <node concept="TZ5HA" id="27C6ztZdET1" role="2XjZqd" />
+              <node concept="VXe08" id="27C6ztZdF9q" role="92FcQ">
+                <ref role="VXe09" node="k9tZZRVI1b" resolve="Stub" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="27C6ztZdET3" role="1dT_Ay">
             <property role="1dT_AB" value="." />
           </node>
         </node>
@@ -6741,50 +6786,23 @@
       </node>
       <node concept="TZ5HA" id="k9tZZRVJ5r" role="TZ5H$">
         <node concept="1dT_AC" id="k9tZZRVJ5s" role="1dT_Ay">
-          <property role="1dT_AB" value="The representation will be selected depending on the context of the MPS entity: if the " />
+          <property role="1dT_AB" value="The representation will be determined by the " />
         </node>
-        <node concept="1dT_AA" id="k9tZZS1Evf" role="1dT_Ay">
-          <node concept="92FcH" id="k9tZZS1Evl" role="qph3F">
-            <node concept="TZ5HA" id="k9tZZS1Evn" role="2XjZqd" />
-            <node concept="VXe08" id="k9tZZS1Evu" role="92FcQ">
-              <ref role="VXe09" node="k9tZZRVI1b" resolve="Stub" />
+        <node concept="1dT_AA" id="27C6ztZdDWE" role="1dT_Ay">
+          <node concept="92FcH" id="27C6ztZdDWP" role="qph3F">
+            <node concept="TZ5HA" id="27C6ztZdDWR" role="2XjZqd" />
+            <node concept="VXe08" id="27C6ztZdDWY" role="92FcQ">
+              <ref role="VXe09" node="6tMbnEHCSHR" resolve="SingleMpsEntityGenerator" />
             </node>
           </node>
         </node>
-        <node concept="1dT_AC" id="k9tZZS1Eve" role="1dT_Ay">
-          <property role="1dT_AB" value="" />
+        <node concept="1dT_AC" id="27C6ztZdDWD" role="1dT_Ay">
+          <property role="1dT_AB" value=" depending on" />
         </node>
       </node>
-      <node concept="TZ5HA" id="k9tZZS1Evx" role="TZ5H$">
-        <node concept="1dT_AC" id="k9tZZS1Evy" role="1dT_Ay">
-          <property role="1dT_AB" value="will be retrieved some time in the future, it will be considered to represent a " />
-        </node>
-        <node concept="1dT_AA" id="k9tZZS1EuW" role="1dT_Ay">
-          <node concept="92FcH" id="k9tZZS1Ev2" role="qph3F">
-            <node concept="TZ5HA" id="k9tZZS1Ev4" role="2XjZqd" />
-            <node concept="VXe08" id="k9tZZS1Evb" role="92FcQ">
-              <ref role="VXe09" node="k9tZZRVI1b" resolve="Stub" />
-            </node>
-          </node>
-        </node>
-        <node concept="1dT_AC" id="k9tZZS1EuV" role="1dT_Ay">
-          <property role="1dT_AB" value="; otherwise" />
-        </node>
-      </node>
-      <node concept="TZ5HA" id="k9tZZS1EwT" role="TZ5H$">
-        <node concept="1dT_AC" id="k9tZZS1EwU" role="1dT_Ay">
-          <property role="1dT_AB" value="it will be considered to represent the " />
-        </node>
-        <node concept="1dT_AA" id="k9tZZS1Ex_" role="1dT_Ay">
-          <node concept="92FcH" id="k9tZZS1ExF" role="qph3F">
-            <node concept="TZ5HA" id="k9tZZS1ExH" role="2XjZqd" />
-            <node concept="VXe08" id="k9tZZS1ExO" role="92FcQ">
-              <ref role="VXe09" node="k9tZZRVH9n" resolve="Model" />
-            </node>
-          </node>
-        </node>
-        <node concept="1dT_AC" id="k9tZZS1Ex$" role="1dT_Ay">
-          <property role="1dT_AB" value="." />
+      <node concept="TZ5HA" id="27C6ztZdE0w" role="TZ5H$">
+        <node concept="1dT_AC" id="27C6ztZdE0x" role="1dT_Ay">
+          <property role="1dT_AB" value="the specific context of the MPS entity." />
         </node>
       </node>
     </node>
