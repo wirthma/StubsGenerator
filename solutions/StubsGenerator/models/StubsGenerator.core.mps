@@ -3731,9 +3731,44 @@
           </node>
         </node>
         <node concept="3clFbH" id="k9tZZRWlDn" role="3cqZAp" />
-        <node concept="3clFbF" id="k9tZZS2s6p" role="3cqZAp">
-          <node concept="1rXfSq" id="k9tZZS2s6n" role="3clFbG">
-            <ref role="37wK5l" node="k9tZZS2gTz" resolve="generateModels" />
+        <node concept="3clFbF" id="12yLFIiuzR5" role="3cqZAp">
+          <node concept="2OqwBi" id="12yLFIiuzR7" role="3clFbG">
+            <node concept="2OqwBi" id="12yLFIiuzR8" role="2Oq$k0">
+              <node concept="37vLTw" id="12yLFIiuzR9" role="2Oq$k0">
+                <ref role="3cqZAo" node="7e0AhKzDWLq" resolve="repository" />
+              </node>
+              <node concept="liA8E" id="12yLFIiuzRa" role="2OqNvi">
+                <ref role="37wK5l" to="lui2:~SRepository.getModelAccess()" resolve="getModelAccess" />
+              </node>
+            </node>
+            <node concept="liA8E" id="12yLFIiuzRb" role="2OqNvi">
+              <ref role="37wK5l" to="lui2:~ModelAccess.runWriteAction(java.lang.Runnable)" resolve="runWriteAction" />
+              <node concept="2ShNRf" id="12yLFIiuzRc" role="37wK5m">
+                <node concept="YeOm9" id="12yLFIiuzRd" role="2ShVmc">
+                  <node concept="1Y3b0j" id="12yLFIiuzRe" role="YeSDq">
+                    <property role="2bfB8j" value="true" />
+                    <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
+                    <ref role="1Y3XeK" to="wyt6:~Runnable" resolve="Runnable" />
+                    <node concept="3Tm1VV" id="12yLFIiuzRf" role="1B3o_S" />
+                    <node concept="3clFb_" id="12yLFIiuzRg" role="jymVt">
+                      <property role="TrG5h" value="run" />
+                      <node concept="3Tm1VV" id="12yLFIiuzRh" role="1B3o_S" />
+                      <node concept="3cqZAl" id="12yLFIiuzRi" role="3clF45" />
+                      <node concept="3clFbS" id="12yLFIiuzRj" role="3clF47">
+                        <node concept="3clFbF" id="k9tZZS2s6p" role="3cqZAp">
+                          <node concept="1rXfSq" id="k9tZZS2s6n" role="3clFbG">
+                            <ref role="37wK5l" node="k9tZZS2gTz" resolve="generateModels" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="2AHcQZ" id="12yLFIiuzRK" role="2AJF6D">
+                        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
         </node>
         <node concept="3clFbH" id="YfRIPMdrZ5" role="3cqZAp" />
