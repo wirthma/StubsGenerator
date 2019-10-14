@@ -33,7 +33,6 @@
     <module reference="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61(MPS.Platform)" version="0" />
     <module reference="552f07da-7329-4f60-82e1-8f550f3fe13d(StubsGenerator)" version="0" />
     <module reference="4b884c2d-fa2c-4f14-933e-02a0187f870a(TestLanguage)" version="0" />
-    <module reference="2429ba7e-dca6-48f7-8628-d00e9ac44245(TextGenGen)" version="0" />
     <module reference="2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)" version="0" />
     <module reference="9e98f4e2-decf-4e97-bf80-9109e8b759aa(jetbrains.mps.lang.feedback.context)" version="0" />
   </dependencyVersions>
