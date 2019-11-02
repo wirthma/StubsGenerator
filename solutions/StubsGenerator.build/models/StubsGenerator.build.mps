@@ -196,6 +196,11 @@
             <ref role="3bR37D" to="ffeo:1TaHNgiIbJb" resolve="MPS.Platform" />
           </node>
         </node>
+        <node concept="1SiIV0" id="5Ee80ncsf1x" role="3bR37C">
+          <node concept="3bR9La" id="5Ee80ncsf1y" role="1SiIV1">
+            <ref role="3bR37D" to="ffeo:7Kfy9QB6LfQ" resolve="jetbrains.mps.kernel" />
+          </node>
+        </node>
       </node>
       <node concept="1E1JtA" id="1xIH$tJvVMq" role="2G$12L">
         <property role="BnDLt" value="true" />
