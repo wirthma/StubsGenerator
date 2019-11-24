@@ -27,6 +27,12 @@ C# standard libraries.
 a brief design overview of the plugin.
 - [Tutorial for creation of a *language-side adapter*](./doc/tutorial_language_side_adapter.pdf)
 
+## Building the plugin
+
+- In solution `StubsGenerator.build` locate build project `StubsGenerator` (with spider icon)
+- Right click on spider icon
+- Use option `Run 'StubsGenerator'` 
+
 ## Example and Related Projects
 
 - Usage of the plugin for generation of library stubs for the C# base language:
