@@ -25,7 +25,8 @@ C# standard libraries.
 
 - [Design overview](doc/design.md): to be able to fully utilize the plugin, you should first read
 a brief design overview of the plugin.
-- [Tutorial for creation of a *language-side adapter*](./doc/tutorial_language_side_adapter.pdf)
+- [How to build the plugin](./doc/building_plugin)
+- [Tutorial for creation of a *language-side adapter*](./doc/tutorial_language_side_adapter.pdf) 
 
 ## Example and Related Projects
 
