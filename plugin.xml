@@ -4,7 +4,7 @@
   <category>Custom Languages</category>
   <description>Generator of stub models from a stubs specification file using a defined stub-to-concept transformation</description>
   <version>1.0</version>
-  <idea-version since-build="192.1"/>
+  <idea-version since-build="192.1" until-build="193.1"/>
 
   <depends>jetbrains.mps.core</depends>
   <depends>jetbrains.mps.build</depends>
