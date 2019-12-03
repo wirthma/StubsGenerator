@@ -30,7 +30,9 @@
       <concept id="7389400916848050060" name="jetbrains.mps.build.structure.BuildLayout_NamedContainer" flags="ng" index="3981dR">
         <child id="4380385936562148502" name="containerName" index="Nbhlr" />
       </concept>
-      <concept id="7389400916848136194" name="jetbrains.mps.build.structure.BuildFolderMacro" flags="ng" index="398rNT" />
+      <concept id="7389400916848136194" name="jetbrains.mps.build.structure.BuildFolderMacro" flags="ng" index="398rNT">
+        <child id="7389400916848144618" name="defaultPath" index="398pKh" />
+      </concept>
       <concept id="7389400916848153117" name="jetbrains.mps.build.structure.BuildSourceMacroRelativePath" flags="ng" index="398BVA">
         <reference id="7389400916848153130" name="macro" index="398BVh" />
       </concept>
@@ -108,6 +110,20 @@
     <node concept="3b7kt6" id="36GfYcKxStV" role="10PD9s" />
     <node concept="398rNT" id="36GfYcKxStW" role="1l3spd">
       <property role="TrG5h" value="mps_home" />
+      <node concept="55IIr" id="4699Jmt6WzO" role="398pKh">
+        <node concept="2Ry0Ak" id="4699Jmt6WzR" role="iGT6I">
+          <property role="2Ry0Am" value=".." />
+          <node concept="2Ry0Ak" id="4699Jmt6WzU" role="2Ry0An">
+            <property role="2Ry0Am" value=".." />
+            <node concept="2Ry0Ak" id="4699Jmt6WzZ" role="2Ry0An">
+              <property role="2Ry0Am" value=".." />
+              <node concept="2Ry0Ak" id="4699Jmt6W$4" role="2Ry0An">
+                <property role="2Ry0Am" value="MPS 2019.3 EAP" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="2sgV4H" id="36GfYcKxStX" role="1l3spa">
       <ref role="1l3spb" to="ffeo:3IKDaVZmzS6" resolve="mps" />
@@ -141,7 +157,7 @@
       </node>
       <node concept="3_J27D" id="36GfYcKxSu9" role="m$_w8">
         <node concept="3Mxwew" id="36GfYcKxSua" role="3MwsjC">
-          <property role="3MwjfP" value="1.0" />
+          <property role="3MwjfP" value="1.1" />
         </node>
       </node>
       <node concept="m$f5U" id="7Ol6YRMJJuJ" role="m$_yh">
