@@ -3,9 +3,9 @@
   <name>StubsGenerator</name>
   <category>Custom Languages</category>
   <description>Generator of stub models from a stubs specification file using a defined stub-to-concept transformation</description>
-  <version>1.1</version>
+  <version>1.2</version>
   <vendor>Martin Wirth (wirthma@gmail.com)</vendor>
-  <idea-version since-build="193.1" until-build="201.1"/>
+  <idea-version since-build="201.1" until-build="202.1"/>
 
   <depends>jetbrains.mps.core</depends>
   <depends>jetbrains.mps.build</depends>
