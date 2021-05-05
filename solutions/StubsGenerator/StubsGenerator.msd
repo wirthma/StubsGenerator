@@ -39,7 +39,6 @@
     <module reference="552f07da-7329-4f60-82e1-8f550f3fe13d(StubsGenerator)" version="0" />
     <module reference="4b884c2d-fa2c-4f14-933e-02a0187f870a(TestLanguage)" version="0" />
     <module reference="2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)" version="0" />
-    <module reference="9e98f4e2-decf-4e97-bf80-9109e8b759aa(jetbrains.mps.lang.feedback.context)" version="0" />
   </dependencyVersions>
 </solution>
 
